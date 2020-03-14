@@ -1,0 +1,9 @@
+footer {
+    padding-bottom: 20px;
+}
+
+.rounded-circle {
+   width: 160px;
+   height: 160px;;
+    background-color: gray;
+}
