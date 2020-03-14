@@ -4,26 +4,23 @@ function Bootstrapintro() {
     return(
         
 
-        // <!-- ======= About Section ======= -->
-        <div id="about" className="about">
-          <div className="container">
-    
-            <div className="row justify-content-between">
-              <div className="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                <img src="assets/img/about-img.svg" className="img-fluid" alt="" data-aos="zoom-in"/>
-              </div>
-              <div className="col-lg-6 pt-5 pt-lg-0">
-                <h3 data-aos="fade-up">About Us</h3>
-                <p data-aos="fade-up" data-aos-delay="100">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad quisquam eligendi eaque possimus. Laborum debitis vitae beatae! 
-                  Consectetur harum numquam modi! A, nulla explicabo cumque eos ut aliquid dolorum?
-                </p>
-               
-              </div>
-            </div>
-    
-          </div>
+        // <!-- ======= Hero Section ======= -->
+  <section id="hero" className="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
+          <h1>Show the world how kynd you are</h1>
+          <h2>Complete random acts of kyndness for yourself, others or the world.</h2>
+          <a href="#about" className="btn-get-started scrollto">Sign Up</a>
         </div>
+        <div className="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="assets/img/hero-img.svg" className="img-fluid animated" alt=""/>
+        </div>
+      </div>
+    </div>
+
+  </section> 
         
        
         
