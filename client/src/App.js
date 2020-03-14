@@ -1,14 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Nav from './Components/Nav/index'
+
+
+import Bootstrapintro from './Components/intro';
+
 
 function App() {
-
+   
   return (
    
-          <Nav/>
+
+          
          
+=======
+    <Bootstrapintro />
+
   );
 }
 
