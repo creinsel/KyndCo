@@ -16,10 +16,12 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "minimist": "^1.2.2",
     "nodemon": "^2.0.2"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.4"
   }
 }
