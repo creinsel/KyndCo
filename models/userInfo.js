@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
+
   name: {
     type: String,
     required: true
@@ -27,6 +28,7 @@ var UserSchema = new Schema({
       ref: "KindActs"
     }
   ]
+
 });
 
 var UserInfo = mongoose.model("UserInfo", UserSchema);
