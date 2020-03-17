@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './App.css';
 import Bootstrapintro from './Components/intro';
 import Bootstrapabout from './Components/about';
@@ -17,7 +16,7 @@ function App() {
     <Team />
     <Footer />
   </>
-  );
-}
+    )
+ }
 
 export default App;
