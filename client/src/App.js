@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './App.css';
+import Nav from './Components/Nav';
 import Bootstrapintro from './Components/intro';
 import Bootstrapabout from './Components/about';
 import Badge from './Components/badge';
@@ -11,6 +12,7 @@ function App() {
    
   return (
    <>
+   <Nav />
     <Bootstrapintro />
     <Bootstrapabout />
     <Badge />
