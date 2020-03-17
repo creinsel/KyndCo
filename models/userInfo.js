@@ -20,7 +20,7 @@ var UserSchema = new Schema({
     points: {
         type: Number,
         required: true,
-act: {
+    act: {
     type: Schema.Types.ObjectId,
     ref: "KindActs"
   }

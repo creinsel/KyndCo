@@ -1,11 +1,13 @@
 import React from "react";
+import SignUp from "../SignUp";
+import SignIn from "../SignIn"
 
 
-function Nav() {
+const Nav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-whitet">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-light">
       <a className="navbar-brand" href="/">
-        <img src ="assets/images/kyndco-logo.png"/>
+        <img src ="assets/images/kyndco-logo.png" alt="logo"/>
       </a>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
@@ -14,11 +16,12 @@ function Nav() {
     
       
       <li className="nav-item">
-        <a className="nav-link" href="/signIn"><div className= "btn btn-primary"> Sign In</div></a>
+        <div className = "m-1"><SignIn/></div>
+        {/* <a className="nav-link" href="/signIn" onClick ={() => SignIn.setModalShow(true)} ><div className= "btn btn-primary"> Sign In</div></a> */}
       </li>
       <li className="nav-item">
-      
-        <a className="nav-link" href="/signUp"><div className= "btn btn-primary"> Sign Up</div></a>
+      <div className = "m-1"><SignUp/></div>
+        {/* <a className="nav-link" href="/signUp"><div className= "btn btn-primary"> Sign Up</div></a> */}
        
       </li>
     
