@@ -7,6 +7,7 @@ import Bootstrapabout from "./components/About";
 import Badge from "./components/Badge";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import Chart from "./components/Chart";
 import Dashboard from "./pages/Dashboard";
 import { KindActContext } from "./context/KindActContext";
 
@@ -26,7 +27,7 @@ function App() {
               <Team />
               <Footer />
             </Route>
-            <Route path="/user/:id" component={Dashboard} />
+            {/* <Route path="/user/:id" component={Dashboard} /> */}
           </Switch>
         </div>
       </Router>
