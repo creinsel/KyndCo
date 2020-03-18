@@ -1,30 +1,38 @@
 
-import React from 'react';
-import './App.css';
-import Bootstrapintro from './Components/intro';
-import Bootstrapabout from './Components/about';
-import Badge from './Components/badge';
-import Team from './Components/team';
-import Footer from './Components/footer';
-import Nav from './Components/Nav'
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Bootstrapintro from "./components/Intro";
+import Bootstrapabout from "./components/About";
+import Badge from "./components/Badge";
+import Team from "./components/Team";
+import Footer from "./components/Footer";
+import Dashboard from "./pages/Dashboard";
+import { KindActContext } from "./context/KindActContext";
+
 
 function App() {
-   
+  const value = useContext(KindActContext);
   return (
-    <div>
-    <Nav/>
-   <>
-    <Bootstrapintro />
-    <Bootstrapabout />
-    <Badge />
-    <Team />
-    <Footer />
-    
-  </>
-  </div>
-    )
- }
+
+    <KindActContext.Provider value={value}>
+      <Router>
+        <div>
+          <Switch>
+            <Route path="/">
+              <Bootstrapintro />
+              <Bootstrapabout />
+              <Badge />
+              <Team />
+              <Footer />
+            </Route>
+            <Route path="/user/:id" component={Dashboard} />
+          </Switch>
+        </div>
+      </Router>
+    </KindActContext.Provider>
+  );
+}
 
 
 export default App;
-
