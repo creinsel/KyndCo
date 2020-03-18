@@ -6,17 +6,22 @@ import Bootstrapabout from './Components/about';
 import Badge from './Components/badge';
 import Team from './Components/team';
 import Footer from './Components/footer';
+import Nav from './Components/Nav'
 
 function App() {
    
   return (
+    <div>
+    <Nav/>
    <>
     <Bootstrapintro />
     <Bootstrapabout />
     <Badge />
     <Team />
     <Footer />
+    
   </>
+  </div>
     )
  }
 

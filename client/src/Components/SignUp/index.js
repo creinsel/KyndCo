@@ -14,17 +14,17 @@ setShow(false);
 
 const {name, email, password} = formData;
 
-if(name && email && password)
-API.saveUser({
-  name,
-  points: 0,
-  email,
-  password
-})
-  .then(res => {
-    // need to add more stuff here
-  })
-  .catch(err => console.log(err));
+// if(name && email && password)
+// API.saveUser({
+//   name,
+//   points: 0,
+//   email,
+//   password
+// })
+//   .then(res => {
+//     // need to add more stuff here
+//   })
+//   .catch(err => console.log(err));
 
     } 
 
