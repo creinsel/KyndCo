@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -9,9 +10,11 @@ import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import { KindActContext } from "./context/KindActContext";
 
+
 function App() {
   const value = useContext(KindActContext);
   return (
+
     <KindActContext.Provider value={value}>
       <Router>
         <div>
@@ -30,5 +33,6 @@ function App() {
     </KindActContext.Provider>
   );
 }
+
 
 export default App;
