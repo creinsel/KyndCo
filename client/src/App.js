@@ -1,25 +1,32 @@
-
-import React from 'react';
-import './App.css';
-import Bootstrapintro from './Components/intro';
-import Bootstrapabout from './Components/about';
-import Badge from './Components/badge';
-import Team from './Components/team';
-import Footer from './Components/footer';
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Bootstrapintro from "./components/Intro";
+import Bootstrapabout from "./components/About";
+import Badge from "./components/Badge";
+import Team from "./components/Team";
+import Footer from "./components/Footer";
+import { KindActContext } from "./context/KindActContext";
 
 function App() {
-   
+  const value = useContext(KindActContext);
   return (
-   <>
-    <Bootstrapintro />
-    <Bootstrapabout />
-    <Badge />
-    <Team />
-    <Footer />
-  </>
-    )
- }
-
+    <KindActContext.Provider value={value}>
+      <Router>
+        <div>
+          <Switch>
+            <Route path="/">
+              <Bootstrapintro />
+              <Bootstrapabout />
+              <Badge />
+              <Team />
+              <Footer />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </KindActContext.Provider>
+  );
+}
 
 export default App;
-
