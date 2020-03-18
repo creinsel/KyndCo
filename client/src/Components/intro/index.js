@@ -13,7 +13,7 @@ function Bootstrapintro() {
               world.
             </h2>
             <a href="#acts" className="btn-get-started scrollto">
-              Try it Out
+              Learn More
             </a>
           </div>
           <div className="col-lg-6 order-1 order-lg-2 hero-img">

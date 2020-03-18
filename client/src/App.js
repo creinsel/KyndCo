@@ -6,6 +6,7 @@ import Bootstrapabout from "./components/About";
 import Badge from "./components/Badge";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import Dashboard from "./pages/Dashboard";
 import { KindActContext } from "./context/KindActContext";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Team />
               <Footer />
             </Route>
+            <Route path="/user/:id" component={Dashboard} />
           </Switch>
         </div>
       </Router>
