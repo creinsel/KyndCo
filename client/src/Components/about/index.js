@@ -1,7 +1,7 @@
 
 import React from "react";
 
-function Bootstrapabout() {
+function About() {
     return (
 
 
@@ -29,4 +29,4 @@ function Bootstrapabout() {
     );
 }
 
-export default Bootstrapabout;
+export default About;
