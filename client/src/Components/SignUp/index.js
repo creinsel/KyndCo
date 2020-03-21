@@ -40,7 +40,7 @@ API.saveUser({
   points: 0,
   email,
   password, 
-  acts: []
+  act: []
 })
   .then(res => {
   //  loadUser();
