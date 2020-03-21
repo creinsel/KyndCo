@@ -4,7 +4,7 @@ function Badge() {
   return (
     // <!-- ======= Badges Section ======= -->
     <section id="services" className="services section-bg">
-      <div class="container">
+      <div className="container">
         <div className="section-title" data-aos="fade-up">
           <h2>Badges</h2>
           <p>Check out our cool badges!</p>
@@ -18,7 +18,7 @@ function Badge() {
           >
             <div className="icon-box">
               <div className="icon">
-                <i class="bx bxl-dribbble"></i>
+                <i className="bx bxl-dribbble"></i>
               </div>
               <h4 className="title">Lorem Ipsum</h4>
               <p className="description">
@@ -69,7 +69,7 @@ function Badge() {
           >
             <div className="icon-box">
               <div className="icon">
-                <i class="bx bx-world"></i>
+                <i className="bx bx-world"></i>
               </div>
               <h4 className="title">Nemo Enim\</h4>
               <p className="description">

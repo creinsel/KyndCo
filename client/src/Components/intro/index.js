@@ -4,9 +4,9 @@ function Bootstrapintro() {
   return (
     // <!-- ======= Hero Section ======= -->
     <section id="hero" className="d-flex align-items-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
+      <div className="container">
+        <div className="row">
+          <div clasName="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
             <h1>Show the world how kynd you are</h1>
             <h2>
               Complete random acts of kyndness for yourself, others or the
