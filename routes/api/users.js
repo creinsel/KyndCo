@@ -10,3 +10,5 @@ router
 
 // create a new user
 router.route("/create").post(UserController.create);
+
+module.exports = router;
