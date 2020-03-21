@@ -1,38 +1,37 @@
-import React from "react";
-import "./style.css";
-import Moment from "react-moment";
-import "moment-timezone";
+/* App.js */
+var React = require("react");
+var CanvasJSReact = require("./canvasjs.react");
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+var kyndPts = [];
 
 const Chart = () => {
-  var chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
+  const options = {
+    theme: "light2",
     title: {
-      text: "How Many Times did you Click?"
+      text: "Stock Price of NIFTY 50"
     },
     axisY: {
-      title: "Number of Clicks"
+      title: "Price in USD",
+      prefix: "$",
+      includeZero: false
     },
     data: [
       {
-        type: "area",
-        color: "rgba(54,158,173,.7)",
-        markerSize: 5,
-        xValueType: "dateTime",
-        xValueFormatString: "MM Do YYYY",
-        yValueFormatString: "#",
-        dataPoints: [
-          { x: new Date(2000, 0, 4), y: 3289000 },
-          { x: new Date(2001, 5, 14), y: 3830000 },
-          { x: new Date(2002, 9, 19), y: 2009000 },
-          { x: new Date(2003, 6, 2), y: 2840000 },
-          { x: new Date(2004, 2, 28), y: 2396000 }
-        ]
+        type: "line",
+        xValueFormatString: "MMM YYYY",
+        yValueFormatString: "$#,##0.00",
+        dataPoints: dataPoints
       }
     ]
-  });
-  chart.render();
-
-  return <div id="chartContainer" style="height: 300px; width: 100%;"></div>;
+  };
+  return (
+    <div>
+      <CanvasJSChart options={options} onRef={ref => (this.chart = ref)} />
+      {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+    </div>
+  );
 };
 
-export default Chart;
+module.exports = Chart;
