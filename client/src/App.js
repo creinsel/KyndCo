@@ -4,12 +4,11 @@ import "./App.css";
 import Bootstrapintro from "./Components/Intro";
 import Bootstrapabout from "./Components/About";
 import Badge from "./Components/Badge";
-// import Team from "./Components/Team";
+import Team from "./Components/Team";
 import Footer from "./Components/Footer";
-
+import Dashboard from "./pages/Dashboard";
 import Nav from "./Components/Nav"
 // import Chart from "./components/Chart";
-// import Dashboard from "./pages/Dashboard";
 import { KindActContext } from "./context/KindActContext";
 
 function App() {
@@ -23,10 +22,10 @@ function App() {
               <Bootstrapintro />
               <Bootstrapabout />
               <Badge />
-              {/* <Team /> */}
+              <Team />
               <Footer />
             </Route>
-            {/* <Route path="/user/:id" component={Dashboard} /> */}
+            <Route exact path="/dashboard" component={Dashboard} />
           </Switch>
       
       </Router>
