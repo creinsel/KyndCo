@@ -4,7 +4,7 @@ function Team() {
   return (
     // <!-- ======= Team Section ======= -->
     <section id="team" className="team">
-      <div class="container">
+      <div className="container">
         <div className="section-title" data-aos="fade-up">
           <h2>Team</h2>
           <p>Our project team members!</p>
@@ -85,7 +85,7 @@ function Team() {
           data-aos-delay="300"
         >
           <div className="member">
-            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="" />
+            <img src="assets/img/team/team-3.jpg" className="img-fluid" alt="" />
             <div className="member-info">
               <div className="member-info-content">
                 <h4>Mone Duncans-Francis</h4>

@@ -26,9 +26,9 @@ const SignIn = () => {
     <label for="Name">Name</label>
     <input type="text" className="form-control" placeholder="Name"/>
   </div>
-  <div class="form-group">
+  <div className="form-group">
     <label for="Email">Email</label>
-    <input type="text" class="form-control"  placeholder="Email"/>
+    <input type="text" className="form-control"  placeholder="Email"/>
   </div>
  
 </form>

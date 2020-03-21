@@ -69,13 +69,14 @@ API.saveUser({
     <label for="Name">Name</label>
     <input type="text" className="form-control" placeholder="Name" name="name" value={formData.name} onChange={handleInputChange}/>
   </div>
-  <div class="form-group">
+  <div className="form-group">
     <label for="Email">Email</label>
     <input type="text" class="form-control"  placeholder="Email" name="email" value={formData.email} onChange={handleInputChange}/>
   </div>
   <div class="form-group">
     <label for="Password">Password</label>
     <input type="text" class="form-control"  placeholder="Password" name="password" value={formData.password} onChange={handleInputChange}/>
+
   </div>
 </form>
 </Modal.Body>
