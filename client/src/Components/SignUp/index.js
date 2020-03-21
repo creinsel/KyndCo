@@ -10,20 +10,21 @@ const SignUp = () => {
       password: ''
     });
 
-    const loadUser = () => {
-      API.getUser()
-        .then(res => {
-          setFormData(res.data)
-        }
-        )
-        .catch(err => console.log(err));
-    };
+    // const loadUser = () => {
+    //   API.getUser()
+    //     .then(res => {
+    //       setFormData(res.data)
+    //     }
+    //     )
+    //     .catch(err => console.log(err));
+    // };
       const handleInputChange = event => {
       const { name, value } = event.target;
       setFormData({
         ...formData,
         [name]: value
       })
+      console.log(formData);
     };
   
     const handleClose = () => {
@@ -42,7 +43,8 @@ API.saveUser({
   acts: []
 })
   .then(res => {
-   loadUser();
+  //  loadUser();
+   console.log("wat up")
   })
   .catch(err => console.log(err));
 
@@ -71,9 +73,9 @@ API.saveUser({
     <label for="Email">Email</label>
     <input type="text" class="form-control"  placeholder="Email" name="email" value={formData.email} onChange={handleInputChange}/>
   </div>
-  <div className="form-group">
-    <label for="Passwprd">Password</label>
-      <input type="text" className="form-control"  placeholder="Password" value= {formdata.password} onChange={handleInputChange}/>
+  <div class="form-group">
+    <label for="Password">Password</label>
+    <input type="text" class="form-control"  placeholder="Password" name="password" value={formData.password} onChange={handleInputChange}/>
 
   </div>
 </form>
