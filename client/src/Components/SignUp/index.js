@@ -40,7 +40,7 @@ API.saveUser({
   points: 0,
   email,
   password, 
-  acts: []
+  act: []
 })
   .then(res => {
   //  loadUser();
@@ -76,7 +76,6 @@ API.saveUser({
   <div class="form-group">
     <label for="Password">Password</label>
     <input type="text" class="form-control"  placeholder="Password" name="password" value={formData.password} onChange={handleInputChange}/>
-
   </div>
 </form>
 </Modal.Body>
