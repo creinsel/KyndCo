@@ -1,119 +1,134 @@
 import React, { useContext, useState, useEffect } from "react";
 import Nav from "../../Components/Nav";
-import Jumbotron from "../../components/Jumbotron";
-import DeleteBtn from "../../components/DeleteBtn";
+import Jumbotron from "../../Components/Jumbotron";
+import AddBtn from "../../Components/AddBtn";
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../../Components/Grid";
+import { List, ListItem } from "../../Components/List";
+import { Input, TextArea, FormBtn } from "../../Components/Form";
+import { KindActContext } from "../../context/KindActContext";
+//import ActsList from "../../Components/ActsList";
 
-const Books = () => {
-  // Setting our component's initial state
-  state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
+const Acts = () => {
+  const [formData, setFormData] = useState({
+    task: '',
+    category: '',
+    points: '',
+    description: ''
+  });
+  const {acts, setActs} = useContext(KindActContext);
+
+
+const loadActs = () => {
+    API.getKindActs()
+    .then(res =>
+      setActs(res.data)
+    )
+    .catch(err => console.log(err));
   };
 
-  // When the component mounts, load all books and save them to this.state.books
-  componentDidMount() {
-    this.loadBooks();
+useEffect(() => {
+  if (acts.length === 0) {
+    loadActs();
   }
+}, []);
 
-  // Loads all books  and sets them to this.state.books
-  loadBooks = () => {
-    API.getBooks()
-      .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-      )
-      .catch(err => console.log(err));
-  };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
+const deleteKindAct = id => {
+  API.deleteKindAct(id)
+  .then(res => {
+    const remainingActs = acts.filter(act => act._id !== id);
+    setActs(remainingActs);
+  })
+  .catch(err => console.log(err));
+};
 
-  // Handles updating component state when the user types into the input field
-  handleInputChange = event => {
+
+const handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
+    setFormData({
+      ...formData,
       [name]: value
-    });
+    })
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
-  handleFormSubmit = event => {
+
+const handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+
+    const {task, category, points, description} = formData;
+
+    if (task && category && points && description) {
+      API.saveAct({
+        task,
+        category,
+        points,
+        description
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadActs())
         .catch(err => console.log(err));
     }
   };
 
-  render() {
     return (
       <Container fluid>
         <Nav />
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>Add an Act</h1>
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                value={formData.task}
+                onChange={handleInputChange}
+                name="task"
+                placeholder="Task (required)"
               />
               <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                value={formData.category}
+                onChange={handleInputChange}
+                name="category"
+                placeholder="Category - Yourself | Others | The World (required)"
               />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+              <Input
+                value={formData.points}
+                onChange={handleInputChange}
+                name="points"
+                placeholder="Points (Required)"
+              />
+               <TextArea
+                value={formData.description}
+                onChange={handleInputChange}
+                name="description"
+                placeholder="Description (Required)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
+                disabled={!(formData.task && formData.category && formData.points && formData.description)}
+                onClick={handleFormSubmit}
               >
-                Submit Book
+                Add Act
               </FormBtn>
             </form>
           </Col>
+
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Acts of Kyndness</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {acts.length ? (
               <List>
-                {this.state.books.map(book => {
-                  return (
-                    <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
+                {acts.map(act => (
+                    <ListItem key={act._id}>
+                      <Link to={"/acts/" + act._id}>
                         <strong>
-                          {book.title} by {book.author}
+                          {act.task} | {act.category} | {act.points} | {act.description}
                         </strong>
-                      </a>
-                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                      </Link>
+                      <AddBtn />
                     </ListItem>
-                  );
-                })}
+                ))}
               </List>
             ) : (
               <h3>No Results to Display</h3>
@@ -122,7 +137,8 @@ const Books = () => {
         </Row>
       </Container>
     );
-  }
-}
+  };
 
-export default Books;
+
+
+export default Acts;
