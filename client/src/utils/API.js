@@ -27,6 +27,7 @@ export default {
 
   saveUser: function(formdata) {
     return axios.post("/api/users/", formdata );
+   
   },
   //gets user by id
   getUser: function(id) {
