@@ -1,14 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
-import Nav from "../../Components/Nav";
-import Jumbotron from "../../Components/Jumbotron";
-import AddBtn from "../../Components/AddBtn";
-import API from "../../utils/API";
+import Nav from "../Components/Nav";
+import Jumbotron from "../Components/Jumbotron";
+import AddBtn from "../Components/AddBtn";
+import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../Components/Grid";
-import { List, ListItem } from "../../Components/List";
-import { Input, TextArea, FormBtn } from "../../Components/Form";
-import { KindActContext } from "../../context/KindActContext";
-//import ActsList from "../../Components/ActsList";
+import { Col, Row, Container } from "../Components/Grid";
+import { List, ListItem } from "../Components/List";
+import { Input, TextArea, FormBtn } from "../Components/Form";
+import { KindActContext } from "../context/KindActContext";
+
 
 const Acts = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ const Acts = () => {
     if (acts.length === 0) {
       loadActs();
     }
-  }, []);
+  });
 
   const deleteKindAct = id => {
     API.deleteKindAct(id)
@@ -122,12 +122,9 @@ const Acts = () => {
             <List>
               {acts.map(act => (
                 <ListItem key={act._id}>
-                  <Link to={"/acts/" + act._id}>
                     <strong>
-                      {act.task} | {act.category} | {act.points} |{" "}
-                      {act.description}
+                      {act.task} | {act.category} | {act.points} | {act.description}
                     </strong>
-                  </Link>
                   <AddBtn />
                 </ListItem>
               ))}
