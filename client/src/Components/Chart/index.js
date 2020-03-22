@@ -11,10 +11,12 @@ const Chart = () => {
   const options = {
     animationEnabled: true,
     title: {
-      text: "How Many Times did you Click?"
+      text: "Stock Price of NIFTY 50"
     },
     axisY: {
-      title: "Number of Clicks"
+      title: "Price in USD",
+      prefix: "$",
+      includeZero: false
     },
     data: [
       {
@@ -36,4 +38,4 @@ const Chart = () => {
   );
 };
 
-export default Chart;
+module.exports = Chart;

@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const UserController = require("../../controller/UserController");
 
-//localhost:3000/api/users/:id
-// find user by id in db, update user by id
+//localhost:3001/api/users/
+// finds user by id in db & allows us to update their info
 router
   .route("/:id")
   .get(UserController.findById)
   .put(UserController.update);
 
-//localhost:3000/api/users
-// create a new user, find user by id, and find all users
+//localhost:3001/api/users/
+// create a new user, find all users, find user by id
 router
   .route("/")
   .post(UserController.create)

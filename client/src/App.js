@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Bootstrapintro from "./Components/Intro";
@@ -12,9 +12,10 @@ import Nav from "./Components/Nav";
 import { KindActContext } from "./context/KindActContext";
 
 function App() {
-  const value = useContext(KindActContext);
+  //const [acts, setActs] = useState([]);
+  const { acts, setActs } = useContext(KindActContext);
   return (
-    <KindActContext.Provider value={value}>
+    <KindActContext.Provider value={{ acts, setActs }}>
       <Router>
         <Switch>
           <Route exact path="/">
