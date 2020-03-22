@@ -6,13 +6,11 @@ var KindActsSchema = new Schema({
     type: String,
     required: true
   },
-  category: [
-    {
-      type: String,
-      required: true,
-      default: "Others"
-    }
-  ],
+  category: {
+    type: String,
+    required: true,
+    default: "Others"
+  },
   tier: {
     type: Number,
     required: true
