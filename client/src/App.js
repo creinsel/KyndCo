@@ -6,7 +6,7 @@ import Bootstrapabout from "./Components/About";
 import Badge from "./Components/Badge";
 import Team from "./Components/Team";
 import Footer from "./Components/Footer";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Nav from "./Components/Nav";
 // import Chart from "./components/Chart";
 import { KindActContext } from "./context/KindActContext";
