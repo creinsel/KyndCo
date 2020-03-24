@@ -35,9 +35,7 @@ const Acts = () => {
   };
 
   useEffect(() => {
-    if (acts.length === 0) {
       loadActs();
-    }
   }, []);
 
   const deleteKindAct = id => {
@@ -69,7 +67,7 @@ const Acts = () => {
         points,
         description
       })
-        .then(res => this.loadActs())
+        .then(res => loadActs())
         .catch(err => console.log(err));
     }
   };
