@@ -47,17 +47,9 @@ const SignUp = () => {
         act: []
       })
         .then(res => {
-// const password = formData.password
-// const rounds = 10
-
-// bcrypt.hash(password, rounds, (err, hash) => {
-// 	if (err) {
-//     console.error(err)
-//     return
-//   }
-//   console.log(hash)
-// })
           console.log("wat up");
+
+          res.send("User Created! Sign Into Your Account to Start Spreading Some Kyndness")
         })
         .catch(err => console.log(err));
   };
