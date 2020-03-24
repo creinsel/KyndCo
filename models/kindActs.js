@@ -11,10 +11,6 @@ var KindActsSchema = new Schema({
     required: true,
     default: "Others"
   },
-  tier: {
-    type: Number,
-    required: true
-  },
   points: {
     type: Number,
     required: true
