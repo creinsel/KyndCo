@@ -2,37 +2,40 @@ import React from "react";
 import "./style.css";
 import Moment from "react-moment";
 import "moment-timezone";
+import CanvasJSReact from "../../lib/canvasjs.react";
+
+var CanvasJs = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const Chart = () => {
-  var chart = new CanvasJS.Chart("chartContainer", {
+  const options = {
     animationEnabled: true,
     title: {
-      text: "How Many Times did you Click?"
+      text: "Stock Price of NIFTY 50"
     },
     axisY: {
-      title: "Number of Clicks"
+      title: "Price in USD",
+      prefix: "$",
+      includeZero: false
     },
     data: [
       {
-        type: "area",
+        type: "column",
         color: "rgba(54,158,173,.7)",
         markerSize: 5,
-        xValueType: "dateTime",
-        xValueFormatString: "MM Do YYYY",
         yValueFormatString: "#",
         dataPoints: [
-          { x: new Date(2000, 0, 4), y: 3289000 },
-          { x: new Date(2001, 5, 14), y: 3830000 },
-          { x: new Date(2002, 9, 19), y: 2009000 },
-          { x: new Date(2003, 6, 2), y: 2840000 },
-          { x: new Date(2004, 2, 28), y: 2396000 }
+          { x: <Moment format="MM/DD/YYYY"></Moment>, y: 5 },
+          { x: <Moment format="MM/DD/YYYY"></Moment>, y: 15 }
         ]
       }
     ]
-  });
-  chart.render();
-
-  return <div id="chartContainer" style="height: 300px; width: 100%;"></div>;
+  };
+  return (
+    <div>
+      <CanvasJSChart options={options} />
+    </div>
+  );
 };
 
 export default Chart;

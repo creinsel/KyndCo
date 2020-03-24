@@ -1,94 +1,126 @@
-import React, {useState} from "react";
-import {Modal, Button} from 'react-bootstrap';
-import API from "../../utils/API"
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
+import API from "../../utils/API";
+
 
 const SignUp = () => {
-    const [show, setShow] = useState(false);
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      password: ''
+  const [show, setShow] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: ""
+  });
+
+  
+// or
+// const bcrypt = require('bcrypt')
+
+
+  // const loadUser = () => {
+  //   API.getUser()
+  //     .then(res => {
+  //       setFormData(res.data)
+  //     }
+  //     )
+  //     .catch(err => console.log(err));
+  // };
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
     });
+    console.log(formData);
+  };
 
-    // const loadUser = () => {
-    //   API.getUser()
-    //     .then(res => {
-    //       setFormData(res.data)
-    //     }
-    //     )
-    //     .catch(err => console.log(err));
-    // };
-      const handleInputChange = event => {
-      const { name, value } = event.target;
-      setFormData({
-        ...formData,
-        [name]: value
+  const handleClose = () => {
+    setShow(false);
+    console.log({formData})
+    const { name, email, password } = formData;
+
+    if (name && email && password)
+      API.saveUser({
+        name,
+        points: 0,
+        email,
+        password,
+        act: []
       })
-      console.log(formData);
-    };
-  
-    const handleClose = () => {
-    
+        .then(res => {
+// const password = formData.password
+// const rounds = 10
 
-setShow(false); 
+// bcrypt.hash(password, rounds, (err, hash) => {
+// 	if (err) {
+//     console.error(err)
+//     return
+//   }
+//   console.log(hash)
+// })
+          console.log("wat up");
+        })
+        .catch(err => console.log(err));
+  };
 
-const {name, email, password} = formData;
+  const handleShow = () => setShow(true);
 
-if(name && email && password)
-API.saveUser({
-  name,
-  points: 0,
-  email,
-  password, 
-  acts: []
-})
-  .then(res => {
-  //  loadUser();
-   console.log("wat up")
-  })
-  .catch(err => console.log(err));
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Sign Up
+      </Button>
 
-    } 
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Create A New Account</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form>
+            <div className="form-group">
+              <label for="Name">Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="form-group">
+              <label for="Email">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div class="form-group">
+              <label for="Password">Password</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+              />
+            </div>
+          </form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            SignUp
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
 
-  
-    const handleShow = () => setShow(true);
-  
-    return (
-      <>
-        <Button variant="primary" onClick={handleShow}>
-          Sign Up
-        </Button>
-  
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Create A New Account</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-              <form>
-  <div className="form-group">
-    <label for="Name">Name</label>
-    <input type="text" className="form-control" placeholder="Name" name="name" value={formData.name} onChange={handleInputChange}/>
-  </div>
-  <div className="form-group">
-    <label for="Email">Email</label>
-    <input type="text" class="form-control"  placeholder="Email" name="email" value={formData.email} onChange={handleInputChange}/>
-  </div>
-  <div class="form-group">
-    <label for="Password">Password</label>
-    <input type="text" class="form-control"  placeholder="Password" name="password" value={formData.password} onChange={handleInputChange}/>
-
-  </div>
-</form>
-</Modal.Body>
-          <Modal.Footer>
-            
-            <Button variant="primary" onClick={handleClose} href="/create">
-              SignUp
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
-  }
   
   export default SignUp;
+

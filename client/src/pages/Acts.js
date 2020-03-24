@@ -1,22 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
-import Nav from "../../Components/Nav";
-import Jumbotron from "../../Components/Jumbotron";
-import AddBtn from "../../Components/AddBtn";
-import API from "../../utils/API";
+import Nav from "../Components/Nav";
+import Jumbotron from "../Components/Jumbotron";
+import AddBtn from "../Components/AddBtn";
+import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../Components/Grid";
-import { List, ListItem } from "../../Components/List";
-import { Input, TextArea, FormBtn } from "../../Components/Form";
-import { KindActContext } from "../../context/KindActContext";
-//import ActsList from "../../Components/ActsList";
-import Moment from "react-moment";
-import "moment-timezone";
-import CanvasJSReact from "../../lib/canvasjs.react";
-import Chart from "../../Components/Chart";
-var CanvasJs = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import { Col, Row, Container } from "../Components/Grid";
+import { List, ListItem } from "../Components/List";
+import { Input, TextArea, FormBtn } from "../Components/Form";
+import { KindActContext } from "../context/KindActContext";
 
-// https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +18,6 @@ const Acts = () => {
     description: ""
   });
   const { acts, setActs } = useContext(KindActContext);
-  //const { userActs, setUserActs } = useContext(UserContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -35,8 +26,10 @@ const Acts = () => {
   };
 
   useEffect(() => {
+    if (acts.length === 0) {
       loadActs();
-  }, []);
+    }
+  });
 
   const deleteKindAct = id => {
     API.deleteKindAct(id)
@@ -67,7 +60,7 @@ const Acts = () => {
         points,
         description
       })
-        .then(res => loadActs())
+        .then(res => this.loadActs())
         .catch(err => console.log(err));
     }
   };
@@ -75,18 +68,6 @@ const Acts = () => {
   return (
     <Container fluid>
       <Nav />
-      <Jumbotron>
-        <Row>
-          <Col size="md-5">
-            <Chart />
-          </Col>
-          <Col size="md-7">
-            Recent History from db will go here
-            <br />
-            <Moment format="MM/DD/YYYY"></Moment>
-          </Col>
-        </Row>
-      </Jumbotron>
       <Row>
         <Col size="md-6">
           <Jumbotron>
@@ -141,12 +122,9 @@ const Acts = () => {
             <List>
               {acts.map(act => (
                 <ListItem key={act._id}>
-                  <Link to={"/acts/" + act._id}>
                     <strong>
-                      {act.task} | {act.category} | {act.points} |{" "}
-                      {act.description}
+                      {act.task} | {act.category} | {act.points} | {act.description}
                     </strong>
-                  </Link>
                   <AddBtn />
                 </ListItem>
               ))}
