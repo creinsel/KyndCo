@@ -12,8 +12,8 @@ import Nav from "./Components/Nav";
 import { KindActContext } from "./context/KindActContext";
 
 function App() {
-  //const [acts, setActs] = useState([]);
-  const { acts, setActs } = useContext(KindActContext);
+  const [acts, setActs] = useState([]);
+  // const { acts, setActs } = useContext(KindActContext);
   return (
     <KindActContext.Provider value={{ acts, setActs }}>
       <Router>
