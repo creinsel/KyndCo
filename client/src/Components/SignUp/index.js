@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 
+
 const SignUp = () => {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
@@ -9,6 +10,11 @@ const SignUp = () => {
     email: "",
     password: ""
   });
+
+  
+// or
+// const bcrypt = require('bcrypt')
+
 
   // const loadUser = () => {
   //   API.getUser()
@@ -29,7 +35,7 @@ const SignUp = () => {
 
   const handleClose = () => {
     setShow(false);
-
+    console.log({formData})
     const { name, email, password } = formData;
 
     if (name && email && password)
@@ -41,7 +47,16 @@ const SignUp = () => {
         act: []
       })
         .then(res => {
-          //  loadUser();
+// const password = formData.password
+// const rounds = 10
+
+// bcrypt.hash(password, rounds, (err, hash) => {
+// 	if (err) {
+//     console.error(err)
+//     return
+//   }
+//   console.log(hash)
+// })
           console.log("wat up");
         })
         .catch(err => console.log(err));
