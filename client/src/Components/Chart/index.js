@@ -38,4 +38,4 @@ const Chart = () => {
   );
 };
 
-module.exports = Chart;
+export default Chart;
