@@ -6,16 +6,10 @@ var KindActsSchema = new Schema({
     type: String,
     required: true
   },
-  category: [
-    {
-      type: String,
-      required: true,
-      default: "Others"
-    }
-  ],
-  tier: {
-    type: Number,
-    required: true
+  category: {
+    type: String,
+    required: true,
+    default: "Others"
   },
   points: {
     type: Number,
@@ -24,6 +18,10 @@ var KindActsSchema = new Schema({
   description: {
     type: String,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now()
   }
 });
 

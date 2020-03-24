@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 export default {
   //API calls to db kindActs
   //Get all kindacts
@@ -27,6 +28,7 @@ export default {
 
   saveUser: function(formdata) {
     return axios.post("/api/users/", formdata );
+   
   },
   //gets user by id
   getUser: function(id) {
