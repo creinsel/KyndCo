@@ -47,9 +47,15 @@ const SignUp = () => {
         act: []
       })
         .then(res => {
-          console.log("wat up");
+          console.log("data: ", res.data);
 
-          res.send("User Created! Sign Into Your Account to Start Spreading Some Kyndness")
+          var userId = res.data._id
+
+          localStorage.setItem("userId", userId);
+
+          res.json({status: "Welcome " +formData.name+ "! Account Created" })
+
+          
         })
         .catch(err => console.log(err));
   };
@@ -115,4 +121,3 @@ const SignUp = () => {
 
   
   export default SignUp;
-

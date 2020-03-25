@@ -21,9 +21,31 @@ router
     console.log("req.body 2: ", req.body)
     UserController.create(req, res);
    })
+
+
     
  })
-  .get(UserController.findById)
-  .get(UserController.findAll);
+
+
+ 
+router
+ .route("/login")
+ .post( async (req, res) =>{
+   
+   console.log("hello")
+   bcrypt.compare(req.body.password, hash).then(function(response) {
+  if(response === true){
+    console.log('response', response)
+  } else{
+    console.log("no")
+  }
+
+ UserController.login(req, res)
+  });
+   
+})
+
+.get(UserController.findById)
+.get(UserController.findAll);
 
 module.exports = router;
