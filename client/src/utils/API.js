@@ -28,6 +28,10 @@ export default {
   saveUser: function(formdata) {
     return axios.post("/api/users/", formdata);
   },
+  login: function(formdata) {
+    return axios.post("/login", formdata );
+   
+  },
   //gets user by id
   getUser: function(id) {
     return axios.get("localhost:3001/api/users/" + id);
