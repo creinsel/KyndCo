@@ -1,38 +1,37 @@
 import React from "react";
 import "./style.css";
-import Moment from "react-moment";
-import "moment-timezone";
+// import Moment from "react-moment";
+// import "moment-timezone";
 import CanvasJSReact from "../../lib/canvasjs.react";
+import moment from "moment";
 
 var CanvasJs = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const Chart = () => {
+const Chart = props => {
   const options = {
     animationEnabled: true,
+    height: 300,
     title: {
-      text: "Stock Price of NIFTY 50"
+      text: "Your Daily Acts of Kyndness"
+    },
+    axisX: {
+      valueFormatString: "#"
     },
     axisY: {
-      title: "Price in USD",
-      prefix: "$",
-      includeZero: false
+      title: "# of Acts"
     },
     data: [
       {
         type: "column",
         color: "rgba(54,158,173,.7)",
-        markerSize: 5,
         yValueFormatString: "#",
-        dataPoints: [
-          { x: <Moment format="MM/DD/YYYY"></Moment>, y: 5 },
-          { x: <Moment format="MM/DD/YYYY"></Moment>, y: 15 }
-        ]
+        dataPoints: props.dataPoints
       }
     ]
   };
   return (
-    <div>
+    <div className="chartContainer">
       <CanvasJSChart options={options} />
     </div>
   );

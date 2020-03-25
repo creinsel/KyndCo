@@ -10,10 +10,11 @@ module.exports = {
   },
   findById: function(req, res) {
     db.UserInfo.findById(req.params.id)
+      .populate("act")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res){ 
+  create: function(req, res) {
     db.UserInfo.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -24,7 +25,10 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   performAct: function(req, res) {
-    db.UserInfo.findOneAndUpdate({ _id: req.params.id }, { $push:{act:req.body}  })
+    db.UserInfo.findOneAndUpdate(
+      { _id: req.params.id },
+      { $push: { act: req.body } }
+    )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
