@@ -8,17 +8,19 @@ import { Col, Row, Container } from "../../Components/Grid";
 import { List, ListItem } from "../../Components/List";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
-//import ActsList from "../../Components/ActsList";
+import { UserContext } from "../../context/UserContext";
 import Moment from "react-moment";
 import "moment-timezone";
 import CanvasJSReact from "../../lib/canvasjs.react";
 import Chart from "../../Components/Chart";
+import moment from "moment-timezone";
 var CanvasJs = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 // https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
+  var tempid = "5e7697bc152dbbbcf9992867";
   const [formData, setFormData] = useState({
     task: "",
     category: "",
@@ -26,7 +28,7 @@ const Acts = () => {
     description: ""
   });
   const { acts, setActs } = useContext(KindActContext);
-  //const { userActs, setUserActs } = useContext(UserContext);
+  const { userActs, setUserActs } = useContext(UserContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -35,8 +37,21 @@ const Acts = () => {
   };
 
   useEffect(() => {
-      loadActs();
+    loadActs();
+    loadUserActs(tempid);
   }, []);
+
+  const loadUserActs = id => {
+    API.getUser(id)
+      .then(res => setUserActs(res.data.userActs))
+      .catch(err => console.log(err));
+    // console.log("userActs:", res.data.userActs);
+  };
+
+  // useEffect(() => {
+  //   loadUserActs()
+  //   ;
+  // }, []);
 
   const deleteKindAct = id => {
     API.deleteKindAct(id)
@@ -53,6 +68,15 @@ const Acts = () => {
       ...formData,
       [name]: value
     });
+  };
+
+  const handleCompleteAct = event => {
+    //const { name, value } = event.target;
+    console.log(event.target);
+    //  setFormData({
+    //    ...formData,
+    //    [name]: value
+    //  });
   };
 
   const handleFormSubmit = event => {
@@ -72,13 +96,20 @@ const Acts = () => {
     }
   };
 
+  const dataPoints = acts.map(act => {
+    return {
+      label: moment(act.date).format("MM Do YY"),
+      y: 5
+    };
+  });
+
   return (
     <Container fluid>
       <Nav />
       <Jumbotron>
         <Row>
           <Col size="md-5">
-            <Chart />
+            <Chart dataPoints={dataPoints} />
           </Col>
           <Col size="md-7">
             Recent History from db will go here
@@ -147,7 +178,7 @@ const Acts = () => {
                       {act.description}
                     </strong>
                   </Link>
-                  <AddBtn />
+                  <AddBtn kindAttr={act._id} addAct={handleCompleteAct} />
                 </ListItem>
               ))}
             </List>

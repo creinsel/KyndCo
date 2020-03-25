@@ -1,4 +1,4 @@
-#chartContainer {
-  height: 300px;
-  width: 100%;
+.chartContainer {
+  position: relative;
+  top: -100px;
 }
