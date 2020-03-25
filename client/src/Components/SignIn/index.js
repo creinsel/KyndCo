@@ -3,11 +3,13 @@ import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 import { UserIdContext } from '../../context/UserIdContext';
 import { SignInContext } from '../../context/SigninContext';
+import { Redirect } from "react-router-dom";
 
 const SignIn = () => {
     const [show, setShow] = useState(false);
     const { setUserId } = useContext(UserIdContext);
     const { setSignIn } = useContext(SignInContext);
+    const [toDashboard, setToDashboard]= useState(false);
 
     const [formData, setFormData] = useState({
       email: "",
@@ -33,16 +35,22 @@ const SignIn = () => {
       API.login(formData)
       .then(res => {
         console.log("login")
-        //react router go to another page
+        //react router go to another pages
       })
 
       API.getUser(id)
       .then(res => {
         console.log("get user: ", res.data)
 
-        // if(formData.email === res.data.email)
-        setSignIn(true);
-        setUserId(id);
+      if(formData.email === res.data.email){
+      setSignIn(true);
+      setUserId(id);
+      console.log("success");
+      setToDashboard(true);
+      }else{
+        console.log("nope")
+      }
+        
        
 
       }
@@ -56,6 +64,7 @@ const SignIn = () => {
   
     return (
       <>
+      {toDashboard ? <Redirect to="/dashboard"/> : null}
         <Button variant="primary" onClick={handleShow}>
           Sign In
         </Button>
