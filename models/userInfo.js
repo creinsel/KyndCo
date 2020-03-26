@@ -3,7 +3,6 @@ var bcrypt = require("bcrypt");
 
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
-
   name: {
     type: String,
     required: true
@@ -29,16 +28,19 @@ var UserSchema = new Schema({
       ref: "KindActs"
     }
   ]
-
 });
 
 UserSchema.methods.hashpassword = async () => {
   const newPassword = await bcrypt.hash(this.password, 10, (err, hash) => {
-   return hash;
-})
-this.password = newPassword;
-return this.password;
-}
+    return hash;
+  });
+  this.password = newPassword;
+  return this.password;
+};
+
+UserSchema.methods.validPassword = password => {
+  return bcrypt.compareSync(password, this.password);
+};
 
 var UserInfo = mongoose.model("UserInfo", UserSchema);
 

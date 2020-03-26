@@ -29,12 +29,13 @@ export default {
     return axios.post("/api/users/", formdata);
   },
   login: function(formdata) {
-    return axios.post("/login", formdata );
-   
+    return axios.post("/login", formdata);
   },
   //gets user by id
-  getUser: function(id) {
-    return axios.get("localhost:3001/api/users/" + id);
+  getUser: function(myobj) {
+    console.log("inside get user");
+    return axios.post("/api/users/check/" + myobj.id);
+    console.log("end of getuser");
   },
   //updates user by id
   updateUser: function(id) {
