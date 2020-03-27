@@ -5,8 +5,11 @@ import API from "../../utils/API";
 import { UserIdContext } from '../../context/UserIdContext';
 import { SignInContext } from '../../context/SigninContext';
 import { Redirect } from "react-router-dom";
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7070b67b40fce07e27494cc8de69fe2bc4664636
 
 const SignIn = () => {
     const [show, setShow] = useState(false);
@@ -69,6 +72,7 @@ const SignIn = () => {
   
     return (
       <>
+<<<<<<< HEAD
      
       {toDashboard ? <Redirect to="/dashboard"/> : null}
         <a class="signinbutton" onClick={handleShow}>
@@ -77,6 +81,13 @@ const SignIn = () => {
      
 
         
+=======
+
+
+      {toDashboard ? <Redirect to="/dashboard"/> : null}
+
+        <Button variant="primary" onClick={handleShow}>
+>>>>>>> 7070b67b40fce07e27494cc8de69fe2bc4664636
           Sign In
         </a>
 
