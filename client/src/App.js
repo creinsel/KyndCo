@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Bootstrapintro from "./Components/intro";
-import Bootstrapabout from "./Components/about";
+import About from "./Components/about";
 import Badge from "./Components/badge";
 import Team from "./Components/team";
 import Footer from "./Components/footer";
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/">
             <Nav />
             <Bootstrapintro />
-            <Bootstrapabout />
+            <About />
             <Badge />
             <Team />
             <Footer />

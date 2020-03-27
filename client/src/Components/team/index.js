@@ -1,5 +1,5 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 
 function Team() {
   return (
@@ -26,22 +26,9 @@ function Team() {
               <div className="member-info">
                 <div className="member-info-content">
                   <h4>Anjali Sharma</h4>
-                  <span>Chief Executive Officer</span>
+                  <span>UI Designer</span>
                 </div>
-                {/* <div class="social">
-                  <a href="">
-                    <i className="icofont-twitter"></i>
-                  </a>
-                  <a href="">
-                    <i className="icofont-facebook"></i>
-                  </a>
-                  <a href="">
-                    <i className="icofont-instagram"></i>
-                  </a>
-                  <a href="">
-                    <i className="icofont-linkedin"></i>
-                  </a>
-                </div> */}
+                
               </div>
             </div>
           </div>
@@ -53,7 +40,7 @@ function Team() {
           >
             <div className="member">
               <img
-                src="assets/img/team/team-2.jpg"
+                src="assets/images/sara.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -62,23 +49,10 @@ function Team() {
                 <h4>Sara Bolduc</h4>
                 <span>Product Manager</span>
               </div>
-              {/* <div class="social">
-                <a href="">
-                  <i className="icofont-twitter"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-facebook"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-instagram"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-linkedin"></i>
-                </a>
-              </div> */}
+             
             </div>
           </div>
-        </div>
+        
 
         <div
           className="col-xl-3 col-lg-4 col-md-6"
@@ -86,26 +60,13 @@ function Team() {
           data-aos-delay="300"
         >
           <div className="member">
-            <img src="assets/img/team/team-3.jpg" className="img-fluid" alt="" />
+            <img src="assets/images/mone.jpg" className="img-fluid home-img" alt="" />
             <div className="member-info">
               <div className="member-info-content">
                 <h4>Mone Duncans-Francis</h4>
-                <span>CTO</span>
+                <span>UI Designer</span>
               </div>
-                {/* <div className="social">
-                <a href="">
-                  <i className="icofont-twitter"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-facebook"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-instagram"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-linkedin"></i>
-                </a>
-              </div>  */}
+               
             </div>
           </div>
         </div> 
@@ -117,7 +78,7 @@ function Team() {
         >
           <div className="member">
             <img
-              src="assets/img/team/team-4.jpg"
+              src="assets/images/casImg.JPG"
               className="img-fluid"
               alt=""
             />
@@ -143,6 +104,7 @@ function Team() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 

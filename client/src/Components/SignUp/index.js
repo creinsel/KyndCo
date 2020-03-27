@@ -3,6 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 
 
+
 const SignUp = () => {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
@@ -67,9 +68,9 @@ const SignUp = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <a variant="primary" onClick={handleShow}>
         Sign Up
-      </Button>
+      </a>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
