@@ -28,81 +28,48 @@ const SignIn = () => {
   
  
   
-    const handleClose = () => {
+    const handleLogIn = () => {
       setShow(false);
-     console.log("handle close")
       API.login(formData)
       .then(result => {
-        console.log("login", result)
-        if(result.status===200){
+        if(result.status === 200){
           setUserId(result.data._id)
         }
         
         //react router go to another pages
       })
-
-    //   API.getUser(id)
-    //   .then(res => {
-    //     console.log("get user: ", res.data)
-
-    //   if(formData.email === res.data.email){
-      
-    //   setUserId(res.data._id)
-    // console.log("setui: ",setUserId(res.data._id))  ;
-    //   console.log("success");
-    //   setToDashboard(true);
-    //   }else{
-    //     console.log("nope")
-    //   }
-        
-       
-
-    //   }
-    //   )
-    //   .catch(err => console.log(err));
-
-      
-     
-
     }
     const handleShow = () => setShow(true);
+    const handleHide = () => setShow(false);
   
     return (
       <>
-
-
-      {/* {toDashboard ? <Redirect to="/dashboard"/> : null} */}
 
         <Button variant="primary" onClick={handleShow}>
           Sign In
         </Button>
   
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleHide}>
           <Modal.Header closeButton>
             <Modal.Title>Sign In to Your Account</Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
           <form action="/login" method="post">
-  <div className="form-group">
-    <label for="Email">Email</label>
-    <input type="text" className="form-control email" name= "email" value= {formData.email} onChange={handleInputChange} placeholder="Email"/>
-  </div>
-  <div className="form-group">
-    <label for="Password">Password</label>
-    <input type="password" className="form-control password"  name= "password" value= {formData.password} onChange={handleInputChange} placeholder="Password"/>
-
-  </div>
- 
-</form>
+            <div className="form-group">
+              <label htmlFor="Email">Email</label>
+              <input type="text" className="form-control email" name= "email" value= {formData.email} onChange={handleInputChange} placeholder="Email"/>
+            </div>
+            <div className="form-group">
+              <label htmlFor="Password">Password</label>
+              <input type="password" className="form-control password"  name= "password" value= {formData.password} onChange={handleInputChange} placeholder="Password"/>
+            </div>
+          </form>
           </Modal.Body>
           <Modal.Footer>
-
-            <Button  onClick={handleClose} >
+            <Button  onClick={handleLogIn} >
               Login
             </Button>
-            
-
           </Modal.Footer>
         </Modal>
       </>
