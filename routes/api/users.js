@@ -4,11 +4,11 @@ const bcrypt = require("bcrypt");
 
 //localhost:3001/api/users/
 // finds user by id in db & allows us to update their info
-router
-  .route("/:id")
-  .get(UserController.findById)
-  .put(UserController.update)
-  .post(UserController.performAct);
+// router
+//   .route("/:id")
+//   .get(UserController.findById)
+//   .put(UserController.update)
+//   .post(UserController.performAct);
 
 //localhost:3001/api/users/
 // create a new user, find all users, find user by id
@@ -28,16 +28,23 @@ router.route("/check/:id").post(UserController.checklogin);
 
 router
 .route("/login")
-.post((req, res) => {'/login',
-console.log("passport"),
-  passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/login',
-                                   failureFlash: true } 
-)
-UserController.login(req,res)
+.post((req, res) => {
+console.log("passport", req.body.email, req.body.password);
+UserController.findByEmail(req, res);
+
+//   passport.authenticate('local', { successRedirect: '/',
+//                                    failureRedirect: '/login',
+//                                    failureFlash: true } 
+// )
+// UserController.login(req,res)
 })
 
-  .get(UserController.findById)
-  .get(UserController.findAll);
+  // .get(UserController.findById)
+  // .get(UserController.findAll);
 
+  router
+    .route("/:id")
+    .get(UserController.findById)
+    .put(UserController.update)
+    .post(UserController.performAct);
 module.exports = router;

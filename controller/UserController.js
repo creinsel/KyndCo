@@ -1,4 +1,5 @@
 const db = require("../models");
+const bcrypt = require('bcrypt');
 
 // Defining methods for the booksController
 module.exports = {
@@ -7,6 +8,26 @@ module.exports = {
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  findByEmail: function(req, res) {
+    db.UserInfo.find({email: req.body.email})
+    .then(dbModel => {
+      if (dbModel.length > 0) {
+      bcrypt.compare(req.body.password, dbModel[0].password)
+      .then(result => {
+        if (result) {
+          const response = {...dbModel[0]._doc};
+          delete response.password;
+          console.log('response', response);
+          res.send(200, response);
+        } else {
+          res.send(404, {message: "Invalid log in"});
+        }
+      })
+    } else {
+      res.send(404, {message: "User not found"});
+    }
+    })
   },
   findById: function(req, res) {
     db.UserInfo.findById(req.params.id)
