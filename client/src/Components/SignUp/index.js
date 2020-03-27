@@ -47,7 +47,9 @@ const SignUp = () => {
         act: []
       })
         .then(res => {
-          console.log("data: ", res.data);
+// const password = formData.password
+// const rounds = 10
+
 
           var userId = res.data._id
 
@@ -56,6 +58,7 @@ const SignUp = () => {
           
 
           
+
         })
         .catch(err => console.log(err));
   };
@@ -121,3 +124,4 @@ const SignUp = () => {
 
   
   export default SignUp;
+

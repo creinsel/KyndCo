@@ -8,20 +8,22 @@ import { Col, Row, Container } from "../../Components/Grid";
 import { List, ListItem } from "../../Components/List";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
-import { UserContext } from "../../context/UserContext";
 import Moment from "react-moment";
+import DashBadge from "../../Components/DashBadge";
 import "moment-timezone";
 import CanvasJSReact from "../../lib/canvasjs.react";
 import Chart from "../../Components/Chart";
-import moment from "moment-timezone";
+import "./style.css";
 var CanvasJs = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 // https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
+
   var id=localStorage.getItem("userId");
   var tempid = id;
+
   const [formData, setFormData] = useState({
     task: "",
     category: "",
@@ -29,7 +31,7 @@ const Acts = () => {
     description: ""
   });
   const { acts, setActs } = useContext(KindActContext);
-  const { userActs, setUserActs } = useContext(UserContext);
+  //const { userActs, setUserActs } = useContext(UserContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -39,21 +41,8 @@ const Acts = () => {
 
   console.log("tempid", tempid)
   useEffect(() => {
-    loadActs();
-    loadUserActs(tempid);
+      loadActs();
   }, []);
-
-  const loadUserActs = id => {
-    API.getUser(id)
-      .then(res => setUserActs(res.data.userActs))
-      .catch(err => console.log(err));
-    // console.log("userActs:", res.data.userActs);
-  };
-
-  // useEffect(() => {
-  //   loadUserActs()
-  //   ;
-  // }, []);
 
   const deleteKindAct = id => {
     API.deleteKindAct(id)
@@ -72,6 +61,7 @@ const Acts = () => {
     });
   };
 
+
   const handleCompleteAct = event => {
     const { name, value } = event.target;
     console.log(event.target);
@@ -81,6 +71,7 @@ const Acts = () => {
      });
      //post to user
   };
+
 
   const handleFormSubmit = event => {
     event.preventDefault();
@@ -99,33 +90,27 @@ const Acts = () => {
     }
   };
 
-  const dataPoints = acts.map(act => {
-    return {
-      label: moment(act.date).format("MM Do YY"),
-      y: 5
-    };
-  });
-
   return (
     <Container fluid>
       <Nav />
-      <Jumbotron>
-        <Row>
+      <div className="acts-header"><Row>
           <Col size="md-5">
-            <Chart dataPoints={dataPoints} />
+            <Chart />
           </Col>
           <Col size="md-7">
-            Recent History from db will go here
+            <h1>Your Kyndline</h1>
             <br />
-            <Moment format="MM/DD/YYYY"></Moment>
+            <p className="todays-date">Today's date is <Moment format="MM/DD/YYYY"></Moment></p>
           </Col>
         </Row>
-      </Jumbotron>
+      </div>
       <Row>
-        <Col size="md-6">
+        <Col size="md-5">
           <Jumbotron>
             <h1>Add an Act</h1>
+            <p className="sub-text">Don't see an act you want to do? Simply fill out the form and yours will be added to the Acts of Kyndness on the right.</p>
           </Jumbotron>
+          <br />
           <form>
             <Input
               value={formData.task}
@@ -167,7 +152,7 @@ const Acts = () => {
           </form>
         </Col>
 
-        <Col size="md-6 sm-12">
+        <Col size="md-5">
           <Jumbotron>
             <h1>Acts of Kyndness</h1>
           </Jumbotron>
@@ -176,18 +161,28 @@ const Acts = () => {
               {acts.map(act => (
                 <ListItem key={act._id}>
                   <Link to={"/acts/" + act._id}>
-                    <strong>
-                      {act.task} | {act.category} | {act.points} |{" "}
-                      {act.description}
-                    </strong>
+                    <Row className="acts-info">
+                      <h3 className="act-title">{act.task}</h3> <p className="bar">|</p> <h3 className="act-cat">{act.category}</h3> <p className="bar">|</p> <h3 className="act-pts">{act.points}</h3>
+                    </Row>
+                    <Row>
+                      <p className="desc">{act.description}</p>
+                    </Row>
+
                   </Link>
-                  <AddBtn kindAttr={act._id} addAct={handleCompleteAct} />
+                  <AddBtn />
                 </ListItem>
               ))}
             </List>
           ) : (
             <h3>No Results to Display</h3>
           )}
+        </Col>
+        <Col size="md-2">
+          <Jumbotron>
+            <h1>Badges</h1>
+            <DashBadge />
+          </Jumbotron>
+            
         </Col>
       </Row>
     </Container>

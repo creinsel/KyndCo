@@ -1,0 +1,32 @@
+.container .dashbadge {
+
+}
+
+.badge-style-c {
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+}
+
+.badge-style-o {
+    width: 250px;
+    height: 250px;
+    opacity: 50%;
+}
+
+.badge-pts {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color:  #3ec094;
+}
+
+.badge-unlock {
+    margin-top: -10px;
+}
+
+.badge-lock {
+    margin-top: -10px;
+}
+
+

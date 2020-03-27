@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
@@ -60,12 +61,16 @@ const SignIn = () => {
 
       
      
+
     }
     const handleShow = () => setShow(true);
   
     return (
       <>
+
+
       {toDashboard ? <Redirect to="/dashboard"/> : null}
+
         <Button variant="primary" onClick={handleShow}>
           Sign In
         </Button>
@@ -75,6 +80,7 @@ const SignIn = () => {
             <Modal.Title>Sign In to Your Account</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+
           <form action="/login" method="post">
   <div className="form-group">
     <label for="Email">Email</label>
@@ -83,19 +89,24 @@ const SignIn = () => {
   <div className="form-group">
     <label for="Password">Password</label>
     <input type="password" className="form-control password"  name= "password" value= {formData.password} onChange={handleInputChange} placeholder="Password"/>
+
   </div>
  
 </form>
           </Modal.Body>
           <Modal.Footer>
+
             <Button  onClick={handleClose} >
               Login
             </Button>
             
+
           </Modal.Footer>
         </Modal>
       </>
     );
+
   
   };
+
   export default SignIn;
