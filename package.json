@@ -23,10 +23,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "axios": "^0.19.2",
-<<<<<<< Updated upstream
     "bcrypt": "^4.0.1",
-=======
->>>>>>> Stashed changes
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
