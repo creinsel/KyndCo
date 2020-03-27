@@ -53,7 +53,7 @@ const SignUp = () => {
 
           localStorage.setItem("userId", userId);
 
-          res.json({status: "Welcome " +formData.name+ "! Account Created" })
+          
 
           
         })

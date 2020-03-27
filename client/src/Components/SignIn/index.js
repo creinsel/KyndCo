@@ -1,108 +1,101 @@
 import React, { useState, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
-import { UserIdContext } from "../../context/UserIdContext";
-import { SignInContext } from "../../context/SigninContext";
+import { UserIdContext } from '../../context/UserIdContext';
+import { SignInContext } from '../../context/SigninContext';
 import { Redirect } from "react-router-dom";
 
 const SignIn = () => {
-  const [show, setShow] = useState(false);
-  const { setUserId } = useContext(UserIdContext);
-  const { setSignIn } = useContext(SignInContext);
-  const [toDashboard, setToDashboard] = useState(false);
+    const [show, setShow] = useState(false);
+    const { setUserId } = useContext(UserIdContext);
+    const { setSignIn } = useContext(SignInContext);
+    const [toDashboard, setToDashboard]= useState(false);
 
-  const [formData, setFormData] = useState({
-    email: "",
-    password: ""
-  });
-
-  var id = localStorage.getItem("userId");
-
-  const handleInputChange = event => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value
+    const [formData, setFormData] = useState({
+      email: "",
+      password: ""
     });
-    // console.log(formData);
-  };
 
-  const handleClose = () => {
-    setShow(false);
+    var id=localStorage.getItem("userId");
 
-    // API.login(formData)
-    // .then(res => {
-    //   console.log("login")
-    //   //react router go to another pages
-    // })
-    let tempobj = {
-      id: id,
-      password: formData.password
+    const handleInputChange = event => {
+      const { name, value } = event.target;
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+      console.log(formData);
     };
-    console.log(tempobj);
-    //API.getUser
-
-    API.getUser(id)
+  
+ 
+  
+    const handleClose = () => {
+      setShow(false);
+     
+      API.login(formData)
       .then(res => {
-        //get data now to check pw
-        console.log("get user: ", res.data);
-
-        if (formData.email === res.data.email) {
-          setSignIn(true);
-          setUserId(id);
-          console.log("success");
-          setToDashboard(true);
-        } else {
-          console.log("nope");
-        }
+        console.log("login")
+        //react router go to another pages
       })
+
+      API.getUser(id)
+      .then(res => {
+        console.log("get user: ", res.data)
+
+      if(formData.email === res.data.email){
+      setSignIn(true);
+      setUserId(res.data._id)
+    console.log("setui: ",setUserId(res.data._id))  ;
+      console.log("success");
+      setToDashboard(true);
+      }else{
+        console.log("nope")
+      }
+        
+       
+
+      }
+      )
       .catch(err => console.log(err));
+
+      
+     
+    }
+    const handleShow = () => setShow(true);
+  
+    return (
+      <>
+      {toDashboard ? <Redirect to="/dashboard"/> : null}
+        <Button variant="primary" onClick={handleShow}>
+          Sign In
+        </Button>
+  
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Sign In to Your Account</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+          <form action="/login" method="post">
+  <div className="form-group">
+    <label for="Email">Email</label>
+    <input type="text" className="form-control email" name= "email" value= {formData.email} onChange={handleInputChange} placeholder="Email"/>
+  </div>
+  <div className="form-group">
+    <label for="Password">Password</label>
+    <input type="password" className="form-control password"  name= "password" value= {formData.password} onChange={handleInputChange} placeholder="Password"/>
+  </div>
+ 
+</form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button  onClick={handleClose} >
+              Login
+            </Button>
+            
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  
   };
-  const handleShow = () => setShow(true);
-
-  return (
-    <>
-      {toDashboard ? <Redirect to="/dashboard" /> : null}
-      <Button variant="primary" onClick={handleShow}>
-        Sign In
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Sign In to Your Account</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form>
-            <div className="form-group">
-              <label for="Email">Email</label>
-              <input
-                type="text"
-                name="email"
-                className="form-control email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Email"
-              />
-            </div>
-            <div className="form-group">
-              <label for="Password">Password</label>
-              <input
-                type="text"
-                className="form-control password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                placeholder="Password"
-              />
-            </div>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={handleClose}>Login</Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  );
-};
-export default SignIn;
+  export default SignIn;

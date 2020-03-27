@@ -16,7 +16,7 @@ module.exports = {
   },
 
   checklogin: function(req, res) {
-    db.UserInfo.findById(req.params.id)
+    db.UserInfo.findById(req.params._id)
       .populate("act")
       .then(function(dbModel) {
         if (!dbModel) {
@@ -42,7 +42,8 @@ module.exports = {
   performAct: function(req, res) {
     db.UserInfo.findOneAndUpdate(
       { _id: req.params.id },
-      { $push: { act: req.body } }
+      { $push: { act: db.UserInfo.act } },
+      {new: true}
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

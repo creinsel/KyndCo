@@ -20,7 +20,8 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 // https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
-  var tempid = "5e7697bc152dbbbcf9992867";
+  var id=localStorage.getItem("userId");
+  var tempid = id;
   const [formData, setFormData] = useState({
     task: "",
     category: "",
@@ -36,6 +37,7 @@ const Acts = () => {
       .catch(err => console.log(err));
   };
 
+  console.log("tempid", tempid)
   useEffect(() => {
     loadActs();
     loadUserActs(tempid);
@@ -71,12 +73,13 @@ const Acts = () => {
   };
 
   const handleCompleteAct = event => {
-    //const { name, value } = event.target;
+    const { name, value } = event.target;
     console.log(event.target);
-    //  setFormData({
-    //    ...formData,
-    //    [name]: value
-    //  });
+     setFormData({
+       ...formData,
+       [name]: value
+     });
+     //post to user
   };
 
   const handleFormSubmit = event => {
