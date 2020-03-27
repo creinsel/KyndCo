@@ -4,6 +4,7 @@ import SignIn from "../SignIn";
 import SignOut from "../SignOut"
 import {UserIdContext} from "../../context/UserIdContext";
 import MyDashBtn from "../MyDashBtn";
+import "./style.css";
 
 
 const Nav = () => {
@@ -21,7 +22,7 @@ const Nav = () => {
         </a>
       </div>
 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent d-lg-block nav-menu">
+      <nav className="navbar navbar-expand-lg navbar-dark  d-lg-block nav-menu">
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
     
             {/* Not sure what this is for below */}
@@ -32,11 +33,11 @@ const Nav = () => {
       
 
       <li className="nav-item">
-      <div className = "m-1">{userId ? <SignOut logout={() => setUserId("")} /> :<SignIn/>}</div>
+      <div className = "m-1 get-started">{userId ? <SignOut logout={() => setUserId("")} /> :<SignIn/>}</div>
         {/* <a className="nav-link" href="/signIn" onClick ={() => SignIn.setModalShow(true)} ><div className= "btn btn-primary"> Sign In</div></a> */}
       </li>
       <li className="nav-item">
-  <div className = "m-1">{userId ? <MyDashBtn/> :<SignUp/>}</div>
+  <div className = "m-1 get-started">{userId ? <MyDashBtn/> :<SignUp/>}</div>
 
         {/* <a className="nav-link" href="/signUp"><div className= "btn btn-primary"> Sign Up</div></a> */}
        </li>
