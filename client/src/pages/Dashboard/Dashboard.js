@@ -104,6 +104,7 @@ const Acts = () => {
           </Col>
         </Row>
       </div>
+      <Container></Container>
       <Row>
         <Col size="md-5">
           <div className="section-header">
@@ -151,7 +152,7 @@ const Acts = () => {
             </FormBtn>
           </form>
         </Col>
-
+              
         <Col size="md-5">
         <div className="section-header">
             <h1>Acts of Kyndness</h1>
