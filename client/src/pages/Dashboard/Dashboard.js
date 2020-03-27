@@ -104,6 +104,7 @@ const Acts = () => {
           </Col>
         </Row>
       </div>
+
       <Container></Container>
       <Row>
         <Col size="md-5">
@@ -113,6 +114,7 @@ const Acts = () => {
           </div>
           <br />
           <form className ="form-container">
+
             <Input
               value={formData.task}
               onChange={handleInputChange}
@@ -152,9 +154,11 @@ const Acts = () => {
             </FormBtn>
           </form>
         </Col>
+
               
         <Col size="md-5">
         <div className="section-header">
+
             <h1>Acts of Kyndness</h1>
           </div>
           {acts.length ? (
@@ -162,6 +166,7 @@ const Acts = () => {
               {acts.map(act => (
                 <ListItem key={act._id}>
                   <Link to={"/acts/" + act._id}>
+
                     <Row>
                       <h3 className="act-title">{act.task}</h3>
                       <p className="bar">|</p>
@@ -174,6 +179,7 @@ const Acts = () => {
                       <h3 className="act-pts">{act.points}</h3>
                     </Row>
       
+
                     <Row>
                       <p className="desc">{act.description}</p>
                     </Row>
@@ -188,11 +194,13 @@ const Acts = () => {
           )}
         </Col>
         <Col size="md-2">
+
         <div className="section-header">
             <h1>Badges</h1>
             <DashBadge />
         </div>
        
+
             
         </Col>
       </Row>

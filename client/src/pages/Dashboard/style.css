@@ -1,5 +1,7 @@
 .acts-header {
     height: 500px;
+
+
     margin-bottom: 50px;
     border-radius: 5px;
     padding-top: 40px;
@@ -13,11 +15,13 @@
       font-family: "Comfortaa", sans-serif;
       color: #ffffff;
       background-color: #ffa437;
+
       font-size: 36px;
       height: 65px;
       padding-top: 15px;
       border-radius: 5px;
       text-align: center;
+
   }
 
   .todays-date {
@@ -30,6 +34,7 @@
 
   }
   
+
 
   .section-header {
     height: 65px;
@@ -73,6 +78,7 @@
   .act-pts {
     font-size: 16px;
     font-weight: 700;
+
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -83,6 +89,7 @@
 
   .desc {
     font-size: 12px;
+
     text-align: left;
     margin-top: 35px;
   }
@@ -96,4 +103,5 @@
 
 
 }
+
 

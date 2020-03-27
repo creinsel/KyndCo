@@ -1,3 +1,4 @@
+
 .dash-badge {
     text-align: center;
 }
@@ -13,11 +14,13 @@
     width: 400px;
     height: 400px;
     margin-top: 10px;
+
     opacity: 50%;
 }
 
 .badge-pts {
     font-family: "Comfortaa", sans-serif;
+
     font-size: 36px;
     font-weight: 700;
     color:  #3ec094;
@@ -31,6 +34,7 @@
 .badge-lock {
     color: #414042;
     font-size: 24px;
+
 }
 
 

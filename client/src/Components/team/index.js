@@ -1,4 +1,5 @@
 import React from "react";
+// import "./style.css";
 
 function Team() {
   return (
@@ -18,7 +19,7 @@ function Team() {
           >
             <div className="member">
               <img
-                src="assets/img/team/team-1.jpg"
+                src="assets/images/sara.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -91,7 +92,7 @@ function Team() {
                 <h4>Mone Duncans-Francis</h4>
                 <span>CTO</span>
               </div>
-              {/* <div className="social">
+                {/* <div className="social">
                 <a href="">
                   <i className="icofont-twitter"></i>
                 </a>
@@ -104,10 +105,10 @@ function Team() {
                 <a href="">
                   <i className="icofont-linkedin"></i>
                 </a>
-              </div> */}
+              </div>  */}
             </div>
           </div>
-        </div>
+        </div> 
 
         <div
           className="col-xl-3 col-lg-4 col-md-6"
@@ -125,7 +126,7 @@ function Team() {
                 <h4>Cassondra Reinsel</h4>
                 <span>Accountant</span>
               </div>
-              {/* <div className="social">
+              <div className="social">
                 <a href="">
                   <i className="icofont-twitter"></i>
                 </a>
@@ -138,7 +139,7 @@ function Team() {
                 <a href="">
                   <i className="icofont-linkedin"></i>
                 </a>
-              </div> */}
+              </div> 
             </div>
           </div>
         </div>

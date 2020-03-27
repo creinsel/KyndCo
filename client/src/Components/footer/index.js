@@ -1,4 +1,5 @@
 import React from 'react';
+// import "./style.css";
 
 function Footer() {
     return (
@@ -9,7 +10,7 @@ function Footer() {
             <div className="container">
               <div className="row">
       
-                <div className="col-lg-3 col-md-1 footer-contact" data-aos="fade-up" data-aos-delay="100">
+                <div className="col-lg-12 col-md-1 footer-contact text-left" data-aos="fade-up" data-aos-delay="100">
                   <h3>Kynd Co.</h3>
                   <p>
                     123 Kynd Street <br />
@@ -25,15 +26,17 @@ function Footer() {
           </div>
           
       
-          <div className="container py-4">
-            <div className="copyright">
+          <div className="container py-4 justify-content-center">
+            <div className="copyright align-items-center">
               &copy; Copyright <strong><span>Kynd Co.</span></strong>. All Rights Reserved
             </div>
             
           </div>
+
+          
         </footer>
         
-      
+       
         
     );
 }

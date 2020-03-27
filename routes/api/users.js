@@ -7,6 +7,7 @@ router
   .route("/")
   .get(UserController.findAll)
   .post((req, res) => {
+
     // console.log("req.body: ", req.body);
     UserController.create(req, res);
   });
@@ -20,6 +21,7 @@ router.route("/login").post((req, res) => {
 //localhost:3001/api/users/:id
 router
   .route("/:id")
+
   .get(UserController.findById)
   .put(UserController.update)
   .post(UserController.performAct);

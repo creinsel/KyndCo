@@ -1,4 +1,5 @@
 import React from "react";
+// import "./style.css";
 
 function Badge() {
   return (
@@ -12,62 +13,61 @@ function Badge() {
 
         <div className="row">
           <div
-            className="col-md-6 col-lg-3 d-flex align-items-stretch"
+            className="col-md-4 col-lg-4 align-items-stretch"
             data-aos="zoom-in"
             data-aos-delay="100"
           >
             <div className="icon-box">
               <div className="icon">
-                <i className="bx bxl-dribbble"></i>
+                
+                  <img src = "../assets/images/world-badge.png" />
+               
               </div>
-              <h4 className="title">Lorem Ipsum</h4>
+              <h4 className="title">World Badge</h4>
               <p className="description">
-                Voluptatum deleniti atque corrupti quos dolores et quas
-                molestias excepturi sint occaecati cupiditate
+                ...
               </p>
             </div>
           </div>
 
           <div
-            className="col-md-6 col-lg-3 d-flex align-items-stretch"
+            className="col-md-4 col-lg-4 align-items-stretch"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
             <div className="icon-box">
               <div className="icon">
-                <i className="bx bx-file"></i>
+              <img src = "../assets/images/yourself-badge.png" />
               </div>
-              <h4 className="title">Sed ut perspiciatis</h4>
+              <h4 className="title">Self Badge</h4>
               <p className="description">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla
+                ...
               </p>
             </div>
           </div>
 
           <div
-            className="col-md-6 col-lg-3 d-flex align-items-stretch"
+            className="col-md-4 col-lg-4 align-items-stretch"
             data-aos="zoom-in"
             data-aos-delay="300"
           >
             <div className="icon-box">
               <div className="icon">
-                <i className="bx bx-tachometer"></i>
+              <img src = "../assets/images/others-badge.png" />
               </div>
-              <h4 className="title">Magni Dolores</h4>
+              <h4 className="title">Other Badge</h4>
               <p className="description">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim
+                ...
               </p>
             </div>
           </div>
 
-          <div
+          {/* <div
             className="col-md-6 col-lg-3 d-flex align-items-stretch"
             data-aos="zoom-in"
             data-aos-delay="400"
-          >
-            <div className="icon-box">
+          > */}
+            {/* <div className="icon-box">
               <div className="icon">
                 <i className="bx bx-world"></i>
               </div>
@@ -75,13 +75,13 @@ function Badge() {
               <p className="description">
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                 blanditiis praesentium voluptatum
-              </p>
-            </div>
-          </div>
+              </p> */}
+            {/* </div>
+          </div> */}
         </div>
       </div>
     </section>
-    //  !-- End Services Section -->
+    //  !-- End Badge Section -->
   );
 }
 export default Badge;
