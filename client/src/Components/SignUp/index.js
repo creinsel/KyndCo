@@ -50,14 +50,15 @@ const SignUp = () => {
 // const password = formData.password
 // const rounds = 10
 
-// bcrypt.hash(password, rounds, (err, hash) => {
-// 	if (err) {
-//     console.error(err)
-//     return
-//   }
-//   console.log(hash)
-// })
-          console.log("wat up");
+
+          var userId = res.data._id
+
+          localStorage.setItem("userId", userId);
+
+          
+
+          
+
         })
         .catch(err => console.log(err));
   };
@@ -123,4 +124,3 @@ const SignUp = () => {
 
   
   export default SignUp;
-

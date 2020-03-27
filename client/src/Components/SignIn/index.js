@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {Modal, Button} from 'react-bootstrap';
 
+
+
 const SignIn = () => {
     const [show, setShow] = useState(false);
   
@@ -12,9 +14,14 @@ const SignIn = () => {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+     
+        <a class="signinbutton" onClick={handleShow}>
           Sign In
-        </Button>
+        </a>
+
+        
+      
+        
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>

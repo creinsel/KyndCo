@@ -17,6 +17,7 @@ function App() {
   return (
     <KindActContext.Provider value={{ acts, setActs }}>
       <Router>
+<<<<<<< Updated upstream
         <Switch>
           <Route exact path="/">
             <Nav />
@@ -28,6 +29,20 @@ function App() {
           </Route>
           <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
+=======
+          <Switch>
+            <Route path="/">
+              <Nav/>
+              <Bootstrapintro />
+              <Bootstrapabout />
+              <Badge />
+               <Team /> 
+              <Footer />
+            </Route>
+            {/* <Route path="/user/:id" component={Dashboard} /> */}
+          </Switch>
+      
+>>>>>>> Stashed changes
       </Router>
     </KindActContext.Provider>
   );
