@@ -31,7 +31,7 @@ export default {
   },
   login: function(formdata) {
     console.log("in the login");
-    return axios.post("/login", formdata );
+    return axios.post("/api/users/login", formdata );
    
   },
   //gets user by id
