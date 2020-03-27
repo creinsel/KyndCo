@@ -3,13 +3,11 @@ import React, { useState, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 import { UserIdContext } from '../../context/UserIdContext';
-import { SignInContext } from '../../context/SigninContext';
 import { Redirect } from "react-router-dom";
 
 const SignIn = () => {
     const [show, setShow] = useState(false);
     const { setUserId } = useContext(UserIdContext);
-    const { setSignIn } = useContext(SignInContext);
     const [toDashboard, setToDashboard]= useState(false);
 
     const [formData, setFormData] = useState({
@@ -32,10 +30,10 @@ const SignIn = () => {
   
     const handleClose = () => {
       setShow(false);
-     
+     console.log("handle close")
       API.login(formData)
-      .then(res => {
-        console.log("login")
+      .then(result => {
+        console.log("login", result)
         //react router go to another pages
       })
 
@@ -44,7 +42,7 @@ const SignIn = () => {
         console.log("get user: ", res.data)
 
       if(formData.email === res.data.email){
-      setSignIn(true);
+      
       setUserId(res.data._id)
     console.log("setui: ",setUserId(res.data._id))  ;
       console.log("success");

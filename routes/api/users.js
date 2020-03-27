@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const UserController = require("../../controller/UserController");
-const bcrypt = require("bcrypt");
-var passport = require('passport')
+
+
 //localhost:3001/api/users/
 // finds user by id in db & allows us to update their info
 // router
