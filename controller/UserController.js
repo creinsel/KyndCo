@@ -1,5 +1,5 @@
 const db = require("../models");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 // Defining methods for the booksController
 module.exports = {
@@ -10,45 +10,28 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByEmail: function(req, res) {
-    db.UserInfo.find({email: req.body.email})
-    .then(dbModel => {
+    db.UserInfo.find({ email: req.body.email }).then(dbModel => {
       if (dbModel.length > 0) {
-      bcrypt.compare(req.body.password, dbModel[0].password)
-      .then(result => {
-        if (result) {
-          const response = {...dbModel[0]._doc};
-          delete response.password;
-          console.log('response', response);
-          res.send(200, response);
-        } else {
-          res.send(404, {message: "Invalid log in"});
-        }
-      })
-    } else {
-      res.send(404, {message: "User not found"});
-    }
-    })
+        bcrypt.compare(req.body.password, dbModel[0].password).then(result => {
+          if (result) {
+            const response = { ...dbModel[0]._doc };
+            delete response.password;
+            console.log("response", response);
+            res.status(200).send(response);
+          } else {
+            res.status(404).send({ message: "Invalid log in" }) 
+          }
+        });
+      } else {
+        res.send(404, { message: "User not found" });
+      }
+    });
   },
   findById: function(req, res) {
     db.UserInfo.findById(req.params.id)
       .populate("act")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },
-
-  checklogin: function(req, res) {
-    db.UserInfo.findById(req.params._id)
-      .populate("act")
-      .then(function(dbModel) {
-        if (!dbModel) {
-          console.log("incorrect email");
-        } else if (!dbModel.validPassword(req.body.password)) {
-          return done(null, false, {
-            message: "incorrect pw"
-          });
-          return done(null, dbModel);
-        }
-      });
   },
   create: function(req, res) {
     db.UserInfo.create(req.body)
@@ -64,7 +47,7 @@ module.exports = {
     db.UserInfo.findOneAndUpdate(
       { _id: req.params.id },
       { $push: { act: db.UserInfo.act } },
-      {new: true}
+      { new: true }
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -74,30 +57,5 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },
-  login: async function(req, res) {
-    try {
-      const user = await db.UserInfo.findOne({ email: req.body.email });
-      if (!user) {
-        return res.status(200).json({
-          message:
-            "The user does not exist. Please check your credentials or register as a new user."
-        });
-      }
-      user.comparePassword(req.body.password, (error, match) => {
-        if (!match) {
-          return res.status(200).json({
-            message:
-              "The password is invalid. Please check your credentials or register as a new user."
-          });
-        }
-      });
-      res.json({
-        message: "The username and password combination is correct!",
-        id: user._id
-      });
-    } catch (error) {
-      res.status(500).json(error);
-    }
   }
 };

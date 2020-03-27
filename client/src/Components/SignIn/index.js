@@ -3,12 +3,12 @@ import React, { useState, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 import { UserIdContext } from '../../context/UserIdContext';
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 const SignIn = () => {
     const [show, setShow] = useState(false);
     const { setUserId } = useContext(UserIdContext);
-    const [toDashboard, setToDashboard]= useState(false);
+    // const [toDashboard, setToDashboard]= useState(false);
 
     const [formData, setFormData] = useState({
       email: "",
@@ -34,28 +34,32 @@ const SignIn = () => {
       API.login(formData)
       .then(result => {
         console.log("login", result)
+        if(result.status===200){
+          setUserId(result.data._id)
+        }
+        
         //react router go to another pages
       })
 
-      API.getUser(id)
-      .then(res => {
-        console.log("get user: ", res.data)
+    //   API.getUser(id)
+    //   .then(res => {
+    //     console.log("get user: ", res.data)
 
-      if(formData.email === res.data.email){
+    //   if(formData.email === res.data.email){
       
-      setUserId(res.data._id)
-    console.log("setui: ",setUserId(res.data._id))  ;
-      console.log("success");
-      setToDashboard(true);
-      }else{
-        console.log("nope")
-      }
+    //   setUserId(res.data._id)
+    // console.log("setui: ",setUserId(res.data._id))  ;
+    //   console.log("success");
+    //   setToDashboard(true);
+    //   }else{
+    //     console.log("nope")
+    //   }
         
        
 
-      }
-      )
-      .catch(err => console.log(err));
+    //   }
+    //   )
+    //   .catch(err => console.log(err));
 
       
      
@@ -67,7 +71,7 @@ const SignIn = () => {
       <>
 
 
-      {toDashboard ? <Redirect to="/dashboard"/> : null}
+      {/* {toDashboard ? <Redirect to="/dashboard"/> : null} */}
 
         <Button variant="primary" onClick={handleShow}>
           Sign In
@@ -104,7 +108,7 @@ const SignIn = () => {
       </>
     );
 
-  
+    
   };
 
-  export default SignIn;
+  export default SignIn
