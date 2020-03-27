@@ -106,12 +106,12 @@ const Acts = () => {
       </div>
       <Row>
         <Col size="md-5">
-          <Jumbotron>
+          <div className="section-header">
             <h1>Add an Act</h1>
             <p className="sub-text">Don't see an act you want to do? Simply fill out the form and yours will be added to the Acts of Kyndness on the right.</p>
-          </Jumbotron>
+          </div>
           <br />
-          <form>
+          <form className ="form-container">
             <Input
               value={formData.task}
               onChange={handleInputChange}
@@ -153,17 +153,26 @@ const Acts = () => {
         </Col>
 
         <Col size="md-5">
-          <Jumbotron>
+        <div className="section-header">
             <h1>Acts of Kyndness</h1>
-          </Jumbotron>
+          </div>
           {acts.length ? (
             <List>
               {acts.map(act => (
                 <ListItem key={act._id}>
                   <Link to={"/acts/" + act._id}>
-                    <Row className="acts-info">
-                      <h3 className="act-title">{act.task}</h3> <p className="bar">|</p> <h3 className="act-cat">{act.category}</h3> <p className="bar">|</p> <h3 className="act-pts">{act.points}</h3>
+                    <Row>
+                      <h3 className="act-title">{act.task}</h3>
+                      <p className="bar">|</p>
+               
+       
+                      <h3 className="act-cat">{act.category}</h3>
+                      <p className="bar">|</p>
+             
+        
+                      <h3 className="act-pts">{act.points}</h3>
                     </Row>
+      
                     <Row>
                       <p className="desc">{act.description}</p>
                     </Row>
@@ -178,10 +187,11 @@ const Acts = () => {
           )}
         </Col>
         <Col size="md-2">
-          <Jumbotron>
+        <div className="section-header">
             <h1>Badges</h1>
             <DashBadge />
-          </Jumbotron>
+        </div>
+       
             
         </Col>
       </Row>
