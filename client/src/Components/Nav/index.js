@@ -3,6 +3,7 @@ import SignUp from "../SignUp";
 import SignIn from "../SignIn";
 import SignOut from "../SignOut"
 import {UserIdContext} from "../../context/UserIdContext";
+import MyDashBtn from "../MyDashBtn";
 
 //how would log out go here? context--> userIDcontext--> dependent on state show signin signup logout
 const Nav = () => {
@@ -24,7 +25,7 @@ const Nav = () => {
         {/* <a className="nav-link" href="/signIn" onClick ={() => SignIn.setModalShow(true)} ><div className= "btn btn-primary"> Sign In</div></a> */}
       </li>
       <li className="nav-item">
-      <div className = "m-1"><SignUp/></div>
+  <div className = "m-1">{userId ? <MyDashBtn/> :<SignUp/>}</div>
         {/* <a className="nav-link" href="/signUp"><div className= "btn btn-primary"> Sign Up</div></a> */}
        
       </li>

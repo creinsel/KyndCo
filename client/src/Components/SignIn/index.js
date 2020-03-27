@@ -15,7 +15,7 @@ const SignIn = () => {
       password: ""
     });
 
-    var id=localStorage.getItem("userId");
+    // var id=localStorage.getItem("userId");
 
     const handleInputChange = event => {
       const { name, value } = event.target;
