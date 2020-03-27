@@ -4,6 +4,7 @@ import SignIn from "../SignIn";
 import SignOut from "../SignOut"
 import {UserIdContext} from "../../context/UserIdContext";
 import MyDashBtn from "../MyDashBtn";
+import "./style.css";
 
 
 const Nav = () => {
