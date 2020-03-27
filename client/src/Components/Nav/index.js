@@ -1,7 +1,7 @@
 import React from "react";
 import SignUp from "../SignUp";
 import SignIn from "../SignIn";
-import "./style.css";
+// import "./style.css";
 
 const Nav = () => {
   return (

@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export default {
   //API calls to db kindActs
   //Get all kindacts
@@ -30,6 +29,11 @@ export default {
     return axios.post("/api/users/", formdata );
    
   },
+  login: function(formdata) {
+    console.log("in the login");
+    return axios.post("/login", formdata );
+   
+  },
   //gets user by id
   getUser: function(id) {
     return axios.get("/api/users/" + id);
@@ -37,5 +41,9 @@ export default {
   //updates user by id
   updateUser: function(id) {
     return axios.put("/api/users/" + id);
+  },
+
+  addAct: function(id){
+    return axios.post("/api/users/addAct"+ id)
   }
 };

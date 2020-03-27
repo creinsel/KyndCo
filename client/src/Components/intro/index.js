@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+// import "./style.css";
 
 function Bootstrapintro() {
   return (
@@ -7,7 +7,7 @@ function Bootstrapintro() {
     <section id="hero">
       <div className="container">
         <div className="row justify-content-between">
-          <div clasName="col-lg-6 pt-5 pt-lg-0 d-flex">
+          <div clasName="col-lg-4 pt-5 pt-lg-0 d-flex">
             <h1 className = "text-center">Show the world how kynd you are</h1>
             <h2>
               Complete random acts of kyndness for yourself, others or the
