@@ -5,14 +5,7 @@ import "./style.css";
 // That way we don't have to define them all individually
 function AddBtn(props) {
   return (
-    <span
-      className="delete-btn"
-      {...props}
-      role="button"
-      tabIndex="0"
-      kindnum={props.kindAttr}
-      onClick={() => props.addAct()}
-    >
+    <span className="delete-btn" {...props} role="button" tabIndex="0">
       +
     </span>
   );

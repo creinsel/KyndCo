@@ -47,15 +47,17 @@ const SignUp = () => {
         act: []
       })
         .then(res => {
-          console.log("data: ", res.data);
+// const password = formData.password
+// const rounds = 10
 
-          var userId = res.data._id
-
-          localStorage.setItem("userId", userId);
-
-          res.json({status: "Welcome " +formData.name+ "! Account Created" })
-
-          
+// bcrypt.hash(password, rounds, (err, hash) => {
+// 	if (err) {
+//     console.error(err)
+//     return
+//   }
+//   console.log(hash)
+// })
+          console.log("wat up");
         })
         .catch(err => console.log(err));
   };
@@ -121,3 +123,4 @@ const SignUp = () => {
 
   
   export default SignUp;
+
