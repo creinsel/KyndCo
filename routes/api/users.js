@@ -27,19 +27,15 @@ router
 router.route("/check/:id").post(UserController.checklogin);
 
 router
-  .route("/login")
-  .post(async (req, res) => {
-    console.log("hello");
-    // bcrypt.compare(req.body.password, hash).then(function(response) {
-    //   if (response === true) {
-    //     console.log("response", response);
-    //   } else {
-    //     console.log("no");
-    //   }
-
-      UserController.login(req, res);
-    // });
-  })
+.route("/login")
+.post((req, res) => {'/login',
+console.log("passport"),
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true } 
+)
+UserController.login(req,res)
+})
 
   .get(UserController.findById)
   .get(UserController.findAll);
