@@ -1,5 +1,15 @@
+
+.form-container {
+    margin-top: 90px;
+}
+
 .form-group {
+    margin: 0 auto;
     font-family: "Comfortaa", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+
 }
 
 .btn-success .add-btn {

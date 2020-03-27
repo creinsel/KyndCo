@@ -1,8 +1,10 @@
 const express = require("express");
-const routes = require("./routes")
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
+const router = express.Router();
+
 // const router = express.Router();
 
 // Define middleware here
@@ -15,18 +17,22 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes)
+app.use(routes);
 // app.use(express.static(root));
 
-mongoose.connect("mongodb://localhost/KyndCo", { useNewUrlParser: true }, (err) =>{
-  if(!err) console.log("connected to mongo")
-});
+mongoose.connect(
+  "mongodb://localhost/KyndCo",
+  { useNewUrlParser: true },
+  err => {
+    if (!err) console.log("connected to mongo");
+  }
+);
 
 app.get("*", (req, res) => {
-  res.sendFile('index.html', {
+  res.sendFile("index.html", {
     root
   });
-})
+});
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

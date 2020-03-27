@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import SignUp from "../SignUp";
 import SignIn from "../SignIn";
-// import "./style.css";
+import SignOut from "../SignOut"
+import {UserIdContext} from "../../context/UserIdContext";
+import MyDashBtn from "../MyDashBtn";
+
 
 const Nav = () => {
+  const {userId, setUserId} = useContext(UserIdContext);
+  
   return (
     <header id="header" className= "fixed-top">
       <div class="container-fluid d-flex">
@@ -25,19 +30,14 @@ const Nav = () => {
       <ul className="nav navbar-nav">
     
       
-      <li className="nav-item get-started m-1">
-        <p>
-        <SignIn/>
-        </p>
-      
-        {/* <div className = "m-1"><SignIn/></div> */}
+
+      <li className="nav-item">
+      <div className = "m-1">{userId ? <SignOut logout={() => setUserId("")} /> :<SignIn/>}</div>
         {/* <a className="nav-link" href="/signIn" onClick ={() => SignIn.setModalShow(true)} ><div className= "btn btn-primary"> Sign In</div></a> */}
       </li>
-      <li className="nav-item get-started m-1">
-        <p>
-        <SignUp/>
-        </p>
-      {/* <div className = "m-1"><SignUp/></div> */}
+      <li className="nav-item">
+  <div className = "m-1">{userId ? <MyDashBtn/> :<SignUp/>}</div>
+
         {/* <a className="nav-link" href="/signUp"><div className= "btn btn-primary"> Sign Up</div></a> */}
        </li>
     
