@@ -9,30 +9,36 @@
 }
 
 .list-overflow-container {
+
+  margin-top: 20px;
   max-height: 700px;
-  border: 1px #DDDDDD solid;
+
   border-radius: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .list-overflow-container ul {
-  margin: 0;
+  display: inline;
 }
 
 .list-overflow-container li {
-  height: 80px;
+
+  height: 100px;
+
   font-size: 20px;
   
 }
 
 .list-overflow-container li * {
   cursor: pointer;
-  display: inline-flex;
-  justify-content: flex-start;
+
+  color: #3ec094;
+
 }
 
 .list-group-item {
   font-family: "Comfortaa", sans-serif;
+
 
 }
