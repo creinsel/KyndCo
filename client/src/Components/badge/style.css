@@ -49,4 +49,13 @@
     height: 200px;
   }
 
+  .section-title .p-badge {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 15px;
+    font-family: "Comfortaa", sans-serif;
+    color: #4e4039;
+  }
+
   
