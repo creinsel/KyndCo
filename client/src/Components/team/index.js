@@ -44,13 +44,14 @@ function Team() {
                 className="img-fluid"
                 alt=""
               />
-              <div className="member-info" />
+              <div className="member-info">
               <div className="member-info-content">
                 <h4>Sara Bolduc</h4>
                 <span>Product Manager</span>
               </div>
              
             </div>
+          </div>
           </div>
         
 
@@ -87,20 +88,7 @@ function Team() {
                 <h4>Cassondra Reinsel</h4>
                 <span>Accountant</span>
               </div>
-              <div className="social">
-                <a href="">
-                  <i className="icofont-twitter"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-facebook"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-instagram"></i>
-                </a>
-                <a href="">
-                  <i className="icofont-linkedin"></i>
-                </a>
-              </div> 
+              
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ const Nav = () => {
          
           {/* Link for app logo? */}
           <a className="navbar-brand kyndlogo" href="/">
-        <img src ="assets/images/kyndco-logo.png" alt="logo" class="img-fluid"/>
+        <img src ="assets/images/kyndco-logo.png" alt="logo" class="img-fluid kynd-img"/>
         </a>
       </div>
 

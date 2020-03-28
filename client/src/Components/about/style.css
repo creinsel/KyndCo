@@ -4,6 +4,7 @@
 .about h3 {
     font-weight: 700;
     font-size: 34px;
+    margin-top: 50px;
     color: #4e4039;
   }
   
@@ -24,6 +25,13 @@
     font-size: 15px;
     color: #5a6570;
   }
+
+  .stickfriends {
+    margin-top: 40px;
+    height: 400px;
+    width: 420px;
+  }
+  
   
   @media (max-width: 991px) {
     .about .about-img img {

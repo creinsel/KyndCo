@@ -24,9 +24,7 @@ function Badge() {
                
               </div>
               <h4 className="title">World Badge</h4>
-              <p className="description">
-                ...
-              </p>
+              
             </div>
           </div>
 
@@ -40,9 +38,7 @@ function Badge() {
               <img src = "../assets/images/yourself-badge.png" />
               </div>
               <h4 className="title">Self Badge</h4>
-              <p className="description">
-                ...
-              </p>
+              
             </div>
           </div>
 
@@ -56,28 +52,11 @@ function Badge() {
               <img src = "../assets/images/others-badge.png" />
               </div>
               <h4 className="title">Other Badge</h4>
-              <p className="description">
-                ...
-              </p>
+              
             </div>
           </div>
 
-          {/* <div
-            className="col-md-6 col-lg-3 d-flex align-items-stretch"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          > */}
-            {/* <div className="icon-box">
-              <div className="icon">
-                <i className="bx bx-world"></i>
-              </div>
-              <h4 className="title">Nemo Enim\</h4>
-              <p className="description">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum
-              </p> */}
-            {/* </div>
-          </div> */}
+         
         </div>
       </div>
     </section>
