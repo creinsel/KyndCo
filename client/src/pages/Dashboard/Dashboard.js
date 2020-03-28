@@ -99,7 +99,6 @@ const Acts = () => {
           <Col size="md-7">
             <h1>Your Kyndline</h1>
             <br />
-            {console.log("userActs", userActs)}
             {userActs.length ? (
               <KyndList>
                 {userActs.map((userAct, index) => (
