@@ -94,7 +94,7 @@ const Acts = () => {
       <div className="acts-header">
         <Row>
           <Col size="md-5">
-            <Chart />
+            <Chart kyndattr={userActs} />
           </Col>
           <Col size="md-7">
             <h1>Your Kyndline</h1>
@@ -104,12 +104,10 @@ const Acts = () => {
               <KyndList>
                 {userActs.map((userAct, index) => (
                   <KyndListItem key={index}>
-                    <Row>
-                      <p className="desc">
-                        You completed {userAct.task} on{" "}
-                        {moment(userAct.date).format("MMM Do YYYY")}
-                      </p>
-                    </Row>
+                    <p className="desc">
+                      You completed {userAct.task} on
+                      {moment(userAct.date).format("MMM Do YYYY")}
+                    </p>
                   </KyndListItem>
                 ))}
               </KyndList>
