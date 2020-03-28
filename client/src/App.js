@@ -11,27 +11,31 @@ import Nav from "./Components/Nav";
 // import Chart from "./components/Chart";
 import { KindActContext } from "./context/KindActContext";
 import { UserIdContext } from "./context/UserIdContext";
+import { UserContext } from "./context/UserContext";
 
 function App() {
   const [acts, setActs] = useState([]);
-  const [userId, setUserId] = useState('');
+  const [userId, setUserId] = useState("");
+  const [userActs, setUserActs] = useState("");
   // const { acts, setActs } = useContext(KindActContext);
   return (
     <KindActContext.Provider value={{ acts, setActs }}>
-      <UserIdContext.Provider value={{ userId, setUserId }} >
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Nav />
-            <Bootstrapintro />
-            <About />
-            <Badge />
-            <Team />
-            <Footer />
-          </Route>
-          <Route exact path="/dashboard" component={Dashboard} />
-        </Switch>
-      </Router>
+      <UserIdContext.Provider value={{ userId, setUserId }}>
+        <UserContext.Provider value={{ userActs, setUserActs }}>
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Nav />
+                <Bootstrapintro />
+                <About />
+                <Badge />
+                <Team />
+                <Footer />
+              </Route>
+              <Route exact path="/dashboard" component={Dashboard} />
+            </Switch>
+          </Router>
+        </UserIdContext.Provider>
       </UserIdContext.Provider>
     </KindActContext.Provider>
   );
