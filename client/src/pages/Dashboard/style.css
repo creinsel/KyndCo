@@ -54,8 +54,6 @@
 
   }
 
-
-
   .acts-info {
     display: inline-block;
       
@@ -85,13 +83,16 @@
 
   .bar {
     margin-top: -5px;
+    color: #3ec094;
   }
 
   .desc {
     font-size: 12px;
-
     text-align: left;
-    margin-top: 35px;
+    color: #414042;
+    margin-left: 14px;
+    width: 650px;
+
   }
   .sub-text {
     width: 500px;
