@@ -1,3 +1,35 @@
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  height: 72px;
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;
+  padding: 15px 0;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: #7a6960;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding-bottom: 15px;;
+  margin: 0;
+  max-height: 80px;
+}
+
+#main {
+  margin-top: 72px;
+}
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -25,12 +57,12 @@
   }
   
   .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-    color: #eb5d1e;
+    color: #ffcd5e;
     text-decoration: none;
   }
   
   .nav-menu .get-started a {
-    background: #eb5d1e;
+    background: #fea710;
     color: #fff;
     border-radius: 50px;
     margin: 0 15px;
@@ -106,6 +138,8 @@
     position: absolute;
     right: 15px;
   }
+
+
   
   @media (max-width: 1366px) {
     .nav-menu .drop-down .drop-down ul {
