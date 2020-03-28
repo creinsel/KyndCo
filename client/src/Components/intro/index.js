@@ -24,7 +24,7 @@ function Bootstrapintro() {
           <div className=" align-items-right justify-content-right hero-img">
             <img
               src="assets/images/kindness.png"
-              className="img-fluid animated  kindimg"
+              className="img-fluid animated kindimg"
               alt=""
             />
           </div>

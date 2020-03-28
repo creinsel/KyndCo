@@ -1,34 +1,37 @@
-
 import React from "react";
-import "./style.css"
+import "./style.css";
 
 function About() {
-    return (
-
-
-      // <!-- ======= About Section ======= -->
+  return (
+    // <!-- ======= About Section ======= -->
     <section id="about" className="about">
       <div class="container">
-
         <div className="row justify-content-between">
           <div className=" d-flex align-items-center justify-content-center about-img">
-            <img src="assets/images/stickfriends2.png" className="img-fluid stickfriends" alt="" data-aos="zoom-in"/>
+            <img
+              src="assets/images/kynd-heart.png"
+              className="img-fluid kynd-heart"
+              alt="kind heart image"
+              data-aos="zoom-in"
+            />
           </div>
           <div className="col-lg-6 pt-5 pt-lg-0">
-            <h3  className ="text-center" data-aos="fade-up">About Us</h3>
-            <p data-aos="fade-up" data-aos-delay="100">
-            At Kynd Co, we want to bring people of all parts of the world and their society closer together to make the world a better place.
-              In doing so, our app encourages users to do acts of kindness by giving them challenges of kind acts they can do, starting off with less challenging acts and 
-              working there way up to more challenging acts and recieving rewards along the way. Try it out!
-            </p>
-            
+            <div className="section-title" data-aos="fade-up">
+              <p className="about-title">About Us</p>
+              <div className="p-about">
+                At Kynd Co, we believe no good deed should go unrewarded. Our app encourages users to do acts of
+                kyndness by providing them a list of kynd acts they can do. These acts range from being kynd to yourself, others and the world.
+                Each act has a point value attached with easier acts having a lower point values and more challenging acts having a higher point value.
+                Sign up today and try it out!
+              
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
     // <!-- End About Section -->
-    );
-  };
+  );
+}
 
 export default About;
