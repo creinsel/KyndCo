@@ -11,7 +11,18 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 const Chart = () => {
   const { userActs } = useContext(UserContext);
 
-  const filterByDate = () => {};
+  // const filterByDate = () => {
+  //   console.log("unsorted userActs", userActs);
+  //   userActs.sort(function(a, b) {
+  //     return new Date(a.date) > new Date(b.date)
+  //       ? -1
+  //       : new Date(a.date) < new Date(b.date)
+  //       ? 1
+  //       : 0;
+  //   });
+  //   console.log("sorted UserActs", userActs);
+  // };
+  // filterByDate();
 
   const options = {
     animationEnabled: true,
