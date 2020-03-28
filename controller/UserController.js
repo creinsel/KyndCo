@@ -29,7 +29,7 @@ module.exports = {
   },
   findById: function(req, res) {
     db.UserInfo.findById(req.params.id)
-      .populate("act")
+      .populate("kindacts")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -45,10 +45,10 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   performAct: function(req, res) {
-    console.log("inside performAct");
+    console.log("inside performAct", req.body);
     db.UserInfo.findOneAndUpdate(
       { _id: req.params.id },
-      { $push: { act: db.UserInfo.act } },
+      { $push: { kindacts: req.body._id } },
 
       { new: true }
     )

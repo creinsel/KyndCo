@@ -9,6 +9,7 @@ import { List, ListItem } from "../../Components/List";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
 import { UserIdContext } from "../../context/UserIdContext";
+import { UserContext } from "../../context/UserContext";
 import Moment from "react-moment";
 import DashBadge from "../../Components/DashBadge";
 import "moment-timezone";
@@ -32,6 +33,7 @@ const Acts = () => {
   });
   const { acts, setActs } = useContext(KindActContext);
   const { userId, setUserId } = useContext(UserIdContext);
+  const { userActs, setUserActs } = useContext(UserContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -39,10 +41,17 @@ const Acts = () => {
       .catch(err => console.log(err));
   };
 
+  const loadCompletedAct = userId => {
+    API.getUser(userId)
+      .then(res => setUserActs(res.data))
+      .catch(err => console.log(err));
+  };
+
   // console.log("tempid", tempid);
   useEffect(() => {
     loadActs();
-  }, []);
+    loadCompletedAct(userId);
+  }, [userId]);
 
   // const deleteKindAct = id => {
   //   API.deleteKindAct(id)
@@ -174,7 +183,7 @@ const Acts = () => {
                   <Row>
                     <p className="desc">{act.description}</p>
                   </Row>
-                  <AddBtn onClick={() => handleCompleteAct(userId, act._id)} />
+                  <AddBtn onClick={() => handleCompleteAct(userId, act)} />
                 </ListItem>
               ))}
             </List>

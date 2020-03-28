@@ -25,6 +25,6 @@ var KindActsSchema = new Schema({
   }
 });
 
-var KindActs = mongoose.model("KindActs", KindActsSchema);
+var KindAct = mongoose.model("KindAct", KindActsSchema);
 
-module.exports = KindActs;
+module.exports = KindAct;
