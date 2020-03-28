@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 #hero {
     width: 100%;
-    height: 70vh;
+    height: 400px;
     background: #24ffa42a;
     border-bottom: 2px solid #fcebe3;
     margin: 72px 0 -72px 0;
@@ -15,16 +15,18 @@
     font-weight: 700;
     line-height: 56px;
     color: #4e4039;
+    font-family: "Comfortaa", sans-serif;
   }
   
   #hero h2 {
     color: #a08f86;
     margin-bottom: 50px;
     font-size: 24px;
+    font-family: "Comfortaa", sans-serif;
   }
   
   #hero .btn-get-started {
-    font-family: "Raleway", sans-serif;
+    
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -35,10 +37,12 @@
     margin: 10px;
     color: #fff;
     background: #fea710;
+    font-family: "Comfortaa", sans-serif;
   }
   
   #hero .btn-get-started:hover {
     background: #ef7f4d;
+    font-family: "Comfortaa", sans-serif;
   }
   
   #hero .animated {

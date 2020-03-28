@@ -7,8 +7,10 @@ function Badge() {
     <section id="services" className="services section-bg">
       <div className="container">
         <div className="section-title" data-aos="fade-up">
-          <h2>Badges</h2>
+         
           <p>Check out our cool badges!</p>
+          <div className= "p-badge">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit</div>
         </div>
 
         <div className="row">

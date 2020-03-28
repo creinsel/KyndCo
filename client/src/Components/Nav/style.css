@@ -20,8 +20,9 @@
 }
 
 #header .logo img {
-  padding-bottom: 15px;;
-  margin: 0;
+  padding-bottom: 30px;
+  margin-bottom: 90px;
+  
   max-height: 80px;
 }
 

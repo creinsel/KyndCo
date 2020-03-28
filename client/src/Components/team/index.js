@@ -7,7 +7,7 @@ function Team() {
     <section id="team" className="team">
       <div className="container">
         <div className="section-title" data-aos="fade-up">
-          <h2>Team</h2>
+          
           <p>Our project team members!</p>
         </div>
 
