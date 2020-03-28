@@ -14,7 +14,7 @@ function Footer() {
                   <h3>Kynd Co.</h3>
                   <p>
                     123 Kynd Street <br />
-                    Berkley, CA 535022<br />
+                    Berkeley, CA 535022<br />
                     United States <br /><br />
                     <strong>Phone:</strong> 555-555-KYND<br />
                     <strong>Email:</strong> kynd@kyndco.com<br />
