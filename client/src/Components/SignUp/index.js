@@ -64,7 +64,7 @@ const SignUp = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Create A New Account</Modal.Title>
+          <Modal.Title className="modal-title">Create A New Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>

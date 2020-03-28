@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 import { UserIdContext } from "../../context/UserIdContext";
+import "./style.css";
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
@@ -43,7 +44,7 @@ const SignIn = () => {
 
       <Modal show={show} onHide={handleHide}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign In to Your Account</Modal.Title>
+          <Modal.Title className="modal-title">Sign In to Your Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form action="/login" method="post">
