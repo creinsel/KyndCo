@@ -35,7 +35,7 @@ function App() {
               <Route exact path="/dashboard" component={Dashboard} />
             </Switch>
           </Router>
-        </UserIdContext.Provider>
+        </UserContext.Provider>
       </UserIdContext.Provider>
     </KindActContext.Provider>
   );
