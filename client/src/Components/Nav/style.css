@@ -3,7 +3,7 @@
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 72px;
+  height: 80px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -12,24 +12,10 @@
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-
-#header .logo h1 a, #header .logo h1 a:hover {
-  color: #7a6960;
-  text-decoration: none;
+.kynd-img {
+  margin-top: -20px;
+  width: 325px;
 }
-
-#header .logo img {
-  padding-bottom: 30px;
-  margin-bottom: 90px;
-  
-  max-height: 80px;
-}
-
-#main {
-  margin-top: 72px;
-}
-
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -54,11 +40,11 @@
     padding: 10px 15px;
     transition: 0.3s;
     font-size: 15px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Comfortaa", sans-serif;
   }
   
   .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-    color: #ffcd5e;
+    color: #3ec094;
     text-decoration: none;
   }
   
@@ -71,7 +57,7 @@
   }
   
   .nav-menu .get-started a:hover {
-    background: #ee7843;
+    background: #3ec094;
     color: #fff;
   }
   
@@ -109,7 +95,7 @@
   }
   
   .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-    color: #eb5d1e;
+    color: #3ec094;
   }
   
   .nav-menu .drop-down > a:after {
@@ -189,7 +175,7 @@
   }
   
   .mobile-nav .get-started a {
-    background: #eb5d1e;
+    background: #3ec094;
     color: #fff;
     border-radius: 50px;
     margin: 15px;
@@ -197,7 +183,7 @@
   }
   
   .mobile-nav .get-started a:hover {
-    background: #ee7843;
+    background: ##3ec094;
     color: #fff;
   }
   
@@ -267,4 +253,8 @@
   
   .mobile-nav-active .mobile-nav-toggle i {
     color: #fff;
+  }
+
+  .badge-pill .btn-get-started .scrollto {
+
   }

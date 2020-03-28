@@ -17,7 +17,7 @@ const Nav = () => {
         <div className="logo mr-auto">
          
           {/* Link for app logo? */}
-          <a className="navbar-brand kyndlogo" href="/">
+          <a href="/">
         <img src ="assets/images/kyndco-logo.png" alt="logo" class="img-fluid kynd-img"/>
         </a>
       </div>

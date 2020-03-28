@@ -34,9 +34,6 @@
     font-size: 18px;
   }
   
-  .services .title a {
-    color: #111;
-  }
   
   .services .description {
     font-size: 15px;
@@ -49,13 +46,30 @@
     height: 200px;
   }
 
-  .section-title .p-badge {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    position: relative;
-    font-size: 15px;
+  .section-title .p-badge{
     font-family: "Comfortaa", sans-serif;
-    color: #4e4039;
+    font-size: 15px;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: #5a6570;
   }
 
+  .section-title p{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 15px;
+    color: #5a6570;
+  }
+
+  .title {
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .sub-title {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 12px;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
   
