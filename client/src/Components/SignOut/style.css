@@ -1,0 +1,29 @@
+.btn-primary {
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 50px;
+    transition: 0.5s;
+    width: 150px;
+    height: 42px;
+    color: #fff;
+    background: #fea710;
+    font-family: "Comfortaa", sans-serif;
+    border: none;
+
+}
+
+.btn-primary:hover {
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 50px;
+    transition: 0.5s;
+    width: 150px;
+    height: 42px;
+    color: #fff;
+    background: #3ec094;
+    font-family: "Comfortaa", sans-serif;
+    border: none;
+
+}

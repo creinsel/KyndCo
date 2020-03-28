@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import "./style.css";
 
 const SignOut = (props) => { 
     return (
-        <Button variant="danger" onClick={props.logout}>
+        <Button className="sign-out" onClick={props.logout}>
           Sign Out
         </Button>
   
