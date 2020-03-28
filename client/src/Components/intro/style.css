@@ -49,8 +49,8 @@
   }
 
   .kindimg {
-    height: 450px;
-    width: 500px;
+    height: 400px;
+    width: 450px;
   }
   
   @media (min-width: 1024px) {
