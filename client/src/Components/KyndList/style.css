@@ -1,0 +1,22 @@
+.list-overflow-container {
+  margin-top: 20px;
+  max-height: 700px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 1px solid black;
+}
+
+.list-overflow-container ul {
+  display: inline;
+}
+
+.list-overflow-container li {
+  height: 150px;
+  font-size: 20px;
+}
+
+.list-group-item {
+  font-family: "Comfortaa", sans-serif;
+  position: relative;
+}

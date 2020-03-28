@@ -17,7 +17,7 @@ function App() {
   const [acts, setActs] = useState([]);
   const [userId, setUserId] = useState("");
   const [userActs, setUserActs] = useState("");
-  // const { acts, setActs } = useContext(KindActContext);
+
   return (
     <KindActContext.Provider value={{ acts, setActs }}>
       <UserIdContext.Provider value={{ userId, setUserId }}>

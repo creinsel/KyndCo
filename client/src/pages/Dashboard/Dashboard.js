@@ -3,9 +3,9 @@ import Nav from "../../Components/Nav";
 import Jumbotron from "../../Components/Jumbotron";
 import AddBtn from "../../Components/AddBtn";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../Components/Grid";
 import { List, ListItem } from "../../Components/List";
+import { KyndList, KyndListItem } from "../../Components/KyndList";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
 import { UserIdContext } from "../../context/UserIdContext";
@@ -13,6 +13,7 @@ import { UserContext } from "../../context/UserContext";
 import Moment from "react-moment";
 import DashBadge from "../../Components/DashBadge";
 import "moment-timezone";
+import moment from "moment";
 import CanvasJSReact from "../../lib/canvasjs.react";
 import Chart from "../../Components/Chart";
 import "./style.css";
@@ -32,7 +33,7 @@ const Acts = () => {
     description: ""
   });
   const { acts, setActs } = useContext(KindActContext);
-  const { userId, setUserId } = useContext(UserIdContext);
+  const { userId } = useContext(UserIdContext);
   const { userActs, setUserActs } = useContext(UserContext);
 
   const loadActs = () => {
@@ -43,24 +44,18 @@ const Acts = () => {
 
   const loadCompletedAct = userId => {
     API.getUser(userId)
-      .then(res => setUserActs(res.data))
+      .then(res => {
+        setUserActs(res.data.kindacts);
+      })
       .catch(err => console.log(err));
   };
 
-  // console.log("tempid", tempid);
   useEffect(() => {
     loadActs();
-    loadCompletedAct(userId);
+    if (userId) {
+      loadCompletedAct(userId);
+    }
   }, [userId]);
-
-  // const deleteKindAct = id => {
-  //   API.deleteKindAct(id)
-  //     .then(res => {
-  //       const remainingActs = acts.filter(act => act._id !== id);
-  //       setActs(remainingActs);
-  //     })
-  //     .catch(err => console.log(err));
-  // };
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -72,9 +67,7 @@ const Acts = () => {
 
   const handleCompleteAct = (userId, actData) => {
     API.performAct(userId, actData)
-      .then(res => {
-        console.log(res);
-      })
+      .then(res => loadCompletedAct(userId))
       .catch(err => console.log(err));
   };
 
@@ -106,9 +99,23 @@ const Acts = () => {
           <Col size="md-7">
             <h1>Your Kyndline</h1>
             <br />
-            <p className="todays-date">
-              Today's date is <Moment format="MM/DD/YYYY"></Moment>
-            </p>
+            {console.log("userActs", userActs)}
+            {userActs.length ? (
+              <KyndList>
+                {userActs.map((userAct, index) => (
+                  <KyndListItem key={index}>
+                    <Row>
+                      <p className="desc">
+                        You completed {userAct.task} on{" "}
+                        {moment(userAct.date).format("MMM Do YYYY")}
+                      </p>
+                    </Row>
+                  </KyndListItem>
+                ))}
+              </KyndList>
+            ) : (
+              <h3>You have not been Kynd....work on that!</h3>
+            )}
           </Col>
         </Row>
       </div>
