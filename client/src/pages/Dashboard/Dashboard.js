@@ -8,6 +8,7 @@ import { Col, Row, Container } from "../../Components/Grid";
 import { List, ListItem } from "../../Components/List";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
+import { UserIdContext } from "../../context/UserIdContext";
 import Moment from "react-moment";
 import DashBadge from "../../Components/DashBadge";
 import "moment-timezone";
@@ -20,8 +21,8 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 // https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
-  var id = localStorage.getItem("userId");
-  var tempid = id;
+  // var id = localStorage.getItem("userId");
+  // var tempid = id;
 
   const [formData, setFormData] = useState({
     task: "",
@@ -30,7 +31,7 @@ const Acts = () => {
     description: ""
   });
   const { acts, setActs } = useContext(KindActContext);
-  //const { userActs, setUserActs } = useContext(UserContext);
+  const { userId, setUserId } = useContext(UserIdContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -38,7 +39,7 @@ const Acts = () => {
       .catch(err => console.log(err));
   };
 
-  console.log("tempid", tempid);
+  // console.log("tempid", tempid);
   useEffect(() => {
     loadActs();
   }, []);
@@ -173,7 +174,7 @@ const Acts = () => {
                   <Row>
                     <p className="desc">{act.description}</p>
                   </Row>
-                  <AddBtn kyndAttr={act._id} />
+                  <AddBtn onClick={() => handleCompleteAct(userId, act._id)} />
                 </ListItem>
               ))}
             </List>

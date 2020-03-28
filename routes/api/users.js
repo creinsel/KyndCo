@@ -23,6 +23,7 @@ router
   .get(UserController.findById)
   .put(UserController.update);
 
+//localhost:3001/api/users/addact/:id
 router.route("/addact/:id").post(UserController.performAct);
 
 module.exports = router;

@@ -41,6 +41,7 @@ export default {
     return axios.put("/api/users/" + id);
   },
   performAct: function(id, actData) {
+    console.log("inside api performAct");
     return axios.post("api/users/addact/" + id, actData);
   }
 };
