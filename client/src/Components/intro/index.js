@@ -17,7 +17,7 @@ function Bootstrapintro() {
                others or the
               world.
             </h2>
-            <a href=" #about #acts " className="btn-get-started scrollto">
+            <a href=" #about #acts " className="badge-pill btn-get-started  scrollto">
               Learn More
             </a>
           </div>
