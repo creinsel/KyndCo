@@ -165,7 +165,7 @@ const Acts = () => {
             <List>
               {acts.map(act => (
                 <ListItem key={act._id}>
-                  <Link to={"/acts/" + act._id}>
+                 
 
                     <Row>
                       <h3 className="act-title">{act.task}</h3>
@@ -184,7 +184,7 @@ const Acts = () => {
                       <p className="desc">{act.description}</p>
                     </Row>
 
-                  </Link>
+                  
                   <AddBtn />
                 </ListItem>
               ))}
