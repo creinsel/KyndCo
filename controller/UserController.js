@@ -19,7 +19,7 @@ module.exports = {
             console.log("response", response);
             res.status(200).send(response);
           } else {
-            res.status(404).send({ message: "Invalid log in" }) 
+            res.status(404).send({ message: "Invalid log in" });
           }
         });
       } else {
@@ -45,12 +45,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   performAct: function(req, res) {
+    console.log("inside performAct");
     db.UserInfo.findOneAndUpdate(
       { _id: req.params.id },
       { $push: { act: db.UserInfo.act } },
 
       { new: true }
-
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
