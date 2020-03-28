@@ -11,7 +11,8 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 const Chart = () => {
   const { userActs } = useContext(UserContext);
 
-  const filterByDate = () => {};
+  const filterByDate = () => {
+  };
 
   const options = {
     animationEnabled: true,
@@ -26,7 +27,10 @@ const Chart = () => {
         type: "column",
         yValueFormatString: "#",
         dataPoints: [
-          { x: userActs, y: 5 },
+          array.forEach(element => {
+            
+          });
+          { x: <Moment format="MM/DD/YYYY"></Moment>, y: 5 },
           { x: <Moment format="MM/DD/YYYY"></Moment>, y: 15 }
         ]
       }
