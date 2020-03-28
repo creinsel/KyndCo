@@ -12,6 +12,8 @@
 
 }
 
-.btn-success .add-btn {
+.add-act-btn {
     background-color: #ffa437;
+    position: relative;
+    left: 100px;
 }
