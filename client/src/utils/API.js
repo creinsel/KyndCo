@@ -26,15 +26,11 @@ export default {
   //API calls to db Users
 
   saveUser: function(formdata) {
-    return axios.post("/api/users/", formdata );
-   
+    return axios.post("/api/users/", formdata);
   },
   login: function(formdata) {
     console.log("in the login");
-
-    return axios.post("/api/users/login", formdata );
-
-   
+    return axios.post("/api/users/login", formdata);
   },
   //gets user by id
   getUser: function(id) {
@@ -44,8 +40,7 @@ export default {
   updateUser: function(id) {
     return axios.put("/api/users/" + id);
   },
-
-  addAct: function(id){
-    return axios.post("/api/users/addAct"+ id)
+  performAct: function(id, actData) {
+    return axios.post("api/users/addact/" + id, actData);
   }
 };
