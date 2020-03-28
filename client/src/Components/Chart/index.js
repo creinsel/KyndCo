@@ -26,10 +26,7 @@ const Chart = () => {
       {
         type: "column",
         yValueFormatString: "#",
-        dataPoints: [
-          array.forEach(element => {
-            
-          });
+        dataPoints: {
           { x: <Moment format="MM/DD/YYYY"></Moment>, y: 5 },
           { x: <Moment format="MM/DD/YYYY"></Moment>, y: 15 }
         ]
