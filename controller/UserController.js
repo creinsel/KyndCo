@@ -16,7 +16,7 @@ module.exports = {
           if (result) {
             const response = { ...dbModel[0]._doc };
             delete response.password;
-            console.log("response", response);
+            // console.log("response", response);
             res.status(200).send(response);
           } else {
             res.status(404).send({ message: "Invalid log in" });

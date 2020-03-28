@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 
-
-
 const SignUp = () => {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
@@ -12,10 +10,8 @@ const SignUp = () => {
     password: ""
   });
 
-  
-// or
-// const bcrypt = require('bcrypt')
-
+  // or
+  // const bcrypt = require('bcrypt')
 
   // const loadUser = () => {
   //   API.getUser()
@@ -31,12 +27,12 @@ const SignUp = () => {
       ...formData,
       [name]: value
     });
-    console.log(formData);
+    // console.log(formData);
   };
 
   const handleClose = () => {
     setShow(false);
-    console.log({formData})
+    // console.log({formData})
     const { name, email, password } = formData;
 
     if (name && email && password)
@@ -48,18 +44,12 @@ const SignUp = () => {
         act: []
       })
         .then(res => {
-// const password = formData.password
-// const rounds = 10
+          // const password = formData.password
+          // const rounds = 10
 
-
-          var userId = res.data._id
+          var userId = res.data._id;
 
           localStorage.setItem("userId", userId);
-
-          
-
-          
-
         })
         .catch(err => console.log(err));
   };
@@ -123,5 +113,4 @@ const SignUp = () => {
   );
 };
 
-  
-  export default SignUp;
+export default SignUp;

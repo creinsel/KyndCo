@@ -13,7 +13,7 @@ router
 
 //localhost:3001/api/users/login
 router.route("/login").post((req, res) => {
-  console.log("passport", req.body.email, req.body.password);
+  // console.log("passport", req.body.email, req.body.password);
   UserController.findByEmail(req, res);
 });
 

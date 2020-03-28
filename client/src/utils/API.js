@@ -29,7 +29,7 @@ export default {
     return axios.post("/api/users/", formdata);
   },
   login: function(formdata) {
-    console.log("in the login");
+    // console.log("in the login");
     return axios.post("/api/users/login", formdata);
   },
   //gets user by id
@@ -41,7 +41,7 @@ export default {
     return axios.put("/api/users/" + id);
   },
   performAct: function(id, actData) {
-    console.log("inside api performAct");
+    // console.log("inside api performAct");
     return axios.post("api/users/addact/" + id, actData);
   }
 };
