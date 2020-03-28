@@ -19,7 +19,7 @@ function Team() {
           >
             <div className="member">
               <img
-                src="assets/images/sara.jpg"
+                src="assets/images/anjali.jpg"
                 className="img-fluid"
                 alt=""
               />
