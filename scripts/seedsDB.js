@@ -30,14 +30,14 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Plant a Tree",
+    task: "Plant a tree",
     description: "Make a difference in your environment and life!",
     category: ["World"],
     tier: 1,
     points: 1
   },
   {
-    task: "Leave Quaters at the Laudromat",
+    task: "Leave quarters at the laundromat",
     description:
       "Doing laundry can be expensive. Surprise someone and leave extra quarters next to a washer and dryer.",
     category: ["Others"],
@@ -125,7 +125,7 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Schedule A Massage",
+    task: "Schedule a massage",
     description:
       "Touch is a powerful form of pain relief and endorphin release. Giving yourself permission to make an appointment with a massage therapist sends the message that you are worthy of tenderness, care, and relaxation. Your body, mind, and spirit will thank you.",
     category: ["Self"],
@@ -141,7 +141,7 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Ride Your Bike or Walk",
+    task: "Ride your bike or walk",
     description:
       "Multi-task like a champion: get some exercise on your errands run or daily commute.",
     category: ["World"],
@@ -157,7 +157,7 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Drink More Water",
+    task: "Drink more water",
     description:
       "When you’re healthy and energetic, it is much easier to be kind.",
     category: ["Self"],
@@ -166,13 +166,13 @@ const kindSeed = [
   },
   {
     task: "Donate used books to a library",
-    description: "Give the Gift of Literacy",
+    description: "Give the gift of literacy",
     category: ["World"],
     tier: 1,
     points: 1
   },
   {
-    task: "Foster a Pet Up for Adoption",
+    task: "Foster a pet up for adoption",
     description:
       "If you’re not prepared to make the leap of adopting a pet, give fostering a try! There are so many animals waiting to be placed, and your kindness can help a lot with their transition.",
     category: ["World"],
@@ -180,7 +180,7 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Tutor Someone",
+    task: "Tutor someone",
     description:
       "Helping someone learn can be beneficial to both teacher and student!",
     category: ["Others"],
