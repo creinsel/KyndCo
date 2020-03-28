@@ -80,7 +80,7 @@ function Team() {
           <div className="member">
             <img
               src="assets/images/casImg.JPG"
-              className="img-fluid"
+              className="img-fluid casimg"
               alt=""
             />
             <div className="member-info">
