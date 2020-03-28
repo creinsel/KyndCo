@@ -19,7 +19,7 @@ function Team() {
           >
             <div className="member">
               <img
-                src="assets/images/sara.jpg"
+                src="assets/images/anjali.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -47,7 +47,7 @@ function Team() {
               <div className="member-info">
               <div className="member-info-content">
                 <h4>Sara Bolduc</h4>
-                <span>Product Manager</span>
+                <span>Back-End Developer</span>
               </div>
              
             </div>
@@ -86,7 +86,7 @@ function Team() {
             <div className="member-info">
               <div className="member-info-content">
                 <h4>Cassondra Reinsel</h4>
-                <span>Accountant</span>
+                <span>Back-End Developer</span>
               </div>
               
             </div>

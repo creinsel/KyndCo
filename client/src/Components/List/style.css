@@ -1,21 +1,10 @@
-.jumbotron {
-  height: 100px;
-  text-align: center;
-  padding-top: 35px;
-  background-color: #3ec094;
-  font-family: "Comfortaa", sans-serif;
-  height: 85px;
-
-}
-
 .list-overflow-container {
-
   margin-top: 20px;
   max-height: 700px;
-
   border-radius: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
+  border: 1px solid black;
 }
 
 .list-overflow-container ul {
@@ -23,22 +12,30 @@
 }
 
 .list-overflow-container li {
-
-  height: 100px;
-
+  height: 150px;
   font-size: 20px;
-  
 }
 
-.list-overflow-container li * {
-  cursor: pointer;
-
+.list-overflow-container .act-title {
+  margin-top: 5px;
   color: #3ec094;
+}
 
+.list-overflow-container .act-cat {
+  margin-top: 5px;
+  color: #3ec094;
+}
+
+.list-overflow-container .act-pts {
+  margin-top: 5px;
+  color: #3ec094;
 }
 
 .list-group-item {
   font-family: "Comfortaa", sans-serif;
+  position: relative;
 
 
 }
+
+
