@@ -102,7 +102,8 @@ const Acts = () => {
           <Col size="md-7">
             <h1>Your Kyndline</h1>
             <p className="sub-text">
-              Keep track of your completed acts here and the Kyndline Chart (left) shows you how kynd you are each day.
+              Keep track of your completed acts here and the Kyndline Chart
+              (left) shows you how kynd you are each day.
             </p>
             <br />
             {/* {console.log("userActs", userActs)} */}
@@ -111,7 +112,9 @@ const Acts = () => {
                 {userActs.map((userAct, index) => (
                   <KyndListItem key={index}>
                     <p className="desc">
-                      You completed {userAct.task} on {userAct.datePerformed}
+                      You completed {userAct.task} on{" "}
+                      {moment(userAct.datePerformed).format("ll")} at{" "}
+                      {moment(userAct.datePerformed).format("LT")}
                     </p>
                   </KyndListItem>
                 ))}
