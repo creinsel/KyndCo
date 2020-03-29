@@ -36,6 +36,8 @@ const Acts = () => {
   const { userId } = useContext(UserIdContext);
   const { userActs, setUserActs } = useContext(UserContext);
 
+  var date = new Date();
+
   const loadActs = () => {
     API.getKindActs()
       .then(res => setActs(res.data))
@@ -45,6 +47,7 @@ const Acts = () => {
   const loadCompletedAct = userId => {
     API.getUser(userId)
       .then(res => {
+        console.log("kindats from db", res.data);
         setUserActs(res.data.kindacts);
       })
       .catch(err => console.log(err));
@@ -66,6 +69,7 @@ const Acts = () => {
   };
 
   const handleCompleteAct = (userId, actData) => {
+    actData.datePerformed = new Date();
     API.performAct(userId, actData)
       .then(res => loadCompletedAct(userId))
       .catch(err => console.log(err));
@@ -99,14 +103,15 @@ const Acts = () => {
           <Col size="md-7">
             <h1>Your Kyndline</h1>
             <br />
+            {console.log("userActs", userActs)}
             {userActs.length ? (
               <KyndList>
                 {userActs.map((userAct, index) => (
                   <KyndListItem key={index}>
                     <p className="desc">
                       You completed {userAct.task} on{" "}
-                      {moment(userAct.date).format("MMM Do YYYY")} at{" "}
-                      {moment(userAct.date).format("h:mm a")}
+                      {moment(userAct.datePerformed).format("MMM Do YYYY")} at{" "}
+                      {moment(userAct.datePerformed).format("h:mm a")}
                     </p>
                   </KyndListItem>
                 ))}

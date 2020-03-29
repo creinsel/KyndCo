@@ -22,12 +22,7 @@ var UserSchema = new Schema({
     type: Number,
     required: true
   },
-  kindacts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "KindAct"
-    }
-  ]
+  kindacts: [{}]
 });
 
 UserSchema.pre("save", function(next) {
