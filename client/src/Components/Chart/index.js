@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./style.css";
 import Moment from "react-moment";
+import moment from "moment";
 import "moment-timezone";
 import CanvasJSReact from "../../lib/canvasjs.react";
 import { UserContext } from "../../context/UserContext";
@@ -13,19 +14,38 @@ const Chart = () => {
 
   var actsToSort = [...userActs];
 
-  const sortByDate = () => {
-    actsToSort.sort(function(a, b) {
-      return new Date(a.datePerformed) - new Date(b.datePerformed);
-    });
-  };
-  sortByDate();
+  // sorts data
+  const sortedData = actsToSort.sort((a, b) => {
+    return new Date(b.datePerformed) - new Date(a.datePerformed) ? -1 : 1;
+  });
 
-  // const filterByDate = () => {
-  //   actsToSort.filter(act => act.datePerformed === act.datePerformed).map(filteredDate => (
-  //       <li>
-  //         {filteredDate.name}
-  //       </li>
-  // }
+  console.log("sortedData", sortedData);
+  //
+
+  // counts dups
+  var counts = {};
+  sortedData.forEach(obj => {
+    var key = moment(obj.datePerformed).format("MM-Do-YY");
+    counts[key] = (counts[key] || 0) + 1;
+  });
+
+  console.log("dups", counts);
+  //
+
+  //create dataPoints array
+  var lb = Object.keys(counts);
+  console.log("# of db points", lb.length);
+  var yAxis = Object.values(counts);
+  var dps = [];
+
+  for (let index = 0; index < lb.length; index++) {
+    dps.push({
+      label: lb[index],
+      y: yAxis[index]
+    });
+  }
+
+  console.log("dataPoints", dps);
 
   const options = {
     animationEnabled: true,
@@ -33,16 +53,14 @@ const Chart = () => {
       text: "Charting Your Kyndline"
     },
     axisY: {
-      title: "Acts completed"
+      includeZero: true
     },
     data: [
       {
         type: "column",
+        indexLabelFontSize: 16,
         yValueFormatString: "#",
-        dataPoints: [
-          { x: <Moment format="MM/DD/YYYY"></Moment>, y: 5 },
-          { x: <Moment format="MM/DD/YYYY"></Moment>, y: 15 }
-        ]
+        dataPoints: dps
       }
     ]
   };

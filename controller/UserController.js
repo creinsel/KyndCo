@@ -46,7 +46,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   performAct: function(req, res) {
-    console.log("inside performAct", req.body);
+    // console.log("inside performAct", req.body);
     db.UserInfo.findOneAndUpdate(
       { _id: req.params.id },
       {

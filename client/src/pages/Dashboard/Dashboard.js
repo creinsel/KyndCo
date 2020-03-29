@@ -102,15 +102,13 @@ const Acts = () => {
           <Col size="md-7">
             <h1>Your Kyndline</h1>
             <br />
-            {console.log("userActs", userActs)}
+            {/* {console.log("userActs", userActs)} */}
             {userActs.length ? (
               <KyndList>
                 {userActs.map((userAct, index) => (
                   <KyndListItem key={index}>
                     <p className="desc">
-                      You completed {userAct.task} on{" "}
-                      {moment(userAct.datePerformed).format("MMM Do YYYY")} at{" "}
-                      {moment(userAct.datePerformed).format("h:mm a")}
+                      You completed {userAct.task} on {userAct.datePerformed}
                     </p>
                   </KyndListItem>
                 ))}
