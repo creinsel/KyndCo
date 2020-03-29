@@ -178,6 +178,9 @@ const Acts = () => {
         <Col size="md-5">
           <div className="section-header">
             <h1>Acts of Kyndness</h1>
+            <p className="sub-text">
+              Choose an act to do from our list of acts. Once you have completed it, click the <span className="plus-style">+</span> button to add it to your Kyndline.
+            </p>
           </div>
           {acts.length ? (
             <List>
