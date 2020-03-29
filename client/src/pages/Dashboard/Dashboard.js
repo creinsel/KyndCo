@@ -47,7 +47,6 @@ const Acts = () => {
   const loadCompletedAct = userId => {
     API.getUser(userId)
       .then(res => {
-        console.log("kindats from db", res.data);
         setUserActs(res.data.kindacts);
       })
       .catch(err => console.log(err));
@@ -106,15 +105,13 @@ const Acts = () => {
               Keep track of your completed acts here and the Kyndline Chart (left) shows you how kynd you are each day.
             </p>
             <br />
-            {console.log("userActs", userActs)}
+            {/* {console.log("userActs", userActs)} */}
             {userActs.length ? (
               <KyndList>
                 {userActs.map((userAct, index) => (
                   <KyndListItem key={index}>
                     <p className="desc">
-                      You completed {userAct.task} on{" "}
-                      {moment(userAct.datePerformed).format("MMM Do YYYY")} at{" "}
-                      {moment(userAct.datePerformed).format("h:mm a")}
+                      You completed {userAct.task} on {userAct.datePerformed}
                     </p>
                   </KyndListItem>
                 ))}
@@ -182,7 +179,9 @@ const Acts = () => {
           <div className="section-header">
             <h1>Acts of Kyndness</h1>
             <p className="sub-text">
-              Choose an act to do from our list of acts. Once you have completed it, click the <span className="plus-style">+</span> button to add it to your Kyndline.
+              Choose an act to do from our list of acts. Once you have completed
+              it, click the <span className="plus-style">+</span> button to add
+              it to your Kyndline.
             </p>
           </div>
           {acts.length ? (
