@@ -13,18 +13,19 @@ const Chart = () => {
 
   var actsToSort = [...userActs];
 
+  const sortByDate = () => {
+    actsToSort.sort(function(a, b) {
+      return new Date(a.datePerformed) - new Date(b.datePerformed);
+    });
+  };
+  sortByDate();
+
   // const filterByDate = () => {
-  //   console.log("unsorted userActs", actsToSort);
-  //   actsToSort.sort(function(a, b) {
-  //     return new Date(a.date) > new Date(b.date)
-  //       ? -1
-  //       : new Date(a.date) < new Date(b.date)
-  //       ? 1
-  //       : 0;
-  //   });
-  //   console.log("sorted userActs", actsToSort);
-  // };
-  // filterByDate();
+  //   actsToSort.filter(act => act.datePerformed === act.datePerformed).map(filteredDate => (
+  //       <li>
+  //         {filteredDate.name}
+  //       </li>
+  // }
 
   const options = {
     animationEnabled: true,
