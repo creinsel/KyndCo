@@ -1,6 +1,6 @@
 .list-overflow-container {
   margin-top: 112px;
-  max-height: 790px;
+  max-height: 700px;
   border-radius: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -12,7 +12,7 @@
 }
 
 .list-overflow-container li {
-  height: 100px;
+  height: 110px;
   font-size: 20px;
 }
 
@@ -43,12 +43,13 @@
   margin-right: 10px;
 }
 
-.list-overflow-container .desc {
+.list-overflow-container .act-desc {
+  margin-top: -5px;
   margin-left: 15px;
   font-size: 12px;
   text-align: left;
   color: #414042;
-  width: 650px;
+  width: 90%;
 }
 
 .list-group-item {

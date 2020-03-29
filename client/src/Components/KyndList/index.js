@@ -12,5 +12,10 @@ export function KyndList({ children }) {
 };
 
 export function KyndListItem({ children }) {
-  return <li className="list-group-item">{children}</li>;
-}
+  return  (
+
+  <li className="list-group-item">
+    <img src="./assets/images/check.png" className="check"></img>
+    {children}</li>
+  )
+};

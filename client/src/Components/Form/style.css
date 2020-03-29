@@ -14,5 +14,10 @@
 .add-act-btn {
     background-color: #ffa437;
     position: relative;
-    left: 93%;
+    left: 86%;
+    color: #ffffff;
+    font-family: "Comfortaa", sans-serif;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
+    margin-top: -5px;
 }

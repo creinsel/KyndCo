@@ -1,39 +1,35 @@
-
 .dash-badge {
     text-align: center;
+    margin: 0 auto;
+}
+
+.dash-badge img {
 }
 
 .badge-style-c {
-    width: 400px;
-    height: 400px;
-    margin-top: 10px;
-
 }
 
 .badge-style-o {
-    width: 400px;
-    height: 400px;
-    margin-top: 10px;
-
     opacity: 50%;
 }
 
 .badge-pts {
     font-family: "Comfortaa", sans-serif;
-
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
     color:#3ec094;
 }
 
 .badge-unlock {
     color: #414042;
-    font-size: 24px;
+    font-size: 18px;
+
 }
 
 .badge-lock {
     color: #414042;
-    font-size: 24px;
+    font-size: 18px;
+
 
 }
 
