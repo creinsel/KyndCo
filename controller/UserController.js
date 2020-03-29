@@ -29,7 +29,7 @@ module.exports = {
   },
   findById: function(req, res) {
     db.UserInfo.findById(req.params.id)
-      .populate("kindacts")
+      // .populate("kindacts")
       .then(dbModel => {
         res.json(dbModel);
       })
@@ -50,7 +50,9 @@ module.exports = {
     console.log("inside performAct", req.body);
     db.UserInfo.findOneAndUpdate(
       { _id: req.params.id },
-      { $push: { kindacts: req.body._id } },
+      {
+        $push: { kindacts: req.body }
+      },
 
       { new: true }
     )
