@@ -93,7 +93,7 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Take a Hot Bath",
+    task: "Take a hot bath",
     description:
       "Soaking in a hot tub, preferably with Epsom salt and aromatherapy oils, can do wonders for sore muscles and a worn-out spirit. Light a candle and turn on some relaxing music to add to the experience.",
     category: ["Self"],
@@ -101,7 +101,7 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Go for A Walk",
+    task: "Go for a walk",
     description:
       "Ideally, this will be in a favorite park or neighborhood. But it could be as simple as a walk around the block. Moving your legs, breathing the outside air, and taking in the sights and sounds will naturally increase blood flow and endorphins, thereby warming your body and bettering your mood.",
     category: ["Self"],
@@ -109,9 +109,9 @@ const kindSeed = [
     points: 1
   },
   {
-    task: "Buy a Special Treat",
+    task: "Buy a special treat",
     description:
-      "What makes you smile? Candles, jewelry, a good book, a trinket from an antique or thrift store, a bar of chocolate, flowers, a latte from a local coffee shop—there are so many small purchases that can make a big difference in how you feel, if only for a few moments. Cohen adds that it’s a good idea to keep the purchase around $20 or less to avoid buyer’s remorse. Whatever you choose, allow yourself to savor the indulgence.",
+      "Candles, jewelry, a good book, a trinket from an antique or thrift store, a bar of chocolate, flowers, a latte from a local coffee shop—there are so many small purchases that can make a big difference in how you feel, if only for a few moments.",
     category: ["Self"],
     tier: 1,
     points: 1
@@ -119,7 +119,7 @@ const kindSeed = [
   {
     task: "Meditate",
     description:
-      "Setting aside the time to simply be—for a few minutes or a few hours—tells your inner taskmaster to simmer down and be still. Using candles, soft music, dim lights, and comfy cushions during meditation will help to set the mood, and slow, rhythmic breathing will guide you into a relaxed state. You can incorporate a mantra or simply allow your mind to become empty, letting go of one nagging thought at a time until all that remains is the sound of your heart beating and breath going in and out.",
+      "Setting aside the time to simply be—for a few minutes or a few hours—tells your inner taskmaster to simmer down and be still. Use candles, soft music, dim lights, and comfy cushions during meditation to help set the mood, and slow, rhythmic breathing will guide you into a relaxed state.",
     category: ["Self"],
     tier: 1,
     points: 1

@@ -1,4 +1,30 @@
+.kyndline-container {
+  margin-top: 0px;
+  margin-left: 20px;
+  max-height: 300px;
+
+}
+
+.kyndline-container .list-group-item {
+  height: 75px;
+}
+
 .list-group-item {
   font-family: "Comfortaa", sans-serif;
-  position: relative;
+
+}
+
+.list-overflow-container .desc {
+  color: #3ec094;
+  font-size: 18px;
+  margin-left: 60px;
+  margin-top: -30px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.list-group-item img {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
 }
