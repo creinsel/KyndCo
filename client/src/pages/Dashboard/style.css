@@ -1,7 +1,6 @@
 .acts-header {
     height: 500px;
-
-
+    margin-top: 100px;
     margin-bottom: 50px;
     border-radius: 5px;
     padding-top: 40px;
@@ -15,38 +14,24 @@
       font-family: "Comfortaa", sans-serif;
       color: #ffffff;
       background-color: #ffa437;
-
-      font-size: 36px;
-      height: 65px;
-      padding-top: 15px;
+      font-size: 30px;
+      height: 50px;
+      padding-top: 10px;
       border-radius: 5px;
       text-align: center;
-
-  }
-
-  .todays-date {
-      margin-left: 48px;
-      font-size: 20px;
-      font-family: "Comfortaa", sans-serif;
-      color: #ffa437;
-      font-weight: 700;
-      margin-top: -15px;
-
   }
   
-
-
   .section-header {
-    height: 65px;
+    height: 50px;
     background-color: #3ec094;
     color: #ffffff;
     font-family: "Comfortaa", sans-serif;
     border-radius: 5px;
-    
+  
   }
 
   .section-header h1 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
     text-align: center;
     padding-top: 10px;
@@ -60,49 +45,35 @@
   }
   
   .act-title {
-    font-size: 16px;
+    font-size: 18px;
     margin-right: 10px;
     font-weight: 700;
-  }
-  
-  .act-cat {
-    font-size: 16px;
-    font-weight: 700;
-    margin-left: 10px;
-    margin-right: 10px;
-    
-  }
-
-  .act-pts {
-    font-size: 16px;
-    font-weight: 700;
-
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .bar {
-    margin-top: -5px;
+    margin-top: -2px;
     color: #3ec094;
   }
 
-  .desc {
-    font-size: 12px;
-    text-align: left;
-    color: #414042;
-    margin-left: 14px;
-    width: 650px;
 
-  }
   .sub-text {
     width: 500px;
     margin: 0 auto;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 16px;
     color: #414042;
 
 
+}
+
+.plus-style {
+  background: #ffa437;
+  padding: 3px 8px 2px 8px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #ffffff;
 }
 
 
