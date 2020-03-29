@@ -47,7 +47,6 @@ const Acts = () => {
   const loadCompletedAct = userId => {
     API.getUser(userId)
       .then(res => {
-        console.log("kindats from db", res.data);
         setUserActs(res.data.kindacts);
       })
       .catch(err => console.log(err));
@@ -179,7 +178,9 @@ const Acts = () => {
           <div className="section-header">
             <h1>Acts of Kyndness</h1>
             <p className="sub-text">
-              Choose an act to do from our list of acts. Once you have completed it, click the <span className="plus-style">+</span> button to add it to your Kyndline.
+              Choose an act to do from our list of acts. Once you have completed
+              it, click the <span className="plus-style">+</span> button to add
+              it to your Kyndline.
             </p>
           </div>
           {acts.length ? (

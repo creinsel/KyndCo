@@ -29,7 +29,6 @@ module.exports = {
   },
   findById: function(req, res) {
     db.UserInfo.findById(req.params.id)
-      // .populate("kindacts")
       .then(dbModel => {
         res.json(dbModel);
       })
