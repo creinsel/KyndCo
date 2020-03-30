@@ -3,6 +3,11 @@
     margin-top: 90px;
 }
 
+.form-control {
+    font-size: 12px;
+    height: 
+}
+
 .form-group {
     margin: 0 auto;
     font-family: "Comfortaa", sans-serif;
@@ -14,7 +19,6 @@
 .add-act-btn {
     background-color: #ffa437;
     position: relative;
-    left: 86%;
     color: #ffffff;
     font-family: "Comfortaa", sans-serif;
     padding: 10px 20px 10px 20px;
