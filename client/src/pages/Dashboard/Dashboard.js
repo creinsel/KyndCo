@@ -36,8 +36,6 @@ const Acts = () => {
   const { userId } = useContext(UserIdContext);
   const { userActs, setUserActs } = useContext(UserContext);
 
-  var date = new Date();
-
   const loadActs = () => {
     API.getKindActs()
       .then(res => setActs(res.data))
@@ -47,7 +45,10 @@ const Acts = () => {
   const loadCompletedAct = userId => {
     API.getUser(userId)
       .then(res => {
-        setUserActs(res.data.kindacts);
+        const sortedActs = res.data.kindacts.sort((a, b) => {
+          return new Date(b.datePerformed) - new Date(a.datePerformed) ? -1 : 1;
+        });
+        setUserActs(sortedActs);
       })
       .catch(err => console.log(err));
   };
@@ -86,7 +87,9 @@ const Acts = () => {
         points,
         description
       })
-        .then(res => loadActs())
+        .then(res => {
+          loadActs();
+        })
         .catch(err => console.log(err));
     }
   };
@@ -120,7 +123,9 @@ const Acts = () => {
                 ))}
               </KyndList>
             ) : (
-              <h3>You have not been Kynd....work on that!</h3>
+              <h3 className="sub-head">
+                You have not been Kynd....work on that!
+              </h3>
             )}
           </Col>
         </Row>
@@ -137,7 +142,7 @@ const Acts = () => {
             </p>
           </div>
           <br />
-          <form className="form-container">
+          <form className="form-container" id="add-act">
             <Input
               value={formData.task}
               onChange={handleInputChange}
