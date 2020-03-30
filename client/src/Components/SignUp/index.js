@@ -64,7 +64,9 @@ const SignUp = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="modal-title">Create A New Account</Modal.Title>
+          <Modal.Title className="modal-title">
+            Create A New Account
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
@@ -82,7 +84,7 @@ const SignUp = () => {
             <div className="form-group">
               <label for="Email">Email</label>
               <input
-                type="text"
+                type="email"
                 class="form-control"
                 placeholder="Email"
                 name="email"
@@ -93,7 +95,7 @@ const SignUp = () => {
             <div class="form-group">
               <label for="Password">Password</label>
               <input
-                type="text"
+                type="password"
                 class="form-control"
                 placeholder="Password"
                 name="password"

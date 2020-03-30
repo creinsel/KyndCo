@@ -6,8 +6,15 @@ import "moment-timezone";
 import CanvasJSReact from "../../lib/canvasjs.react";
 import { UserContext } from "../../context/UserContext";
 
-var CanvasJs = CanvasJSReact.CanvasJS;
+var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+CanvasJS.addColorSet("greenShades", [
+  //colorSet Array
+
+  "#FFA734",
+  "#3EC094"
+]);
 
 const Chart = () => {
   const { userActs } = useContext(UserContext);
@@ -47,20 +54,28 @@ const Chart = () => {
 
   console.log("dataPoints", dps);
 
+  //take only 5 most recent dates to graph
+  const dps5 = dps.splice(-5, 5);
+
   const options = {
     animationEnabled: true,
+    colorSet: "greenShades",
     title: {
       text: "Charting Your Kyndline"
     },
     axisY: {
-      includeZero: true
+      includeZero: true,
+      title: "# of Acts Completed"
+    },
+    axisX: {
+      title: "By Date"
     },
     data: [
       {
         type: "column",
         indexLabelFontSize: 16,
         yValueFormatString: "#",
-        dataPoints: dps
+        dataPoints: dps5
       }
     ]
   };
