@@ -14,7 +14,7 @@
   font-family: "Comfortaa", sans-serif;
   color: #ffffff;
   background-color: #ffa437;
-  font-size: 30px;
+  font-size: 26px;
   height: 50px;
   padding-top: 10px;
   border-radius: 5px;
@@ -22,16 +22,16 @@
 }
 
 .section-header {
+  margin-top: -45px;
   height: 50px;
   background-color: #3ec094;
   color: #ffffff;
   font-family: "Comfortaa", sans-serif;
   border-radius: 5px;
-  margin-top: 30px;
 }
 
 .section-header h1 {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   text-align: center;
   padding-top: 10px;
@@ -53,11 +53,11 @@
 }
 
 .sub-text {
-  width: 500px;
+  width: 75%;
   margin: 0 auto;
   text-align: center;
-  margin-top: 40px;
-  font-size: 16px;
+  margin-top: 30px;
+  font-size: 12px;
   color: #414042;
   font-family: "Comfortaa", sans-serif;
 }
@@ -65,15 +65,16 @@
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 24px;
-  color: #c70039;
+  color: #ffa437;
   font-family: "Comfortaa", sans-serif;
 }
 
 .plus-style {
   background: #ffa437;
-  padding: 3px 8px 2px 8px;
+  margin-top: 2px;
+  padding: 0px 8px 0px 8px;
   font-size: 24px;
   font-weight: 700;
   border-radius: 5px;
@@ -82,4 +83,9 @@
 
 .plain-text {
   color: #414042;
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 14px;
 }

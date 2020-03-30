@@ -9,7 +9,7 @@ const kindSeed = [
   {
     task: "Hold a door open for someone",
     description:
-      "Whether entering or leaving...be nice and hold the door open for the person in front or behind you.",
+      "Whether entering or leaving...be nice & hold the door open for the person in front or behind you.",
     category: ["Others"],
     tier: 1,
     points: 1
@@ -39,7 +39,7 @@ const kindSeed = [
   {
     task: "Leave quarters at the laundromat",
     description:
-      "Doing laundry can be expensive. Surprise someone and leave extra quarters next to a washer and dryer.",
+      "Doing laundry can be expensive. Surprise someone & leave extra quarters next to a washer & dryer.",
     category: ["Others"],
     tier: 1,
     points: 1
@@ -55,7 +55,7 @@ const kindSeed = [
   {
     task: "Text someone good morning or good night",
     description:
-      "Kick-start someone’s day and/or make sure it ends on the right note.",
+      "Kick-start someone’s day &/or make sure it ends on the right note.",
     category: ["Others"],
     tier: 1,
     points: 1
@@ -63,7 +63,7 @@ const kindSeed = [
   {
     task: "Reply to a post you enjoy",
     description:
-      "We all get in the habit of breezing past content on social media, though it’s actually worth the effort of making the Internet a positive and constructive place.",
+      "We all get in the habit of breezing past content on social media, though it’s actually worth the effort of making the Internet a positive &constructive place.",
     category: ["Others", "World"],
     tier: 1,
     points: 1
@@ -95,7 +95,7 @@ const kindSeed = [
   {
     task: "Take a hot bath",
     description:
-      "Soaking in a hot tub, preferably with Epsom salt and aromatherapy oils, can do wonders for sore muscles and a worn-out spirit. Light a candle and turn on some relaxing music to add to the experience.",
+      "Soaking in a hot tub, preferably with Epsom salt and aromatherapy oils, can do wonders for sore muscles & a worn-out spirit. Light a candle & turn on some relaxing music to add to the experience.",
     category: ["Self"],
     tier: 1,
     points: 1
@@ -103,7 +103,7 @@ const kindSeed = [
   {
     task: "Go for a walk",
     description:
-      "Ideally, this will be in a favorite park or neighborhood. But it could be as simple as a walk around the block. Moving your legs, breathing the outside air, and taking in the sights and sounds will naturally increase blood flow and endorphins, thereby warming your body and bettering your mood.",
+      "Ideally, go to a favorite park or neighborhood, but it could be as simple as a walk around the block. Moving your legs, breathing the outside air, & taking in the sights & sounds will naturally increase blood flow & endorphins, thereby bettering your mood.",
     category: ["Self"],
     tier: 1,
     points: 1
@@ -119,7 +119,7 @@ const kindSeed = [
   {
     task: "Meditate",
     description:
-      "Setting aside the time to simply be—for a few minutes or a few hours—tells your inner taskmaster to simmer down and be still. Use candles, soft music, dim lights, and comfy cushions during meditation to help set the mood, and slow, rhythmic breathing will guide you into a relaxed state.",
+      "Setting aside the time to simply be—for a few minutes or a few hours—tells your inner taskmaster to simmer down & be still. Use candles, soft music, dim lights, & comfy cushions during meditation to help set the mood, & slow, rhythmic breathing will guide you into a relaxed state.",
     category: ["Self"],
     tier: 1,
     points: 1
@@ -127,7 +127,7 @@ const kindSeed = [
   {
     task: "Schedule a massage",
     description:
-      "Touch is a powerful form of pain relief and endorphin release. Giving yourself permission to make an appointment with a massage therapist sends the message that you are worthy of tenderness, care, and relaxation. Your body, mind, and spirit will thank you.",
+      "Touch is a powerful form of pain relief & endorphin release. Giving yourself permission to make an appointment with a massage therapist sends the message that you are worthy of tenderness, care, & relaxation. Your body, mind, & spirit will thank you.",
     category: ["Self"],
     tier: 1,
     points: 1
@@ -174,7 +174,7 @@ const kindSeed = [
   {
     task: "Foster a pet up for adoption",
     description:
-      "If you’re not prepared to make the leap of adopting a pet, give fostering a try! There are so many animals waiting to be placed, and your kindness can help a lot with their transition.",
+      "If you’re not prepared to make the leap of adopting a pet, give fostering a try! There are so many animals waiting to be placed, & your kindness can help a lot with their transition.",
     category: ["World"],
     tier: 1,
     points: 1

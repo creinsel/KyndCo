@@ -61,19 +61,27 @@ const Chart = () => {
     animationEnabled: true,
     colorSet: "greenShades",
     title: {
-      text: "Charting Your Kyndline"
+      text: "Charting Your Kyndline",
+      fontFamily: "Comfortaa",
+      fontSize: 24,
+      horizontalAlign: "center",
     },
     axisY: {
       includeZero: true,
-      title: "# of Acts Completed"
+      title: "# of Acts Completed",
+      titleFontFamily: "Comfortaa",
+      titleFontSize: 18,
     },
     axisX: {
-      title: "By Date"
+      title: "By Date",
+      titleFontFamily: "Comfortaa",
+      titleFontSize: 18,
     },
     data: [
       {
         type: "column",
-        indexLabelFontSize: 16,
+        indexLabelFontFamily: "Comfortaa",
+        indexLabelFontSize: 10,
         yValueFormatString: "#",
         dataPoints: dps5
       }

@@ -115,7 +115,7 @@ const Acts = () => {
                 {userActs.map((userAct, index) => (
                   <KyndListItem key={index}>
                     <p className="desc">
-                      You completed {userAct.task} on{" "}
+                      <span className="plain-text">You completed</span> {userAct.task} <span className="plain-text">on</span>{" "}
                       {moment(userAct.datePerformed).format("ll")} at{" "}
                       {moment(userAct.datePerformed).format("LT")}
                     </p>
@@ -133,12 +133,12 @@ const Acts = () => {
 
       <Container></Container>
       <Row>
-        <Col size="md-5">
+        <Col size="md-3">
           <div className="section-header">
             <h1>Add an Act</h1>
             <p className="sub-text">
-              Don't see an act you want to do? Simply fill out the form and
-              yours will be added to the Acts of Kyndness on the right.
+              Don't see an act you want to do? Simply fill out the form &
+              yours will be added to the Acts of Kyndness.
             </p>
           </div>
           <br />
@@ -147,25 +147,25 @@ const Acts = () => {
               value={formData.task}
               onChange={handleInputChange}
               name="task"
-              placeholder="Task (required)"
+              placeholder="Task (Req.)"
             />
             <Input
               value={formData.category}
               onChange={handleInputChange}
               name="category"
-              placeholder="Category - Yourself | Others | The World (required)"
+              placeholder="Category - Yourself | Others | The World (Req.)"
             />
             <Input
               value={formData.points}
               onChange={handleInputChange}
               name="points"
-              placeholder="Points (Required)"
+              placeholder="Points (Req.)"
             />
             <TextArea
               value={formData.description}
               onChange={handleInputChange}
               name="description"
-              placeholder="Description (Required)"
+              placeholder="Description (Req.)"
             />
             <FormBtn
               disabled={
@@ -183,7 +183,7 @@ const Acts = () => {
           </form>
         </Col>
 
-        <Col size="md-5">
+        <Col size="md-6">
           <div className="section-header">
             <h1>Acts of Kyndness</h1>
             <p className="sub-text">
@@ -214,7 +214,7 @@ const Acts = () => {
             <h3>No Results to Display</h3>
           )}
         </Col>
-        <Col size="md-2">
+        <Col size="md-3">
           <div className="section-header">
             <h1>Badges</h1>
             <DashBadge />

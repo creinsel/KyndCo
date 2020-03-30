@@ -15,20 +15,22 @@
 
 .badge-pts {
     font-family: "Comfortaa", sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
     color:#3ec094;
 }
 
 .badge-unlock {
+    margin-top: -10px;
     color: #414042;
-    font-size: 18px;
+    font-size: 14px;
 
 }
 
 .badge-lock {
+    margin-top: -10px;
     color: #414042;
-    font-size: 18px;
+    font-size: 14px;
 
 
 }

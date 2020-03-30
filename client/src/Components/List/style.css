@@ -1,6 +1,6 @@
 .list-overflow-container {
   margin-top: 112px;
-  max-height: 700px;
+  max-height: 560px;
   border-radius: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -20,7 +20,7 @@
   margin-top: 5px;
   margin-left: 15px;
   color: #3ec094;
-  font-size: 18px;
+  font-size: 14px;
   margin-right: 10px;
   font-weight: 700;
 }
@@ -28,7 +28,7 @@
 .list-overflow-container .act-cat {
   margin-top: 5px;
   color: #3ec094;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   margin-left: 10px;
   margin-right: 10px;
@@ -37,19 +37,19 @@
 .list-overflow-container .act-pts {
   margin-top: 5px;
   color: #3ec094;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .list-overflow-container .act-desc {
-  margin-top: -5px;
+  margin-top: -12px;
   margin-left: 15px;
   font-size: 12px;
   text-align: left;
   color: #414042;
-  width: 90%;
+  width: 80%;
 }
 
 .list-group-item {
