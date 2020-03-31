@@ -99,10 +99,10 @@ const Acts = () => {
       <Nav />
       <div className="acts-header">
         <Row>
-          <Col size="md-5">
+          <Col size="md-5 sm-12">
             <Chart />
           </Col>
-          <Col size="md-7">
+          <Col size="md-7 sm-12">
             <h1>Your Kyndline</h1>
             <p className="sub-text">
               Keep track of your completed acts here and the Kyndline Chart

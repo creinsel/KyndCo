@@ -12,7 +12,7 @@
 }
 
 .list-overflow-container li {
-  height: 110px;
+  height: auto;
   font-size: 20px;
 }
 
