@@ -6,7 +6,7 @@
 }
 
 .kyndline-container .list-group-item {
-  height: 60px;
+  height: auto;
 }
 
 .list-group-item {
@@ -26,6 +26,17 @@
 
 .list-group-item img {
   width: 25px;
-  height: 25px;
   margin-top: 8px;
+}
+
+@media (max-width: 1366px) {
+  .nav-menu .drop-down .drop-down ul {
+    left: -90%;
+  }
+  .nav-menu .drop-down .drop-down:hover > ul {
+    left: -100%;
+  }
+  .nav-menu .drop-down .drop-down > a:after {
+    content: "\ea9d";
+  }
 }

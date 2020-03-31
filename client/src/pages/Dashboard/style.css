@@ -1,5 +1,6 @@
 .acts-header {
   height: 500px;
+  margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 50px;
   border-radius: 5px;
@@ -22,7 +23,7 @@
 }
 
 .section-header {
-  margin-top: -45px;
+  width: auto;
   height: 50px;
   background-color: #3ec094;
   color: #ffffff;
@@ -88,4 +89,9 @@
 
 .desc {
   font-size: 14px;
+}
+
+
+.acts-header {
+  
 }
