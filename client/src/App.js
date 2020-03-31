@@ -26,7 +26,7 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <Nav />
-                <Bootstrapintro />
+                <Intro />
                 <About />
                 <Badge />
                 <Team />
