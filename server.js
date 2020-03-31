@@ -19,14 +19,20 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 // app.use(express.static(root));
+var database = "mongodb://localhost/KyndCo"
 
-mongoose.connect(
-  "mongodb://localhost/KyndCo",
-  { useNewUrlParser: true },
-  err => {
-    if (!err) console.log("connected to mongo");
-  }
-);
+if (process.env.MONGODB_URI){
+  mongoose.connect(process.env.MONGODB_URI)
+} else {
+  mongoose.connect(database)
+}
+// mongoose.connect(
+//   "mongodb://localhost/KyndCo",
+//   { useNewUrlParser: true },
+//   err => {
+//     if (!err) console.log("connected to mongo");
+//   }
+// );
 
 app.get("*", (req, res) => {
   res.sendFile("index.html", {
