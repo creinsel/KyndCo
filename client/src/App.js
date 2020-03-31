@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Bootstrapintro from "./Components/Intro";
+import Intro from "./Components/Intro";
 import About from "./Components/About";
 import Badge from "./Components/Badge";
 import Team from "./Components/Team";
