@@ -3,12 +3,21 @@ import SignUp from "../SignUp";
 import SignIn from "../SignIn";
 import SignOut from "../SignOut"
 import {UserIdContext} from "../../context/UserIdContext";
+import {UserPointsContext} from "../../context/UserPointsContext";
 import MyDashBtn from "../MyDashBtn";
 import "./style.css";
 
 
 const Nav = () => {
   const {userId, setUserId} = useContext(UserIdContext);
+
+  const {userPoints} = useContext(UserPointsContext);
+
+  // const calcUserPoints = () => {
+  //   return userPoints.reduce((totalUserPoints, userPoint) => {
+  //     return book.likes ? book.likes + totalLikes : totalLikes;
+  //   }, 0);
+  // }
   
   return (
     <header id="header" className= "fixed-top">
@@ -29,8 +38,16 @@ const Nav = () => {
            {/* <ul className="navbar-nav mr-auto">
           </ul>  */}
       <ul className="nav navbar-nav">
-    
-      
+
+        { userId ? (
+      <li className="nav-item">
+
+        Total points: { userId ? userPoints : 0}
+      </li>
+        )
+        :
+        <span></span>
+      }
 
       <li className="nav-item">
       <div className = "m-1 get-started">{userId ? <SignOut logout={() => setUserId("")} /> :<SignIn/>}</div>
