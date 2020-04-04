@@ -2,11 +2,14 @@ import React, { useState, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import API from "../../utils/API";
 import { UserIdContext } from "../../context/UserIdContext";
+import { UsernameContext } from "../../context/UsernameContext";
 import "./style.css";
+// import { UserContext } from "../../context/UserContext";
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
-  const { setUserId } = useContext(UserIdContext);
+  const { userId, setUserId } = useContext(UserIdContext);
+  // const { setUsername } = useContext(UsernameContext);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -29,8 +32,10 @@ const SignIn = () => {
       if (result.status === 200) {
         setUserId(result.data._id);
       }
-
       //react router go to another pages
+    });
+    API.getUser(userId).then(result => {
+      console.log("user logged in:", result);
     });
   };
   const handleShow = () => setShow(true);
@@ -44,7 +49,9 @@ const SignIn = () => {
 
       <Modal show={show} onHide={handleHide}>
         <Modal.Header closeButton>
-          <Modal.Title className="modal-title">Sign In to Your Account</Modal.Title>
+          <Modal.Title className="modal-title">
+            Sign In to Your Account
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form action="/login" method="post">
