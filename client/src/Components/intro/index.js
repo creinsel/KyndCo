@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Bootstrapintro() {
+function Intro() {
   return (
     // <!-- ======= Hero Section ======= -->
     <section id="hero">
@@ -34,4 +34,4 @@ function Bootstrapintro() {
   );
 }
 
-export default Bootstrapintro;
+export default Intro;

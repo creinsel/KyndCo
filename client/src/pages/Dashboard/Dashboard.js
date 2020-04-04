@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+// import Home from "../Home/Home"
 import Nav from "../../Components/Nav";
 import Jumbotron from "../../Components/Jumbotron";
 import AddBtn from "../../Components/AddBtn";
@@ -10,6 +12,7 @@ import { Input, TextArea, FormBtn } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
 import { UserIdContext } from "../../context/UserIdContext";
 import { UserContext } from "../../context/UserContext";
+import {UserPointsContext} from "../../context/UserPointsContext";
 import Moment from "react-moment";
 import DashBadge from "../../Components/DashBadge";
 import "moment-timezone";
@@ -20,12 +23,14 @@ import "./style.css";
 var CanvasJs = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
+
 // https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
   // var id = localStorage.getItem("userId");
   // var tempid = id;
-
+  const [redirect, setRedirect]= useState(null)
+  
   const [formData, setFormData] = useState({
     task: "",
     category: "",
@@ -35,6 +40,7 @@ const Acts = () => {
   const { acts, setActs } = useContext(KindActContext);
   const { userId } = useContext(UserIdContext);
   const { userActs, setUserActs } = useContext(UserContext);
+  const { setUserPoints } = useContext(UserPointsContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -53,10 +59,24 @@ const Acts = () => {
       .catch(err => console.log(err));
   };
 
+  const calcUserPoints = userId => {
+    API.getUser(userId)
+    .then(res => {
+      var tempScore;
+      const calcUserPoints = res.data.kindacts.map(act => {
+        return (tempScore += act.points) 
+      });
+      setUserPoints(calcUserPoints);
+    })
+    .catch(err => console.log(err));
+    };
+
+
   useEffect(() => {
     loadActs();
     if (userId) {
       loadCompletedAct(userId);
+      calcUserPoints(userId);
     }
   }, [userId]);
 
@@ -71,7 +91,7 @@ const Acts = () => {
   const handleCompleteAct = (userId, actData) => {
     actData.datePerformed = new Date();
     API.performAct(userId, actData)
-      .then(res => loadCompletedAct(userId))
+      .then(res => loadCompletedAct(userId), calcUserPoints(userId))
       .catch(err => console.log(err));
   };
 
@@ -95,6 +115,7 @@ const Acts = () => {
   };
 
   return (
+    userId ? [
     <Container fluid>
       <Nav />
       <div className="acts-header">
@@ -222,6 +243,8 @@ const Acts = () => {
         </Col>
       </Row>
     </Container>
+    ]
+    : <Redirect to="/"/>
   );
 };
 

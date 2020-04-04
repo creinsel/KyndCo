@@ -1,13 +1,8 @@
 import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Bootstrapintro from "./Components/Intro";
-import About from "./Components/About";
-import Badge from "./Components/Badge";
-import Team from "./Components/Team";
-import Footer from "./Components/Footer";
+import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Nav from "./Components/Nav";
 // import Chart from "./components/Chart";
 import { KindActContext } from "./context/KindActContext";
 import { UserIdContext } from "./context/UserIdContext";
@@ -27,7 +22,7 @@ function App() {
           <UsernameContext.Provider value={{ username, setUsername }}>
             <Router>
               <Switch>
-                <Route exact path="/">
+                <Route exact path="/" component={Home}>
                   <Nav />
                   <Bootstrapintro />
                   <About />
@@ -39,6 +34,7 @@ function App() {
               </Switch>
             </Router>
           </UsernameContext.Provider>
+
         </UserContext.Provider>
       </UserIdContext.Provider>
     </KindActContext.Provider>
