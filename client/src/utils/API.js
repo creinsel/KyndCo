@@ -37,8 +37,8 @@ export default {
     return axios.get("/api/users/" + id);
   },
   //updates user by id
-  updateUser: function(id) {
-    return axios.put("/api/users/" + id);
+  updateUser: function(id, data) {
+    return axios.put("/api/users/" + id, data);
   },
   performAct: function(id, actData) {
     // console.log("inside api performAct");

@@ -13,7 +13,7 @@ function App() {
   const [acts, setActs] = useState([]);
   const [userId, setUserId] = useState("");
   const [userActs, setUserActs] = useState("");
-  const [userPoints, setUserPoints] = useState("");
+  const [userPoints, setUserPoints] = useState();
   const [username, setUsername] = useState("");
 
   return (
