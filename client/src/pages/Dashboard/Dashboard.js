@@ -70,7 +70,7 @@ const Acts = () => {
     })
     .catch(err => console.log(err));
 
-    API.updateUser (userId, {points: userPoints })
+    API.updateUser (userId, userPoints)
     };
 
 
