@@ -1,49 +1,42 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import SignUp from "../SignUp";
 import SignIn from "../SignIn";
-import SignOut from "../SignOut"
-import {UserIdContext} from "../../context/UserIdContext";
+import SignOut from "../SignOut";
+import { UserIdContext } from "../../context/UserIdContext";
+import { UsernameContext } from "../../context/UsernameContext";
 import {UserPointsContext} from "../../context/UserPointsContext";
 import MyDashBtn from "../MyDashBtn";
 import "./style.css";
 
-
 const Nav = () => {
-  const {userId, setUserId} = useContext(UserIdContext);
-
+  const { userId, setUserId } = useContext(UserIdContext);
+  const { username } = useContext(UsernameContext);
   const {userPoints} = useContext(UserPointsContext);
 
-  // const calcUserPoints = () => {
-  //   return userPoints.reduce((totalUserPoints, userPoint) => {
-  //     return book.likes ? book.likes + totalLikes : totalLikes;
-  //   }, 0);
-  // }
-  
   return (
-    <header id="header" className= "fixed-top">
+    <header id="header" className="fixed-top">
       <div class="container-fluid d-flex">
-
         <div className="logo mr-auto">
-         
           {/* Link for app logo? */}
           <a href="/">
-        <img src ="assets/images/kyndco-logo.png" alt="logo" class="img-fluid kynd-img"/>
-        </a>
-      </div>
+            <img
+              src="assets/images/kyndco-logo.png"
+              alt="logo"
+              class="img-fluid kynd-img"
+            />
+          </a>
+        </div>
 
-      <nav className="navbar navbar-expand-lg navbar-dark  d-lg-block nav-menu">
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    
+        <nav className="navbar navbar-expand-lg navbar-dark  d-lg-block nav-menu">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/* Not sure what this is for below */}
-           {/* <ul className="navbar-nav mr-auto">
+            {/* <ul className="navbar-nav mr-auto">
           </ul>  */}
+
       <ul className="nav navbar-nav">
 
         { userId ? (
-      <li className="nav-item">
-
-        Total points: { userId ? userPoints : 0}
-      </li>
+      <li className="nav-item">Hello {username}! | Total points: { userId ? userPoints : 0}</li>
         )
         :
         <span></span>
@@ -69,6 +62,6 @@ const Nav = () => {
     </div>
     </header>
   );
-}
+};
 
 export default Nav;
