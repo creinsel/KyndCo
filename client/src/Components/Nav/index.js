@@ -3,13 +3,13 @@ import SignUp from "../SignUp";
 import SignIn from "../SignIn";
 import SignOut from "../SignOut";
 import { UserIdContext } from "../../context/UserIdContext";
-// import { UsernameContext } from "../../context/UsernameContext";
+import { UsernameContext } from "../../context/UsernameContext";
 import MyDashBtn from "../MyDashBtn";
 import "./style.css";
 
 const Nav = () => {
   const { userId, setUserId } = useContext(UserIdContext);
-  // const { username } = useContext(UsernameContext);
+  const { username } = useContext(UsernameContext);
 
   return (
     <header id="header" className="fixed-top">
@@ -31,7 +31,7 @@ const Nav = () => {
             {/* <ul className="navbar-nav mr-auto">
           </ul>  */}
             <ul className="nav navbar-nav">
-              {/* <li className="nav-item">Hello {username}! |</li> */}
+              <li className="nav-item">Hello {username}! |</li>
 
               <li className="nav-item">
                 <div className="m-1 get-started">

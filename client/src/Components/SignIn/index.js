@@ -4,12 +4,11 @@ import API from "../../utils/API";
 import { UserIdContext } from "../../context/UserIdContext";
 import { UsernameContext } from "../../context/UsernameContext";
 import "./style.css";
-// import { UserContext } from "../../context/UserContext";
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
-  const { userId, setUserId } = useContext(UserIdContext);
-  // const { setUsername } = useContext(UsernameContext);
+  const { setUserId } = useContext(UserIdContext);
+  const { setUsername } = useContext(UsernameContext);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -31,11 +30,9 @@ const SignIn = () => {
     API.login(formData).then(result => {
       if (result.status === 200) {
         setUserId(result.data._id);
+        setUsername(result.data._id.name);
       }
       //react router go to another pages
-    });
-    API.getUser(userId).then(result => {
-      console.log("user logged in:", result);
     });
   };
   const handleShow = () => setShow(true);
