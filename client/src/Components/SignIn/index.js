@@ -30,7 +30,7 @@ const SignIn = () => {
     API.login(formData).then(result => {
       if (result.status === 200) {
         setUserId(result.data._id);
-        setUsername(result.data._id.name);
+        setUsername(result.data.name);
       }
       //react router go to another pages
     });
