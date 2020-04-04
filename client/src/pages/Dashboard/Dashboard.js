@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+// import Home from "../Home/Home"
 import Nav from "../../Components/Nav";
 import Jumbotron from "../../Components/Jumbotron";
 import AddBtn from "../../Components/AddBtn";
@@ -20,12 +22,14 @@ import "./style.css";
 var CanvasJs = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
+
 // https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
   // var id = localStorage.getItem("userId");
   // var tempid = id;
-
+  const [redirect, setRedirect]= useState(null)
+  
   const [formData, setFormData] = useState({
     task: "",
     category: "",
@@ -95,6 +99,7 @@ const Acts = () => {
   };
 
   return (
+    userId ? [
     <Container fluid>
       <Nav />
       <div className="acts-header">
@@ -222,6 +227,8 @@ const Acts = () => {
         </Col>
       </Row>
     </Container>
+    ]
+    : <Redirect to="/"/>
   );
 };
 
