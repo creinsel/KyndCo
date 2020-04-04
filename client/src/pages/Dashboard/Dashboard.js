@@ -40,7 +40,7 @@ const Acts = () => {
   const { acts, setActs } = useContext(KindActContext);
   const { userId } = useContext(UserIdContext);
   const { userActs, setUserActs } = useContext(UserContext);
-  const { setUserPoints } = useContext(UserPointsContext);
+  const { userPoints, setUserPoints } = useContext(UserPointsContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -62,13 +62,15 @@ const Acts = () => {
   const calcUserPoints = userId => {
     API.getUser(userId)
     .then(res => {
-      var tempScore;
+      var tempScore = 0;
       const calcUserPoints = res.data.kindacts.map(act => {
         return (tempScore += act.points) 
       });
-      setUserPoints(calcUserPoints);
+      setUserPoints(calcUserPoints.slice(-1).pop());
     })
     .catch(err => console.log(err));
+
+    API.updateUser (userId, {points: userPoints })
     };
 
 
