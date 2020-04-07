@@ -26,7 +26,7 @@ const Chart = () => {
     return new Date(b.datePerformed) - new Date(a.datePerformed) ? -1 : 1;
   });
 
-  console.log("sortedData", sortedData);
+  // console.log("sortedData", sortedData);
   //
 
   // counts dups
@@ -36,7 +36,7 @@ const Chart = () => {
     counts[key] = (counts[key] || 0) + 1;
   });
 
-  console.log("dups", counts);
+  // console.log("dups", counts);
   //
 
   //create dataPoints array
