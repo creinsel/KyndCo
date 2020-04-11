@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import SignUp from "../SignUp";
 import SignIn from "../SignIn";
@@ -7,19 +7,34 @@ import { UserIdContext } from "../../context/UserIdContext";
 import { UserPointsContext } from "../../context/UserPointsContext";
 import { UsernameContext } from "../../context/UsernameContext";
 import MyDashBtn from "../MyDashBtn";
+import API from "../../utils/API";
 import "./style.css";
 
 const Nav = () => {
   const { userId, setUserId } = useContext(UserIdContext);
-  const { userPoints } = useContext(UserPointsContext);
+  const { userPoints, setUserPoints } = useContext(UserPointsContext);
   const [toHome, setToHome] = useState(false);
   const { username } = useContext(UsernameContext);
 
-  // const calcUserPoints = () => {
-  //   return userPoints.reduce((totalUserPoints, userPoint) => {
-  //     return book.likes ? book.likes + totalLikes : totalLikes;
-  //   }, 0);
-  // }
+  const calcUserPoints = (userId) => {
+    API.getUser(userId)
+      .then((res) => {
+        var tempScore = 0;
+        const calcUserPoints = res.data.kindacts.map((act) => {
+          return (tempScore += act.points);
+        });
+        setUserPoints(calcUserPoints.slice(-1).pop());
+      })
+      .catch((err) => console.log(err));
+
+    API.updateUser(userId, userPoints);
+  };
+
+  useEffect(() => {
+    if (userId) {
+      calcUserPoints(userId);
+    }
+  }, [userId]);
 
   const handleLogo = () => {
     setToHome(true);
