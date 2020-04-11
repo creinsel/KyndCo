@@ -28,3 +28,18 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+export function Select(props){
+
+    return (
+      <div className="form-group">
+        <select className="form-control" {...props}>
+      <option>{props.opt1}</option>
+      <option>{props.opt2}</option>
+      <option>{props.opt3}</option>
+      
+      
+    </select>
+      </div>
+    );
+}
