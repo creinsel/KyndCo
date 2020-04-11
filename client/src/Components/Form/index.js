@@ -30,18 +30,37 @@ export function FormBtn(props) {
 }
 
 export function Select(props){
+var cat =props.name;
 
+if(cat ==="category"){
+  return (
+    <div className="form-group">
+      <select className="form-control" {...props}>
+  
+    <option>{props.opt1}</option>
+    <option>{props.opt2}</option>
+    <option>{props.opt3}</option>
+
+</select>
+</div>
+  )
+  
+} else{
     return (
       <div className="form-group">
         <select className="form-control" {...props}>
+    
       <option>{props.opt1}</option>
       <option>{props.opt2}</option>
       <option>{props.opt3}</option>
       <option>{props.opt4}</option>
       <option>{props.opt5}</option>
+    
       
       
     </select>
       </div>
     );
+  };
+    
 }
