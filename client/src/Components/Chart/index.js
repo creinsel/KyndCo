@@ -13,7 +13,7 @@ CanvasJS.addColorSet("greenShades", [
   //colorSet Array
 
   "#FFA734",
-  "#3EC094"
+  "#3EC094",
 ]);
 
 const Chart = () => {
@@ -31,7 +31,7 @@ const Chart = () => {
 
   // counts dups
   var counts = {};
-  sortedData.forEach(obj => {
+  sortedData.forEach((obj) => {
     var key = moment(obj.datePerformed).format("MM-Do-YY");
     counts[key] = (counts[key] || 0) + 1;
   });
@@ -48,7 +48,7 @@ const Chart = () => {
   for (let index = 0; index < lb.length; index++) {
     dps.push({
       label: lb[index],
-      y: yAxis[index]
+      y: yAxis[index],
     });
   }
 
@@ -71,6 +71,7 @@ const Chart = () => {
       title: "# of Acts Completed",
       titleFontFamily: "Comfortaa",
       titleFontSize: 18,
+      interval: 1,
     },
     axisX: {
       title: "By Date",
@@ -83,9 +84,9 @@ const Chart = () => {
         indexLabelFontFamily: "Comfortaa",
         indexLabelFontSize: 10,
         yValueFormatString: "#",
-        dataPoints: dps5
-      }
-    ]
+        dataPoints: dps5,
+      },
+    ],
   };
   return (
     <div>
