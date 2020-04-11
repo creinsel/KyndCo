@@ -8,7 +8,7 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../Components/Grid";
 import { List, ListItem } from "../../Components/List";
 import { KyndList, KyndListItem } from "../../Components/KyndList";
-import { Input, TextArea, FormBtn } from "../../Components/Form";
+import { Input, TextArea, FormBtn, Select } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
 import { UserIdContext } from "../../context/UserIdContext";
 import { UserContext } from "../../context/UserContext";
@@ -110,7 +110,7 @@ const Acts = () => {
         description
       })
         .then(res => {
-          loadActs();
+          loadActs()
         })
         .catch(err => console.log(err));
     }
@@ -172,11 +172,19 @@ const Acts = () => {
               name="task"
               placeholder="Task (Req.)"
             />
-            <Input
+            {/* <Input
               value={formData.category}
               onChange={handleInputChange}
               name="category"
               placeholder="Category - Yourself | Others | The World (Req.)"
+            /> */}
+            <Select
+              value={formData.category}
+              name="category"
+              onChange={handleInputChange}
+              opt1="Yourself"
+              opt2="Others"
+              opt3="The World"
             />
             <Input
               value={formData.points}
