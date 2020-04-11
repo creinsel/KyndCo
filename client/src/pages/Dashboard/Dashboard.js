@@ -186,12 +186,22 @@ const Acts = () => {
               opt2="Others"
               opt3="The World"
             />
-            <Input
+             <Select
+              value={formData.points}
+              name="points"
+              onChange={handleInputChange}
+              opt1="1"
+              opt2="2"
+              opt3="3"
+              opt4="4"
+              opt5="5"
+            />
+            {/* <Input
               value={formData.points}
               onChange={handleInputChange}
               name="points"
               placeholder="Points (Req.)"
-            />
+            /> */}
             <TextArea
               value={formData.description}
               onChange={handleInputChange}

@@ -37,6 +37,8 @@ export function Select(props){
       <option>{props.opt1}</option>
       <option>{props.opt2}</option>
       <option>{props.opt3}</option>
+      <option>{props.opt4}</option>
+      <option>{props.opt5}</option>
       
       
     </select>
