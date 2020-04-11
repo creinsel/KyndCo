@@ -6,22 +6,17 @@ import Badge from "../../Components/Badge";
 import Team from "../../Components/Team";
 import Footer from "../../Components/Footer";
 
-
-
 const Home = () => {
-   
- return(
- <>
-     <Nav />
-    <Intro />
-    <About />
-    <Badge />
-    <Team />
-    <Footer />
-
- </> 
- )  
-
+  return (
+    <>
+      <Nav />
+      <Intro />
+      <About />
+      <Badge />
+      <Team />
+      <Footer />
+    </>
+  );
 };
 
 export default Home;
