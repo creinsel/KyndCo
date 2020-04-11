@@ -15,11 +15,7 @@ const Nav = () => {
   const [toHome, setToHome] = useState(false);
   const { username } = useContext(UsernameContext);
 
-  // const calcUserPoints = () => {
-  //   return userPoints.reduce((totalUserPoints, userPoint) => {
-  //     return book.likes ? book.likes + totalLikes : totalLikes;
-  //   }, 0);
-  // }
+ 
 
   const handleLogo = () => {
     setToHome(true);
