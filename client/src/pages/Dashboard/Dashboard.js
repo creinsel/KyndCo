@@ -1,29 +1,36 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+// import Home from "../Home/Home"
 import Nav from "../../Components/Nav";
 import Jumbotron from "../../Components/Jumbotron";
 import AddBtn from "../../Components/AddBtn";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../Components/Grid";
 import { List, ListItem } from "../../Components/List";
-import { Input, TextArea, FormBtn } from "../../Components/Form";
+import { KyndList, KyndListItem } from "../../Components/KyndList";
+import { Input, TextArea, FormBtn, Select } from "../../Components/Form";
 import { KindActContext } from "../../context/KindActContext";
 import { UserIdContext } from "../../context/UserIdContext";
+import { UserContext } from "../../context/UserContext";
+import {UserPointsContext} from "../../context/UserPointsContext";
 import Moment from "react-moment";
 import DashBadge from "../../Components/DashBadge";
 import "moment-timezone";
+import moment from "moment";
 import CanvasJSReact from "../../lib/canvasjs.react";
 import Chart from "../../Components/Chart";
 import "./style.css";
 var CanvasJs = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
+
 // https://www.npmjs.com/package/react-moment //momentjs style format
 
 const Acts = () => {
   // var id = localStorage.getItem("userId");
   // var tempid = id;
-
+  const [redirect, setRedirect]= useState(null)
+  
   const [formData, setFormData] = useState({
     task: "",
     category: "",
@@ -31,7 +38,9 @@ const Acts = () => {
     description: ""
   });
   const { acts, setActs } = useContext(KindActContext);
-  const { userId, setUserId } = useContext(UserIdContext);
+  const { userId } = useContext(UserIdContext);
+  const { userActs, setUserActs } = useContext(UserContext);
+  const { userPoints, setUserPoints } = useContext(UserPointsContext);
 
   const loadActs = () => {
     API.getKindActs()
@@ -39,19 +48,39 @@ const Acts = () => {
       .catch(err => console.log(err));
   };
 
-  // console.log("tempid", tempid);
+  const loadCompletedAct = userId => {
+    API.getUser(userId)
+      .then(res => {
+        const sortedActs = res.data.kindacts.sort((a, b) => {
+          return new Date(b.datePerformed) - new Date(a.datePerformed) ? -1 : 1;
+        });
+        setUserActs(sortedActs);
+      })
+      .catch(err => console.log(err));
+  };
+
+  const calcUserPoints = userId => {
+    API.getUser(userId)
+    .then(res => {
+      var tempScore = 0;
+      const calcUserPoints = res.data.kindacts.map(act => {
+        return (tempScore += act.points) 
+      });
+      setUserPoints(calcUserPoints.slice(-1).pop());
+    })
+    .catch(err => console.log(err));
+
+    API.updateUser (userId, userPoints)
+    };
+
+
   useEffect(() => {
     loadActs();
-  }, []);
-
-  // const deleteKindAct = id => {
-  //   API.deleteKindAct(id)
-  //     .then(res => {
-  //       const remainingActs = acts.filter(act => act._id !== id);
-  //       setActs(remainingActs);
-  //     })
-  //     .catch(err => console.log(err));
-  // };
+    if (userId) {
+      loadCompletedAct(userId);
+      calcUserPoints(userId);
+    }
+  }, [userId]);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -62,10 +91,9 @@ const Acts = () => {
   };
 
   const handleCompleteAct = (userId, actData) => {
+    actData.datePerformed = new Date();
     API.performAct(userId, actData)
-      .then(res => {
-        console.log(res);
-      })
+      .then(res => loadCompletedAct(userId), calcUserPoints(userId))
       .catch(err => console.log(err));
   };
 
@@ -81,64 +109,104 @@ const Acts = () => {
         points,
         description
       })
-        .then(res => loadActs())
+        .then(res => {
+          loadActs()
+        })
         .catch(err => console.log(err));
     }
   };
 
   return (
+    userId ? [
     <Container fluid>
       <Nav />
       <div className="acts-header">
         <Row>
-          <Col size="md-5">
+          <Col size="md-5 sm-12">
             <Chart />
           </Col>
-          <Col size="md-7">
+          <Col size="md-7 sm-12">
             <h1>Your Kyndline</h1>
-            <br />
-            <p className="todays-date">
-              Today's date is <Moment format="MM/DD/YYYY"></Moment>
+            <p className="sub-text">
+              Keep track of your completed acts here and the Kyndline Chart
+              (left) shows you how kynd you are each day.
             </p>
+            <br />
+            {/* {console.log("userActs", userActs)} */}
+            {userActs.length ? (
+              <KyndList>
+                {userActs.map((userAct, index) => (
+                  <KyndListItem key={index}>
+                    <p className="desc">
+                      <span className="plain-text">You completed</span> {userAct.task} <span className="plain-text">on</span>{" "}
+                      {moment(userAct.datePerformed).format("ll")} at{" "}
+                      {moment(userAct.datePerformed).format("LT")}
+                    </p>
+                  </KyndListItem>
+                ))}
+              </KyndList>
+            ) : (
+              <h3 className="sub-head">
+                You have not been Kynd....work on that!
+              </h3>
+            )}
           </Col>
         </Row>
       </div>
 
       <Container></Container>
       <Row>
-        <Col size="md-5">
+        <Col size="md-3">
           <div className="section-header">
             <h1>Add an Act</h1>
             <p className="sub-text">
-              Don't see an act you want to do? Simply fill out the form and
-              yours will be added to the Acts of Kyndness on the right.
+              Don't see an act you want to do? Simply fill out the form &
+              yours will be added to the Acts of Kyndness.
             </p>
           </div>
           <br />
-          <form className="form-container">
+          <form className="form-container" id="add-act">
             <Input
               value={formData.task}
               onChange={handleInputChange}
               name="task"
-              placeholder="Task (required)"
+              placeholder="Task (Req.)"
             />
-            <Input
+            {/* <Input
               value={formData.category}
               onChange={handleInputChange}
               name="category"
-              placeholder="Category - Yourself | Others | The World (required)"
+              placeholder="Category - Yourself | Others | The World (Req.)"
+            /> */}
+            <Select
+              value={formData.category}
+              name="category"
+              onChange={handleInputChange}
+              opt1="Yourself"
+              opt2="Others"
+              opt3="The World"
             />
-            <Input
+             <Select
+              value={formData.points}
+              name="points"
+              onChange={handleInputChange}
+              opt1="1"
+              opt2="2"
+              opt3="3"
+              opt4="4"
+              opt5="5"
+            />
+            {/* <Input
               value={formData.points}
               onChange={handleInputChange}
               name="points"
-              placeholder="Points (Required)"
-            />
+              placeholder="Points (Req.)"
+            /> */}
             <TextArea
               value={formData.description}
               onChange={handleInputChange}
               name="description"
-              placeholder="Description (Required)"
+              placeholder="Description (Req.)"
             />
             <FormBtn
               disabled={
@@ -156,9 +224,14 @@ const Acts = () => {
           </form>
         </Col>
 
-        <Col size="md-5">
+        <Col size="md-6">
           <div className="section-header">
             <h1>Acts of Kyndness</h1>
+            <p className="sub-text">
+              Choose an act to do from our list of acts. Once you have completed
+              it, click the <span className="plus-style">+</span> button to add
+              it to your Kyndline.
+            </p>
           </div>
           {acts.length ? (
             <List>
@@ -172,9 +245,9 @@ const Acts = () => {
                     <h3 className="act-pts">{act.points}</h3>
                   </Row>
                   <Row>
-                    <p className="desc">{act.description}</p>
+                    <p className="act-desc">{act.description}</p>
                   </Row>
-                  <AddBtn onClick={() => handleCompleteAct(userId, act._id)} />
+                  <AddBtn onClick={() => handleCompleteAct(userId, act)} />
                 </ListItem>
               ))}
             </List>
@@ -182,7 +255,7 @@ const Acts = () => {
             <h3>No Results to Display</h3>
           )}
         </Col>
-        <Col size="md-2">
+        <Col size="md-3">
           <div className="section-header">
             <h1>Badges</h1>
             <DashBadge />
@@ -190,6 +263,8 @@ const Acts = () => {
         </Col>
       </Row>
     </Container>
+    ]
+    : <Redirect to="/"/>
   );
 };
 

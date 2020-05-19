@@ -16,7 +16,7 @@ module.exports = {
           if (result) {
             const response = { ...dbModel[0]._doc };
             delete response.password;
-            console.log("response", response);
+            // console.log("response", response);
             res.status(200).send(response);
           } else {
             res.status(404).send({ message: "Invalid log in" });
@@ -29,8 +29,9 @@ module.exports = {
   },
   findById: function(req, res) {
     db.UserInfo.findById(req.params.id)
-      .populate("act")
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => {
+        res.json(dbModel);
+      })
       .catch(err => res.status(422).json(err));
   },
 
@@ -44,11 +45,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  updateUser: function(req, res) {
+    db.UserInfo.findOneAndUpdate({ _id: req.params.id }, {$set: { points: req.body }})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   performAct: function(req, res) {
-    console.log("inside performAct");
+    // console.log("inside performAct", req.body);
     db.UserInfo.findOneAndUpdate(
       { _id: req.params.id },
-      { $push: { act: db.UserInfo.act } },
+      {
+        $push: { kindacts: req.body }
+      },
 
       { new: true }
     )

@@ -21,10 +21,10 @@ var KindActsSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   }
 });
 
-var KindActs = mongoose.model("KindActs", KindActsSchema);
+var KindAct = mongoose.model("KindAct", KindActsSchema);
 
-module.exports = KindActs;
+module.exports = KindAct;

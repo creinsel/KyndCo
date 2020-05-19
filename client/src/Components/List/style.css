@@ -1,10 +1,10 @@
 .list-overflow-container {
-  margin-top: 20px;
-  max-height: 700px;
+  margin-top: 112px;
+  max-height: 560px;
   border-radius: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
-  border: 1px solid black;
+  border: .5px solid #ced4da;
 }
 
 .list-overflow-container ul {
@@ -12,23 +12,44 @@
 }
 
 .list-overflow-container li {
-  height: 150px;
+  height: auto;
   font-size: 20px;
 }
 
 .list-overflow-container .act-title {
   margin-top: 5px;
+  margin-left: 15px;
   color: #3ec094;
+  font-size: 14px;
+  margin-right: 10px;
+  font-weight: 700;
 }
 
 .list-overflow-container .act-cat {
   margin-top: 5px;
   color: #3ec094;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .list-overflow-container .act-pts {
   margin-top: 5px;
   color: #3ec094;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.list-overflow-container .act-desc {
+  margin-top: -12px;
+  margin-left: 15px;
+  font-size: 12px;
+  text-align: left;
+  color: #414042;
+  width: 80%;
 }
 
 .list-group-item {

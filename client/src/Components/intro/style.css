@@ -3,45 +3,44 @@
 --------------------------------------------------------------*/
 #hero {
     width: 100%;
-    height: 400px;
-    background: #24ffa42a;
-    border-bottom: 2px solid #fcebe3;
+    height: 500px;
+    background: #c5ecdf;
+    
     margin: 72px 0 -72px 0;
   }
   
   #hero h1 {
-    margin: 0 0 10px 0;
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
-    color: #4e4039;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #414042;
     font-family: "Comfortaa", sans-serif;
   }
   
   #hero h2 {
-    color: #a08f86;
-    margin-bottom: 50px;
+    color: #6a6a6a;
+    margin-bottom: 30px;
     font-size: 24px;
     font-family: "Comfortaa", sans-serif;
   }
   
   #hero .btn-get-started {
-    
-    font-weight: 500;
+    font-weight: 700;
     font-size: 16px;
-    letter-spacing: 1px;
     display: inline-block;
-    padding: 8px 28px;
     border-radius: 50px;
     transition: 0.5s;
-    margin: 10px;
+    padding: 12px 20px 12px 20px;
     color: #fff;
     background: #fea710;
     font-family: "Comfortaa", sans-serif;
   }
   
   #hero .btn-get-started:hover {
-    background: #ef7f4d;
+    background: #3ec094;
+    text-decoration: none;
     font-family: "Comfortaa", sans-serif;
   }
   
@@ -51,7 +50,7 @@
 
   .kindimg {
     height: 400px;
-    width: 420px;
+    width: 450px;
   }
   
   @media (min-width: 1024px) {

@@ -1,12 +1,17 @@
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about {
+  height: 575px;
+}
+
+
 .about h3 {
   font-family: "Comfortaa", sans-serif;
     font-weight: 700;
     font-size: 34px;
-    margin-top: 120px;
-    color: #4e4039;
+    margin-top: 20px;
+    color: #414042;
   }
   
   .about h4 {
@@ -14,7 +19,7 @@
     font-size: 20px;
     font-weight: 700;
     margin-top: 5px;
-    color: #7a6960;
+    color: #6a6a6a;
   }
   
   .about i {
@@ -23,18 +28,33 @@
     color: #f39e7a;
   }
   
-  .about p {
+
+  .kynd-heart {
+    margin-top: 40px;
+    width: 450px;
+    height: 450px;
+  }
+
+  .section-title .p-about{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 15px;
+    color: #5a6570;
+    margin-top: 20px;
+  }
+
+  .section-title p{
     font-family: "Comfortaa", sans-serif;
     font-size: 15px;
     color: #5a6570;
   }
 
-  .stickfriends {
-    margin-top: 40px;
-    height: 400px;
-    width: 420px;
+  .section-title .about-title {
+    margin-top: 150px;
   }
-  
+
+  .section-title p::after {
+      background: #fea710;
+  }
   
   @media (max-width: 991px) {
     .about .about-img img {

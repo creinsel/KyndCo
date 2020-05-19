@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Bootstrapintro() {
+function Intro() {
   return (
     // <!-- ======= Hero Section ======= -->
     <section id="hero">
@@ -24,7 +24,7 @@ function Bootstrapintro() {
           <div className=" align-items-right justify-content-right hero-img">
             <img
               src="assets/images/kindness.png"
-              className="img-fluid animated  kindimg"
+              className="img-fluid animated kindimg"
               alt=""
             />
           </div>
@@ -34,4 +34,4 @@ function Bootstrapintro() {
   );
 }
 
-export default Bootstrapintro;
+export default Intro;

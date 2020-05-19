@@ -1,4 +1,4 @@
 module.exports = {
-  KindActs: require("./kindActs"),
+  KindAct: require("./kindAct"),
   UserInfo: require("./userInfo")
 };

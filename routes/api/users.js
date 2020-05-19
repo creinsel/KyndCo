@@ -13,7 +13,7 @@ router
 
 //localhost:3001/api/users/login
 router.route("/login").post((req, res) => {
-  console.log("passport", req.body.email, req.body.password);
+  // console.log("passport", req.body.email, req.body.password);
   UserController.findByEmail(req, res);
 });
 
@@ -25,5 +25,7 @@ router
 
 //localhost:3001/api/users/addact/:id
 router.route("/addact/:id").post(UserController.performAct);
+
+router.route("/addpoints/:id").put(UserController.updateUser);
 
 module.exports = router;

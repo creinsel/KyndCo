@@ -65,7 +65,7 @@
   }
   
   .team .member .social a:hover {
-    color: #eb5d1e;
+    color: #3ec094;
   }
   
   .team .member .social i {
@@ -74,7 +74,7 @@
   }
   
   .team .member:hover .member-info {
-    background: linear-gradient(0deg, rgba(78, 64, 57, 0.95) 0%, rgba(78, 64, 57, 0.95) 15%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(0deg, rgba(255, 167, 52, 0.95) 0%, rgba(255, 180, 82, 0.95) 15%, rgba(0, 0, 0, 0) 100%);
     opacity: 1;
     transition: 0.4s;
   }

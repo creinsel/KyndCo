@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
+import "./style.css";
 
 const MyDashBtn = () => { 
     
@@ -13,7 +14,7 @@ const MyDashBtn = () => {
         <>
         {toDashboard ? <Redirect to="/dashboard"/> : null}
 
-        <Button variant="primary" onClick={goDash}>
+        <Button onClick={goDash}>
           My Dashboard
         </Button>
         </>

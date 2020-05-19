@@ -1,0 +1,42 @@
+.kyndline-container {
+  margin-top: 0px;
+  margin-left: 20px;
+  max-height: 300px;
+
+}
+
+.kyndline-container .list-group-item {
+  height: auto;
+}
+
+.list-group-item {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 14px;
+
+}
+
+.list-overflow-container .desc {
+  color: #3ec094;
+  font-size: 14px;
+  margin-left: 40px;
+  margin-top: -23px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.list-group-item img {
+  width: 25px;
+  margin-top: 8px;
+}
+
+@media (max-width: 1366px) {
+  .nav-menu .drop-down .drop-down ul {
+    left: -90%;
+  }
+  .nav-menu .drop-down .drop-down:hover > ul {
+    left: -100%;
+  }
+  .nav-menu .drop-down .drop-down > a:after {
+    content: "\ea9d";
+  }
+}
