@@ -36,11 +36,6 @@
     "passport-local": "^1.0.0",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-router-dom": "^5.1.2"
-  },
-  "name": "kyndco-app",
-  "description": "a really cool app",
-  "version": "1.0.0",
-  "engines": {
-    "node": "10.16.3"
   }
+  
 }
