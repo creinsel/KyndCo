@@ -1,3 +1,4 @@
+
 {
   "name": "client",
   "version": "0.1.0",
@@ -15,6 +16,13 @@
     "react-dom": "^16.13.0",
     "react-moment": "^0.9.7",
     "react-scripts": "3.4.0"
+  },
+  
+    "name": "kyndco-app",
+    "version": "1.0.0",
+    "engines": {
+      "node": "10.16.3"
+      
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,11 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "name": "myapp",
-  "description": "a really cool app",
-  "version": "1.0.0",
-  "engines": {
-    "node": "10.16.x"
   }
+  
 }
+
+
+
