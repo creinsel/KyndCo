@@ -16,10 +16,16 @@
     "react-moment": "^0.9.7",
     "react-scripts": "3.4.0"
   },
-  "engines": {
-    "node": "10.16.3",
-    "npm": "6.9.0"
-  },
+
+  
+    "name": "package-name",
+    "version": "1.0.0",
+    "description": "package description",
+    "scripts": {
+      "deploy": "node --version",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
