@@ -22,7 +22,7 @@
     "version": "1.0.0",
     "description": "package description",
     "scripts": {
-      "deploy": "node --version",
+      "deploy": "10.16.3",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
   
