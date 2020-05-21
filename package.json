@@ -6,7 +6,7 @@
   "engines": {
     "node": "10.16.3",
     "npm": "6.9.0"
-    },
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -38,5 +38,4 @@
     "react-bootstrap": "^1.0.0-beta.17",
     "react-router-dom": "^5.1.2"
   }
-  
 }

@@ -1,6 +1,5 @@
-
 {
-  "name": "client",
+  "name": "deploy",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
@@ -16,17 +15,11 @@
     "react-dom": "^16.13.0",
     "react-moment": "^0.9.7",
     "react-scripts": "3.4.0"
-    
   },
-
-  "name": "deploy",
-  "version": "0.1.0",
-  "private":true,
   "engines": {
     "node": "10.16.3",
-    "npm":"6.9.0"
+    "npm": "6.9.0"
   },
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -49,8 +42,4 @@
       "last 1 safari version"
     ]
   }
-  
 }
-
-
-
