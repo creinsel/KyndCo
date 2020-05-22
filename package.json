@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "MERN template.  Create-react-app + Express",
   "main": "server.js",
-  "engines": {
-    "node": "10.16.3",
-    "npm": "6.9.0"
-  },
+  
 
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

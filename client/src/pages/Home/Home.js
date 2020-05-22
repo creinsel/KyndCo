@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../../Components/nav";
+import Nav from "../../Components/Nav";
 import Intro from "../../Components/intro";
 import About from "../../Components/about";
 import Badge from "../../Components/badge";
