@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "./node_modules/react";
+import { Redirect } from "./node_modules/react-router-dom";
 import SignUp from "../SignUp";
 import SignIn from "../SignIn";
 import SignOut from "../SignOut";
