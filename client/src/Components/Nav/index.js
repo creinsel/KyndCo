@@ -23,7 +23,11 @@ const Nav = () => {
         const calcUserPoints = res.data.kindacts.map((act) => {
           return (tempScore += act.points);
         });
-        setUserPoints(calcUserPoints.slice(-1).pop());
+        if (calcUserPoints.length === 0) {
+          setUserPoints(0);
+        } else {
+          setUserPoints(calcUserPoints.slice(-1).pop());
+        }
       })
       .catch((err) => console.log(err));
 
@@ -64,7 +68,7 @@ const Nav = () => {
             <ul className="nav navbar-nav">
               {userId ? (
                 <li className="nav-item">
-                  Hello {username}! | Total points: {userId ? userPoints : 0}
+                  Hello {username}! | {userId ? userPoints : 0} points
                 </li>
               ) : (
                 <span></span>
