@@ -235,7 +235,16 @@ const Acts = () => {
                 completed it, click the <span className="plus-style">+</span>{" "}
                 button to add it to your Kyndline.
               </p>
+              <Select
+                value={formData.category}
+                name="category"
+                onChange={handleInputChange}
+                opt1="Yourself"
+                opt2="Others"
+                opt3="The World"
+              />
             </div>
+           
             {acts.length ? (
               <List>
                 {acts.map((act) => (
