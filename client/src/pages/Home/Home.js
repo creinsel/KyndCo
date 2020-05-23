@@ -1,10 +1,10 @@
 import React from "react";
 import Nav from "../../Components/Nav";
-import Intro from "../../Components/intro";
-import About from "../../Components/about";
-import Badge from "../../Components/badge";
-import Team from "../../Components/team";
-import Footer from "../../Components/footer";
+import Intro from "../../Components/Intro";
+import About from "../../Components/About";
+import Badge from "../../Components/Badge";
+import Team from "../../Components/Team";
+import Footer from "../../Components/Footer";
 
 const Home = () => {
   return (
