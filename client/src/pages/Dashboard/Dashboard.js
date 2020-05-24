@@ -36,6 +36,9 @@ const Acts = () => {
     points: "",
     description: "",
   });
+  const [sortCat, setSortCat] = useState({
+    cat: "",
+  });
   const { acts, setActs } = useContext(KindActContext);
   const { userId } = useContext(UserIdContext);
   const { userActs, setUserActs } = useContext(UserContext);
@@ -87,6 +90,14 @@ const Acts = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleInputSort = (event) => {
+    const { name, value } = event.target;
+    setSortCat({
       ...formData,
       [name]: value,
     });
@@ -238,9 +249,9 @@ const Acts = () => {
             </div>
             <br />
             <Select
-              value={formData.category}
+              value={sortCat.cat}
               name="category"
-              onChange={handleInputChange}
+              onChange={handleInputSort}
               opt1="Yourself"
               opt2="Others"
               opt3="The World"
