@@ -36,6 +36,9 @@ const Acts = () => {
     points: "",
     description: "",
   });
+  const [sortCat, setSortCat] = useState({
+    cat: "",
+  });
   const { acts, setActs } = useContext(KindActContext);
   const { userId } = useContext(UserIdContext);
   const { userActs, setUserActs } = useContext(UserContext);
@@ -87,6 +90,14 @@ const Acts = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleInputSort = (event) => {
+    const { name, value } = event.target;
+    setSortCat({
       ...formData,
       [name]: value,
     });
@@ -160,8 +171,8 @@ const Acts = () => {
         <Container></Container>
         <Row>
           <Col size="md-3">
-            <div className="section-header">
-              <h1>Add an Act</h1>
+            <div className="section">
+              <h1 className="section-header">Add an Act</h1>
               <p className="sub-text">
                 Don't see an act you want to do? Simply fill out the form &
                 yours will be added to the Acts of Kyndness.
@@ -228,23 +239,24 @@ const Acts = () => {
           </Col>
 
           <Col size="md-6">
-            <div className="section-header">
-              <h1>Acts of Kyndness</h1>
+            <div className="section">
+              <h1 className="section-header">Acts of Kyndness</h1>
               <p className="sub-text">
                 Choose an act to do from our list of acts. Once you have
                 completed it, click the <span className="plus-style">+</span>{" "}
                 button to add it to your Kyndline.
               </p>
-              <Select
-                value={formData.category}
-                name="category"
-                onChange={handleInputChange}
-                opt1="Yourself"
-                opt2="Others"
-                opt3="The World"
-              />
             </div>
-           
+            <br />
+            <Select
+              value={sortCat.cat}
+              name="category"
+              onChange={handleInputSort}
+              opt1="Yourself"
+              opt2="Others"
+              opt3="The World"
+            />
+
             {acts.length ? (
               <List>
                 {acts.map((act) => (
@@ -268,8 +280,8 @@ const Acts = () => {
             )}
           </Col>
           <Col size="md-3">
-            <div className="section-header">
-              <h1>Badges</h1>
+            <div className="section">
+              <h1 className="section-header">Badges</h1>
               <DashBadge />
             </div>
           </Col>
