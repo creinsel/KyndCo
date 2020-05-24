@@ -1,10 +1,10 @@
 .list-overflow-container {
-  margin-top: 112px;
+  /* margin-top: 112px; */
   max-height: 560px;
   border-radius: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
-  border: .5px solid #ced4da;
+  border: 0.5px solid #ced4da;
 }
 
 .list-overflow-container ul {
@@ -55,8 +55,4 @@
 .list-group-item {
   font-family: "Comfortaa", sans-serif;
   position: relative;
-
-
 }
-
-

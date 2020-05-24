@@ -1,27 +1,25 @@
-
 .form-container {
-    margin-top: 90px;
+  /* margin-top: 90px; */
 }
 
 .form-control {
-    font-size: 12px;
-    height: 
+  font-size: 12px;
+  /* height: 1em; */
 }
 
 .form-group {
-    margin: 0 auto;
-    font-family: "Comfortaa", sans-serif;
-    margin-top: 20px;
-    margin-bottom: 30px;
-
+  margin: 0 auto;
+  font-family: "Comfortaa", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .add-act-btn {
-    background-color: #ffa437;
-    position: relative;
-    color: #ffffff;
-    font-family: "Comfortaa", sans-serif;
-    padding: 10px 20px 10px 20px;
-    border-radius: 25px;
-    margin-top: -5px;
+  background-color: #ffa437;
+  position: relative;
+  color: #ffffff;
+  font-family: "Comfortaa", sans-serif;
+  padding: 10px 20px 10px 20px;
+  border-radius: 25px;
+  margin-top: -5px;
 }

@@ -22,6 +22,10 @@
   text-align: center;
 }
 
+.section {
+  width: auto;
+}
+
 .section-header {
   width: auto;
   height: 50px;
@@ -29,14 +33,19 @@
   color: #ffffff;
   font-family: "Comfortaa", sans-serif;
   border-radius: 5px;
-}
 
-.section-header h1 {
   font-size: 26px;
   font-weight: 700;
   text-align: center;
   padding-top: 10px;
 }
+
+/* .section-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10px;
+} */
 
 .acts-info {
   display: inline-block;
@@ -91,7 +100,5 @@
   font-size: 14px;
 }
 
-
 .acts-header {
-  
 }
