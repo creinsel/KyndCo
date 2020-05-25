@@ -5,27 +5,28 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   badges: {
-    type: String
+    type: String,
   },
   points: {
     type: Number,
-    required: true
+    required: true,
+    default: 0,
   },
-  kindacts: [{}]
+  kindacts: [{}],
 });
 
-UserSchema.pre("save", function(next) {
+UserSchema.pre("save", function (next) {
   var user = this;
   // only hash the password if it has been modified (or is new)
   if (!user.isModified("password")) {
@@ -58,7 +59,7 @@ UserSchema.pre("save", function(next) {
 //   return this.password;
 // };
 
-UserSchema.methods.validPassword = password => {
+UserSchema.methods.validPassword = (password) => {
   console.log("checking hash");
   return bcrypt.compareSync(password, this.password);
 };
